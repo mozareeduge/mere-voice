@@ -1,15 +1,15 @@
 # Final Acceptance Report — v0.6
 
 Candidate: `NIRAVANA-VOICE-NEARFINAL-0.6`
-Engineering acceptance: **PASS**
-Release state: `CHATGPT_CRAFT_PASS_EXTERNAL_GATES_REMAIN`
+Engineering acceptance: **FAIL**
+Release state: `ENGINEERING_ACCEPTANCE_FAIL`
 
 ## Compiler gates
 - product authority closure: PASS
 - candidate/version identity consistency: PASS
 - artifact registry fingerprints: PASS (8 logical artifacts)
 - scenario traceability completeness: PASS (40/40)
-- executable dev QA: PASS
+- executable dev QA: FAIL
 - runnable local candidate: PASS
 
 ## Proof classification
@@ -19,7 +19,7 @@ Release state: `CHATGPT_CRAFT_PASS_EXTERNAL_GATES_REMAIN`
 - PARTIAL_AUTOMATED: 1
 
 ## Truthful unresolved gates
-- real Mana/Piper engineering state in this package: NOT YET PROVEN
+- real Mana/Piper engineering state in this package: PASS
 - Persian pronunciation/prosody listening acceptance
 - actual Windows/default-audio-device smoke
 - optional visual PDF punctuation/typography confirmation

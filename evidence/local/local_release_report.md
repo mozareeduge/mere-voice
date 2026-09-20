@@ -1,19 +1,19 @@
 # Local Release Report — v0.6
 
-Generated: `2026-09-20T12:54:20.045639+00:00`
+Generated: `2026-09-20T18:30:46.191133+00:00`
 Candidate baseline: **PASS**
-Real Mana/Piper engineering state: **NOT YET PROVEN**
+Real Mana/Piper engineering state: **PASS**
 
 ## Current audio
 - ready lines: 17/17
-- real Piper lines: 0/17
-- fixture lines: 17/17
-- engines: espeak-fixture
+- real Piper lines: 17/17
+- fixture lines: 0/17
+- engines: piper-tts
 
 ## Model
-- model present: False
-- model hash valid: False
-- config invariants valid: False
+- model present: True
+- model hash valid: True
+- config invariants valid: True
 
 ## Remaining human/target gates
 - Persian pronunciation/prosody listening acceptance

@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-20T12:54:20.045639+00:00",
+  "generated_at": "2026-09-20T18:30:46.191133+00:00",
   "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
   "platform": {
-    "python": "3.11.15",
+    "python": "3.11.9",
     "python_supported": true,
     "piper-tts": "1.8.0",
     "pedalboard": "0.9.25",
     "numpy": "2.4.6",
     "pytest": "9.1.1",
-    "playwright": "1.63.0",
-    "node": "/opt/node22/bin/node",
-    "os": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39"
+    "playwright": null,
+    "node": "C:\\Program Files\\nodejs\\node.EXE",
+    "os": "Windows-10-10.0.19044-SP0"
   },
   "source": {
     "schema_version": 2,
@@ -22,7 +22,7 @@
     "extraction_witness_sha256_inherited_from_dossier_ledger": "c7c9d7c3219ed1f8f99a1a1d731eaa7773bead1ec65408bd79bc2d965c439736",
     "source_fidelity": "PRIMARY_WITNESS_TEXT_WITH_DECLARED_EXTRACTION_NORMALIZATION",
     "ui_notice": "PRIMARY WITNESS SOURCE · 17 Voice units · extraction-normalized; visual PDF punctuation/typography check pending.",
-    "source_sha256": "a39ea2bb1eba3d50393b2573a4af21b65ed4bfbb13551e157dcf87b91c598397"
+    "source_sha256": "35f445bb3ffea16e6fa7ce6dcde55896e0d985222f7b2de6cf87f07f80e0766a"
   },
   "score": {
     "score_id": "SCORE-PRIMARY-WITNESS-LAB-01",
@@ -36,26 +36,35 @@
   },
   "audio": {
     "ready_line_count": 17,
-    "fixture_line_count": 17,
-    "piper_line_count": 0,
+    "fixture_line_count": 0,
+    "piper_line_count": 17,
     "engines": [
-      "espeak-fixture"
+      "piper-tts"
     ],
-    "all_17_real_piper": false
+    "all_17_real_piper": true
   },
   "model": {
     "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
-    "model_path": "models/fa_IR-mana-medium.onnx",
-    "config_path": "models/fa_IR-mana-medium.onnx.json",
-    "model_present": false,
-    "config_present": false,
-    "model_hash_ok": false,
-    "config_invariants_ok": false
+    "model_path": "models\\fa_IR-mana-medium.onnx",
+    "config_path": "models\\fa_IR-mana-medium.onnx.json",
+    "model_present": true,
+    "config_present": true,
+    "model_hash_ok": true,
+    "config_invariants_ok": true,
+    "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
+    "config_invariants": {
+      "sample_rate": 22050,
+      "language_code": "fa",
+      "espeak_voice": "fa",
+      "phoneme_type": "espeak",
+      "num_speakers": 1
+    },
+    "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997"
   },
   "preparation": null,
   "preparation_error": null,
   "base_candidate_pass": true,
-  "real_voice_engineering_pass": false,
+  "real_voice_engineering_pass": true,
   "external_human_gates": [
     "Persian pronunciation/prosody listening acceptance",
     "actual Windows/default-audio-device smoke",

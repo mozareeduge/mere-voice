@@ -1,15 +1,17 @@
 {
-  "asset_id": "FIXTURE-VOICE-004-2923de8a0863",
+  "asset_id": "ASSET-VOICE-004-ed58e9c176c3",
   "line_id": "VOICE-004",
   "status": "READY",
   "source_text_sha256": "af558b35208e72da4c393aa43553683129b51c6baeee5b4be76d9ab380253079",
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
-  "engine": "espeak-fixture",
-  "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
-  "wav_path": "data/assets/dry/FIXTURE-VOICE-004-2923de8a0863.wav",
-  "wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107",
-  "duration_ms": 29442,
-  "rendered_at": "2026-09-20T08:34:47.853597+00:00",
-  "fixture": true,
-  "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance."
+  "engine": "piper-tts",
+  "engine_version": "1.8.0",
+  "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
+  "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
+  "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
+  "wav_path": "data/assets/dry/ASSET-VOICE-004-ed58e9c176c3.wav",
+  "wav_sha256": "cb17730c518fd5ce62c67c1bfc31df787a134520d4dc085ac6972c7a9d08ef8f",
+  "duration_ms": 23975,
+  "rendered_at": "2026-09-20T18:30:02.579928+00:00",
+  "fixture": false
 }

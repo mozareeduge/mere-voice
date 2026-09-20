@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-20T12:54:20.080410+00:00",
+  "generated_at": "2026-09-20T18:30:46.223141+00:00",
   "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
   "app_version": "0.6.0",
   "compiler_source": "chatgpt_executable_handoff_v2.0",
-  "engineering_acceptance_pass": true,
-  "release_state": "CHATGPT_CRAFT_PASS_EXTERNAL_GATES_REMAIN",
+  "engineering_acceptance_pass": false,
+  "release_state": "ENGINEERING_ACCEPTANCE_FAIL",
   "authority_closure": {
     "horizons": [
       "HZN-001",
@@ -143,24 +143,24 @@
     }
   },
   "component_integration_reality_qa": {
-    "strict": true,
-    "pass": true,
+    "strict": false,
+    "pass": false,
     "checks": {
       "pytest": {
         "cmd": [
-          "/home/user/mere-voice/.venv/bin/python",
+          "C:\\Users\\Zarinpal\\Documents\\Personal Formal Documents\\Artworks\\digital art\\mere-voice\\.venv\\Scripts\\python.exe",
           "-m",
           "pytest",
           "-q"
         ],
-        "returncode": 0,
-        "stdout": ".......................                                                  [100%]\n",
+        "returncode": 1,
+        "stdout": ".F.........F...........                                                  [100%]\n================================== FAILURES ===================================\n_ test_primary_witness_candidate_is_immediately_runnable_with_explicit_fixture_audio _\n\n    def test_primary_witness_candidate_is_immediately_runnable_with_explicit_fixture_audio():\n        state=current_state()\n        assert state['fixture_mode'] is False\n        assert state['source_primary_witness'] is True\n>       assert state['audio_fixture_mode'] is True\nE       assert False is True\n\ntests\\integration\\test_prebuilt_candidate.py:13: AssertionError\n_ test_local_release_report_separates_runnable_baseline_from_real_voice_gate __\n\n    def test_local_release_report_separates_runnable_baseline_from_real_voice_gate():\n        report = build_report(do_prepare=False, do_dev_verify=False, do_export_smoke=False)\n        assert report[\"base_candidate_pass\"] is True\n        assert report[\"audio\"][\"ready_line_count\"] == 17\n>       assert report[\"audio\"][\"fixture_line_count\"] == 17\nE       assert 0 == 17\n\ntests\\integration\\test_v05_release_hardening.py:38: AssertionError\n=========================== short test summary info ===========================\nFAILED tests/integration/test_prebuilt_candidate.py::test_primary_witness_candidate_is_immediately_runnable_with_explicit_fixture_audio\nFAILED tests/integration/test_v05_release_hardening.py::test_local_release_report_separates_runnable_baseline_from_real_voice_gate\n",
         "stderr": "",
-        "pass": true
+        "pass": false
       },
       "node_app": {
         "cmd": [
-          "/opt/node22/bin/node",
+          "C:\\Program Files\\nodejs\\node.EXE",
           "--check",
           "web/app.js"
         ],
@@ -171,7 +171,7 @@
       },
       "node_scheduler": {
         "cmd": [
-          "/opt/node22/bin/node",
+          "C:\\Program Files\\nodejs\\node.EXE",
           "--check",
           "web/audio-scheduler.js"
         ],
@@ -182,7 +182,7 @@
       },
       "scheduler_lifecycle": {
         "cmd": [
-          "/opt/node22/bin/node",
+          "C:\\Program Files\\nodejs\\node.EXE",
           "tests/browser/stop_harness.mjs"
         ],
         "returncode": 0,
@@ -191,39 +191,42 @@
         "pass": true
       },
       "browser_qa": {
-        "cmd": [
-          "/home/user/mere-voice/.venv/bin/python",
-          "tests/browser/run_candidate_browser_qa.py"
-        ],
-        "returncode": 0,
-        "stdout": "{\n  \"viewports\": {\n    \"1440x900\": {\n      \"line_rows\": 17,\n      \"event_blocks\": 17,\n      \"ready_badge\": \"READY \\u00b7 PROCESSED\",\n      \"page_horizontal_overflow_px\": 0,\n      \"timeline_internal_overflow_px\": 9044,\n      \"selected_event\": \"EV-016\",\n      \"inspector_controls_clear_of_research\": true\n    },\n    \"1024x768\": {\n      \"line_rows\": 17,\n      \"event_blocks\": 17,\n      \"ready_badge\": \"READY \\u00b7 PROCESSED\",\n      \"page_horizontal_overflow_px\": 0,\n      \"timeline_internal_overflow_px\": 9075\n    }\n  },\n  \"temporal\": {\n    \"baseline\": {\n      \"a\": 0.4000000059604645,\n      \"bc\": 0.800000011920929,\n      \"pass\": true\n    },\n    \"shift_canary_observation\": {\n      \"a\": 0.4000000059604645,\n      \"bc\": 0,\n      \"pass\": false\n    }\n  },\n  \"interaction\": {\n    \"invalid_start_rejected\": {\n      \"restored\": true,\n      \"status\": \"Start time must be a whole number of milliseconds \\u2265 0. Previous value kept.\",\n      \"score_calls_queued\": 0\n    },\n    \"invalid_gain_rejected\": {\n      \"restored\": true,\n      \"status\": \"gain_db must be between -60 and 12. Previous value kept.\",\n      \"score_calls_queued\": 0\n    },\n    \"immediate_after_processing_edit\": {\n      \"ready_badge\": \"BLOCKED\",\n      \"dirty_text\": \"UNSAVED CURRENT SCORE\",\n      \"export_disabled\": true,\n      \"event_state\": \"dry=READY \\u00b7 variant=STALE \\u00b7 route=STEREO_MAIN\"\n    },\n    \"api_calls\": [\n      \"/api/state\",\n      \"/api/score\",\n      \"/api/save-revision\"\n    ],\n    \"flush_before_revision\": true,\n    \"immediate_after_duplicate\": {\n      \"ready_badge\": \"BLOCKED\",\n      \"dirty_text\": \"UNSAVED CURRENT SCORE\",\n      \"event_state\": \"dry=READY \\u00b7 variant=STALE \\u00b7 route=STEREO_MAIN\",\n      \"start_preserved\": true,\n      \"gain_preserved\": true,\n      \"line_preserved\": true,\n      \"count_incremented\": true\n    },\n    \"immediate_after_add\": {\n      \"count_incremented\": true,\n      \"start_is_zero\": true,\n      \"gain_is_default\": true,\n      \"enabled\": true,\n      \"ready_badge\": \"BLOCKED\",\n      \"event_state\": \"dry=READY \\u00b7 variant=STALE \\u00b7 route=STEREO_MAIN\"\n    },\n    \"immediate_after_delete\": {\n      \"count_decremented\": true,\n      \"confirm_calls\": [\n        \"Delete EV-019? The current score has unsaved edits. The last saved revision remains recoverable.\"\n      ],\n      \"revision_text\": \"Revision 99\",\n      \"dirty_text\": \"UNSAVED CURRENT SCORE\"\n    }\n  },\n  \"canaries\": {\n    \"geometry_overflow_detected\": true,\n    \"shifted_onset_turns_red\": true,\n    \"invalid_start_preserves_last_valid\": true,\n    \"invalid_processing_preserves_last_valid\": true,\n    \"processing_edit_blocks_stale_playback\": true,\n    \"save_revision_flushes_score_first\": true,\n    \"duplicate_event_preserves_semantics\": true,\n    \"duplicate_event_blocks_stale_playback\": true,\n    \"add_event_uses_authority_defaults\": true,\n    \"delete_dirty_score_confirms_and_keeps_revision\": true\n  },\n  \"pass\": true\n}\n",
-        "stderr": "",
-        "pass": true
+        "pass": null,
+        "skipped": "playwright not installed"
       }
     },
-    "executed_count": 5,
+    "executed_count": 4,
     "missing_required": false
   },
   "local_release": {
     "base_candidate_pass": true,
-    "real_voice_engineering_pass": false,
+    "real_voice_engineering_pass": true,
     "audio": {
       "ready_line_count": 17,
-      "fixture_line_count": 17,
-      "piper_line_count": 0,
+      "fixture_line_count": 0,
+      "piper_line_count": 17,
       "engines": [
-        "espeak-fixture"
+        "piper-tts"
       ],
-      "all_17_real_piper": false
+      "all_17_real_piper": true
     },
     "model": {
       "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
-      "model_path": "models/fa_IR-mana-medium.onnx",
-      "config_path": "models/fa_IR-mana-medium.onnx.json",
-      "model_present": false,
-      "config_present": false,
-      "model_hash_ok": false,
-      "config_invariants_ok": false
+      "model_path": "models\\fa_IR-mana-medium.onnx",
+      "config_path": "models\\fa_IR-mana-medium.onnx.json",
+      "model_present": true,
+      "config_present": true,
+      "model_hash_ok": true,
+      "config_invariants_ok": true,
+      "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
+      "config_invariants": {
+        "sample_rate": 22050,
+        "language_code": "fa",
+        "espeak_voice": "fa",
+        "phoneme_type": "espeak",
+        "num_speakers": 1
+      },
+      "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997"
     }
   },
   "external_gates": [
