@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-09-20T09:32:10.469371+00:00",
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
+  "platform": {
+    "python": "3.13.5",
+    "python_supported": true,
+    "piper-tts": null,
+    "pedalboard": "0.9.23",
+    "numpy": "2.3.5",
+    "pytest": "9.0.2",
+    "playwright": "1.57.0",
+    "node": "/opt/nvm/versions/node/v22.16.0/bin/node",
+    "os": "Linux-6.18.44-x86_64-with-glibc2.41"
+  },
+  "source": {
+    "schema_version": 2,
+    "source_mode": "PRIMARY_PDF_WITNESS",
+    "authority": "primary play-text witness; supersedes dossier excerpts for prototype source wording",
+    "warning": "The 17 spoken Voice entries are reconstructed from the primary PDF’s indexed text. Obvious PDF extraction spacing/glyph splits are repaired and embedded stage directions are separated from speech. Lexical changes are not allowed; the one non-whitespace repair (المسه → لامسه) is explicitly recorded. Final visual typography/punctuation confirmation against the PDF page remains a human source-fidelity check, not an engineering blocker.",
+    "derived_from": "چرا که تو بذل عشق می_کنی..pdf",
+    "primary_witness_sha256_inherited_from_dossier_ledger": "898064d027e370e83a1df813b3ae79a8c1587084c5b44022048caed5cf7c91c1",
+    "extraction_witness_sha256_inherited_from_dossier_ledger": "c7c9d7c3219ed1f8f99a1a1d731eaa7773bead1ec65408bd79bc2d965c439736",
+    "source_fidelity": "PRIMARY_WITNESS_TEXT_WITH_DECLARED_EXTRACTION_NORMALIZATION",
+    "ui_notice": "PRIMARY WITNESS SOURCE · 17 Voice units · extraction-normalized; visual PDF punctuation/typography check pending.",
+    "source_sha256": "a39ea2bb1eba3d50393b2573a4af21b65ed4bfbb13551e157dcf87b91c598397"
+  },
+  "score": {
+    "score_id": "SCORE-PRIMARY-WITNESS-LAB-01",
+    "revision": 2,
+    "events": 17
+  },
+  "readiness": {
+    "dry_ready": true,
+    "processed_ready": true,
+    "state": "READY_PROCESSED"
+  },
+  "audio": {
+    "ready_line_count": 17,
+    "fixture_line_count": 17,
+    "piper_line_count": 0,
+    "engines": [
+      "espeak-fixture"
+    ],
+    "all_17_real_piper": false
+  },
+  "model": {
+    "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
+    "model_path": "models/fa_IR-mana-medium.onnx",
+    "config_path": "models/fa_IR-mana-medium.onnx.json",
+    "model_present": false,
+    "config_present": false,
+    "model_hash_ok": false,
+    "config_invariants_ok": false
+  },
+  "preparation": null,
+  "preparation_error": null,
+  "base_candidate_pass": true,
+  "real_voice_engineering_pass": false,
+  "external_human_gates": [
+    "Persian pronunciation/prosody listening acceptance",
+    "actual Windows/default-audio-device smoke",
+    "optional visual PDF punctuation/typography confirmation",
+    "final performance Voice / physical speaker-field artistic decision"
+  ]
+}

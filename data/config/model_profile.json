@@ -1,0 +1,31 @@
+{
+  "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
+  "engine_id": "piper-tts",
+  "engine_range": ">=1.8,<2",
+  "model_name": "fa_IR-mana-medium.onnx",
+  "model_path": "models/fa_IR-mana-medium.onnx",
+  "config_path": "models/fa_IR-mana-medium.onnx.json",
+  "expected_model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
+  "model_repository": "https://huggingface.co/MahtaFetrat/Mana-Persian-Piper",
+  "model_license": "MIT",
+  "sample_rate_declared": 22050,
+  "render_parameters": {
+    "volume": 1.0,
+    "length_scale": 1.0,
+    "noise_scale": 0.667,
+    "noise_w_scale": 0.8,
+    "normalize_audio": false
+  },
+  "fixture_profile": {
+    "engine": "espeak",
+    "voice": "fa",
+    "purpose": "prebuilt runnable audio fixture over primary-witness text only; replace with Mana/Piper for listening/rehearsal judgment"
+  },
+  "expected_config_invariants": {
+    "sample_rate": 22050,
+    "language_code": "fa",
+    "espeak_voice": "fa",
+    "phoneme_type": "espeak",
+    "num_speakers": 1
+  }
+}

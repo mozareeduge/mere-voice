@@ -1,0 +1,207 @@
+version: 1
+project: niravana-voice-prototype
+authority_snapshot: VOICE-PROTOTYPE-PD-2026-09-17-R2
+qa_snapshot: VOICE-PROTOTYPE-QA-2026-09-17-R1
+terminal_states:
+  canonical_text_present: CANDIDATE_READY_FOR_REHEARSAL_REVIEW
+  canonical_text_absent: ENGINEERING_READY_OWNER_CONTENT_REQUIRED
+
+tasks:
+  - id: TASK-P00
+    objective: Establish greenfield baseline, Git identity, Python runtime, local Flask/static vertical slice, execution state.
+    depends_on: []
+    refs:
+      product: [HZN-009, HZN-010]
+      qa: [ORACLE-020, ORACLE-024]
+    files:
+      - app.py
+      - requirements.txt
+      - scripts/setup.ps1
+      - scripts/run.ps1
+      - web/index.html
+      - web/app.js
+      - web/styles.css
+    proof:
+      - local server binds only 127.0.0.1
+      - workbench opens in Chromium
+      - fixture warning shell is visible
+      - git status and runtime versions recorded
+    gate: GATE-TARGETED
+    done_when: Runnable local shell exists with no cloud/database/auth dependency.
+
+  - id: TASK-P01
+    objective: Implement domain schemas, IDs, parameter validation, hashing/staleness rules and deterministic fixtures.
+    depends_on: [TASK-P00]
+    refs:
+      product: [OBJ-001, OBJ-004, OBJ-005, OBJ-006, OBJ-007, SCN-004, SCN-006, SCN-007, SCN-010]
+      qa: [ORACLE-001, ORACLE-004, ORACLE-005]
+    files:
+      - voice_proto/domain.py
+      - voice_proto/validation.py
+      - voice_proto/storage.py
+      - scripts/generate_fixtures.py
+      - data/source/voice_lines.fixture.json
+      - tests/unit/
+    proof:
+      - source hash changes on punctuation mutation
+      - processing change stales variant; start_ms change does not
+      - duplicate event gets independent ID
+      - parameter ranges reject invalid values without silent clamp
+    gate: GATE-TARGETED
+    done_when: Product state semantics are executable and unit-tested before TTS/audio integration.
+
+  - id: TASK-P02
+    objective: Implement current Piper dry rendering, immutable asset metadata, source reload and failure preservation.
+    depends_on: [TASK-P01]
+    refs:
+      product: [HZN-001, HZN-002, SCN-001, SCN-002, SCN-003, SCN-004, SCN-005]
+      qa: [ORACLE-001, ORACLE-002, ORACLE-003]
+    files:
+      - voice_proto/tts.py
+      - voice_proto/manifest.py
+      - scripts/fetch_model.py
+      - data/config/model_profile.json
+      - tests/integration/test_tts_assets.py
+    proof:
+      - one fixture Persian line renders locally
+      - output/metadata hashes recorded
+      - failed line cannot delete prior successful asset
+      - source/profile mutation produces STALE state
+    gate: GATE-TARGETED
+    done_when: Dry asset preparation is local, immutable, traceable and retryable.
+
+  - id: TASK-P03
+    objective: Implement offline processed-event variant pipeline with semantic pitch, delay, reverb, envelope, gain and pan.
+    depends_on: [TASK-P01, TASK-P02]
+    refs:
+      product: [HZN-003, HZN-007, SCN-011, SCN-012, SCN-013, SCN-014, DEC-016]
+      qa: [ORACLE-004, ORACLE-008, ORACLE-010]
+    files:
+      - voice_proto/processing.py
+      - tests/unit/test_processing_identity.py
+      - tests/integration/test_processing_audio.py
+    proof:
+      - neutral spec produces dry-equivalent semantics
+      - nonzero pitch changes pitch without rate masquerade
+      - tails are intentionally retained/documented
+      - same dry+spec reuses variant; start_ms-only change does not rerender
+    gate: GATE-AUDIO-TEMPORAL
+    done_when: Event sound-body preparation is deterministic/cacheable and semantically correct.
+
+  - id: TASK-P04
+    objective: Implement Web Audio absolute scheduler, overlap, simultaneous onset, silence, rehearsal-start transform and stop cleanup.
+    depends_on: [TASK-P01]
+    refs:
+      product: [HZN-004, HZN-005, SCN-015, SCN-016, SCN-017, SCN-019, SCN-020, SCN-023]
+      qa: [ORACLE-006, ORACLE-007, ORACLE-011, ORACLE-012, ORACLE-013, ORACLE-025]
+    files:
+      - web/audio-scheduler.js
+      - tests/browser/temporal.spec.py
+      - tests/fixtures/
+    proof:
+      - OfflineAudioContext SCORE-FIX-01/02/03 pass
+      - relative onset error <= 10ms harness ceiling
+      - scheduler never chains from ended callbacks
+      - stop clears all active sources
+      - CANARY-001 and CANARY-004 fail the relevant tests
+    gate: GATE-AUDIO-TEMPORAL
+    done_when: Temporal semantics are proven independently of UI animation and physical speakers.
+
+  - id: TASK-P05
+    objective: Build complete workbench UI and event lifecycle/readiness behavior over implemented domain/API/audio layers.
+    depends_on: [TASK-P02, TASK-P03, TASK-P04]
+    refs:
+      product: [SURF-001, FLOW-001, FLOW-002, FLOW-003, FLOW-004, SCN-006, SCN-007, SCN-008, SCN-009, SCN-018, SCN-021, SCN-022, SCN-030, SCN-031, SCN-032]
+      qa: [ORACLE-005, ORACLE-009, ORACLE-019, ORACLE-020, ORACLE-021, ORACLE-022]
+    files:
+      - app.py
+      - web/index.html
+      - web/app.js
+      - web/styles.css
+      - tests/browser/
+    proof:
+      - actual controls drive visible/operable state
+      - no drag semantics invented
+      - processed/dry readiness differs correctly
+      - 12-event density works
+      - 1440x900 and 1024x768 no page overflow
+      - keyboard/focus path works
+      - CANARY-005 turns geometry test red
+    gate: GATE-BROWSER
+    done_when: A non-programmer can construct, hear and inspect a temporal score from the workbench.
+
+  - id: TASK-P06
+    objective: Implement atomic revisions, research notes, run manifests, processed/dry export and offline end-to-end flow.
+    depends_on: [TASK-P05]
+    refs:
+      product: [HZN-008, HZN-009, HZN-011, FLOW-005, FLOW-006, FLOW-007, SCN-024, SCN-025, SCN-026, SCN-027, SCN-028, SCN-029]
+      qa: [ORACLE-014, ORACLE-015, ORACLE-016, ORACLE-017, ORACLE-018, ORACLE-023]
+    files:
+      - voice_proto/storage.py
+      - voice_proto/export.py
+      - voice_proto/manifest.py
+      - app.py
+      - tests/integration/
+      - tests/browser/
+    proof:
+      - failed save cannot corrupt prior revision
+      - dirty score blocks export
+      - processed/dry sidecars tell truth
+      - network disabled after preparation still permits run/save/note/export
+    gate: GATE-OFFLINE
+    done_when: Rehearsal experiments survive as reproducible local revisions/evidence.
+
+  - id: TASK-P07
+    objective: Challenge test harness with required canaries, run full browser/accessibility/density regression and close proof gaps.
+    depends_on: [TASK-P06]
+    refs:
+      product: [SCN-X-01, SCN-X-02, SCN-X-03, SCN-X-04, SCN-X-05, SCN-X-06, SCN-X-07, SCN-X-08]
+      qa: [ORACLE-001, ORACLE-006, ORACLE-008, ORACLE-013, ORACLE-020]
+    files:
+      - tests/
+      - evidence/
+    proof:
+      - CANARY-001 through CANARY-005 each turn relevant green test red
+      - candidate restored cleanly after canaries
+      - full automated suite green on unchanged tree
+      - no unexpected skips
+    gate: GATE-CANARY
+    done_when: Critical green results have demonstrated mutation sensitivity.
+
+  - id: TASK-P08
+    objective: Validate actual Windows target path with real model, default audio output and export.
+    depends_on: [TASK-P07]
+    refs:
+      product: [HZN-002, HZN-009, HZN-012]
+      qa: [ORACLE-002, ORACLE-015, ORACLE-024, ORACLE-027]
+    files:
+      - evidence/windows-smoke/
+    proof:
+      - setup and run scripts work on Windows 10/11 x64
+      - real Mana model hash/version recorded
+      - one real fixture/canonical dry render plays
+      - two-event overlap sounds
+      - Stop/reset works
+      - saved revision and export produced
+      - canonical Persian human smoke if content supplied
+    gate: GATE-WINDOWS-SMOKE
+    done_when: The target rehearsal machine path is proven or a precise infrastructure blocker is recorded.
+
+  - id: TASK-P09
+    objective: Freeze exact candidate, run final scope audit/full gate, update truthful README and produce handoff evidence.
+    depends_on: [TASK-P08]
+    refs:
+      product: [HZN-001, HZN-012]
+      qa: [ORACLE-001, ORACLE-023, ORACLE-024]
+    files:
+      - README.md
+      - evidence/
+      - .git/voice-prototype-execution/state.json
+    proof:
+      - every changed tracked file maps to an authorized task
+      - full suite green on exact final tree
+      - dependency/model/source hashes recorded
+      - run command verified
+      - terminal state honest about canonical-text gate
+    gate: GATE-FULL
+    done_when: Exact candidate is reproducible, evidence-bound and ready for owner/rehearsal handoff.

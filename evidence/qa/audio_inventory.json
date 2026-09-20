@@ -1,0 +1,342 @@
+[
+  {
+    "event_id": "EV-001",
+    "line_id": "VOICE-001",
+    "start_ms": 0,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-001-81564a4cbc30.wav",
+      "wav_sha256": "8763710d126b1d853ef4147f166aa35c882f141bbcfcb9db470be2d2369135be",
+      "duration_ms": 9724,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/debcd498f49e81aca0df14b5.wav",
+      "wav_sha256": "922c3e3e6c9f4516fc7be129de7d3b3c6be7e589bf3e439cf0eadf1fe4e5abb4",
+      "duration_ms": 12744,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-002",
+    "line_id": "VOICE-002",
+    "start_ms": 10500,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-002-7b6dacf155d7.wav",
+      "wav_sha256": "6d1b0582b9623b4d48a4e3510b121e24c708b425a09bcd90dcbdf34a6c51db67",
+      "duration_ms": 6242,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/bb24355ccaa1bf00d8618134.wav",
+      "wav_sha256": "cd478990beab5fb2c01bd1adcb8ce566cf377abb8bbb20dfe3ac5636f244a131",
+      "duration_ms": 9262,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-003",
+    "line_id": "VOICE-003",
+    "start_ms": 17550,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-003-7ce241b67a34.wav",
+      "wav_sha256": "eb8fb6584b7f849d1327350bbf4a27e3949c6856c64bd8f7657c1cdfd15167dd",
+      "duration_ms": 10723,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/258a320d254b4e3c338e77c8.wav",
+      "wav_sha256": "12732926aac5c982b24d08bfaa0d36c030c7d51cb925483ca131f7a857fd48fe",
+      "duration_ms": 12923,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-004",
+    "line_id": "VOICE-004",
+    "start_ms": 28800,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-004-2923de8a0863.wav",
+      "wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107",
+      "duration_ms": 29442,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/76a269f579ebff1242e0fa37.wav",
+      "wav_sha256": "9f5cccd95f726134309ce6fad1cd2e22ee97dec81741c8804057f8e576492f2d",
+      "duration_ms": 31642,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-005",
+    "line_id": "VOICE-005",
+    "start_ms": 58750,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-005-f2e07c8b219a.wav",
+      "wav_sha256": "5eb35d1a2e73213fa469e7508757a3465abdc91c1a3d3686c864460125149341",
+      "duration_ms": 6548,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/acd3079c7b62dd973a0d334a.wav",
+      "wav_sha256": "0af2ac6a5e3591c9778f3f064239448733f6a8915b124a7ad06934ea2cf0d8c2",
+      "duration_ms": 8748,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-006",
+    "line_id": "VOICE-006",
+    "start_ms": 66000,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-006-e74ce8141077.wav",
+      "wav_sha256": "289ea63e9546d8ba13d5161ef7a60cea5317a37e8ea66bac09cfe3f51910cef7",
+      "duration_ms": 5108,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/32c9282272b27e24d421b890.wav",
+      "wav_sha256": "7537d43d0edd453c1d6d103ae81fcf285243dd58fa5a8e0f01ddc7a5af414ee0",
+      "duration_ms": 8128,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-007",
+    "line_id": "VOICE-007",
+    "start_ms": 71800,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-007-82a7b25eec6d.wav",
+      "wav_sha256": "e05aec345b000725b22ea1826a3ad21be1e8a012c0c86b29c7c08251958a1877",
+      "duration_ms": 10562,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/eedc64e61992f8d83657a3e6.wav",
+      "wav_sha256": "503bf23f8c06777cfad5682f8368c993887e54fbee2ccef190785f0cf978ca72",
+      "duration_ms": 13582,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-008",
+    "line_id": "VOICE-008",
+    "start_ms": 83100,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-008-c4ba665f0916.wav",
+      "wav_sha256": "9d99641a8ac1516e495958b48e8d7dc19fcc3cffab50937b33d0e642aeb1aa17",
+      "duration_ms": 7830,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/6ebc8e15f1c59623d2ef80bd.wav",
+      "wav_sha256": "8a9b5379e2ddba07913f2c6c4545f67b22cee8ff624c99e4a70945fe5bdcb492",
+      "duration_ms": 10850,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-009",
+    "line_id": "VOICE-009",
+    "start_ms": 91650,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-009-2703da460ccd.wav",
+      "wav_sha256": "0ab9d6bc9e888315de8c23ab1ed2b3090b9ee7f6f3135366d50345beb714f698",
+      "duration_ms": 5759,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/1e1d99e60f910eb66e6c8160.wav",
+      "wav_sha256": "2adb25a4468c4ea6d539eb7bdbcf81347503fa99292d98206a2ed534b535abdc",
+      "duration_ms": 8779,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-010",
+    "line_id": "VOICE-010",
+    "start_ms": 98150,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-010-d778bcc7a56a.wav",
+      "wav_sha256": "afda20bfa719fbda0dfcb19b494988fe865be302f5dfd0fc4d614a1344a7f3b3",
+      "duration_ms": 7243,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/51470dec448398f658fdadd3.wav",
+      "wav_sha256": "996fb740e1991e3fca1477a435f7750e081fc273652cdd891cd1a3d1e2fa495a",
+      "duration_ms": 10263,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-011",
+    "line_id": "VOICE-011",
+    "start_ms": 106100,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-011-cc0608bb277a.wav",
+      "wav_sha256": "a61cfd716d65c914675723d01e8c587a7621d151d38c006ec812bd7b6cdd3a01",
+      "duration_ms": 7239,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/2938935ca394ae7eb6662061.wav",
+      "wav_sha256": "097ffee916f006f16a2f5478b83c4e8efc736f58021fcbf462e27b6cee9eba6e",
+      "duration_ms": 10259,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-012",
+    "line_id": "VOICE-012",
+    "start_ms": 114050,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-012-9ef1d36a5d3c.wav",
+      "wav_sha256": "386ad5713bd70754a8af0f702ef1b13dd64745bac868d8abc7ae74caa68df65c",
+      "duration_ms": 5323,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/0147965eb1713c81800a1b55.wav",
+      "wav_sha256": "16c4734040ebc6499446995728eb984ed27e41c8d4e2acdea2414aca673e9304",
+      "duration_ms": 8343,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-013",
+    "line_id": "VOICE-013",
+    "start_ms": 120100,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-013-1119117cb248.wav",
+      "wav_sha256": "7d0d1b8a211add7977d8ebbc8c98ffa546442ffc833ab6772e4011a2f2e4e566",
+      "duration_ms": 6763,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/397ef460084ebdd7b4df2549.wav",
+      "wav_sha256": "bdf7c30382980db34d26b92bb3f7740c0972fd944eec0cd4e0e9e1f67858affd",
+      "duration_ms": 9783,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-014",
+    "line_id": "VOICE-014",
+    "start_ms": 128100,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-014-67a79d565652.wav",
+      "wav_sha256": "2c80c3a95efc1148d667b89250e30b67b2f7c4c2a6840c3daf558ee2c5126eb9",
+      "duration_ms": 2458,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/9e6c1008d464340c20bed059.wav",
+      "wav_sha256": "ff59c9e5c0036b5da7828e69d5a601e03798a0434cc53eee51ed8ed1c5372f9a",
+      "duration_ms": 6052,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-015",
+    "line_id": "VOICE-015",
+    "start_ms": 128650,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-015-381bd88881a1.wav",
+      "wav_sha256": "201124719943dfa966f429a244b4f41029a98d6b8eaab11ed49610c0c35bd0c6",
+      "duration_ms": 2584,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/2cfaeb16251d7584500327c9.wav",
+      "wav_sha256": "aa3b7a75054b2c669598109eaef6a0224c3c0037c8137573a9b7dba68c4bb2ae",
+      "duration_ms": 5614,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-016",
+    "line_id": "VOICE-016",
+    "start_ms": 129200,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-016-c7817762644d.wav",
+      "wav_sha256": "60cf9c9460b2746020fb09fc6f3987aa9f102aadd18442954c98584d14e35e42",
+      "duration_ms": 2514,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/7359a10ae34f1b06b508dbec.wav",
+      "wav_sha256": "328e422dcd8701b56d01b77e3195f637236705b109107aa123adbc85bab43aae",
+      "duration_ms": 5997,
+      "fixture": true
+    }
+  },
+  {
+    "event_id": "EV-017",
+    "line_id": "VOICE-017",
+    "start_ms": 132500,
+    "dry": {
+      "status": "READY",
+      "engine": "espeak-fixture",
+      "wav_path": "data/assets/dry/FIXTURE-VOICE-017-e1a97aa2e734.wav",
+      "wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5",
+      "duration_ms": 2446,
+      "fixture": true
+    },
+    "variant": {
+      "status": "READY",
+      "wav_path": "data/assets/processed/2646439034a027fe0b81beb5.wav",
+      "wav_sha256": "53fc6091ffbd2d9a7537675556839355a20126625eef6813e8a8f1fc24e33412",
+      "duration_ms": 5256,
+      "fixture": true
+    }
+  }
+]

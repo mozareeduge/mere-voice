@@ -1,0 +1,23 @@
+{
+  "project": "niravana-voice-prototype",
+  "candidate_id": "NIRAVANA-VOICE-PREBUILT-0.3",
+  "start_head": null,
+  "current_head": null,
+  "current_task": "TASK-R00",
+  "completed_tasks": [],
+  "open_tasks": [
+    "TASK-R00",
+    "TASK-R01",
+    "TASK-R02",
+    "TASK-R03",
+    "TASK-R04"
+  ],
+  "last_verified_sha": null,
+  "last_full_gate": null,
+  "blocking": null,
+  "owner_gates": [
+    "GATE-SOURCE-FIDELITY-01",
+    "GATE-HUMAN-VOICE-01"
+  ],
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6"
+}

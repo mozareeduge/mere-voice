@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+execution-state/
+# Keep supplied fixture audio and score revisions versioned for reproducibility.

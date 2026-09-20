@@ -1,0 +1,94 @@
+{
+  "viewports": {
+    "1440x900": {
+      "line_rows": 17,
+      "event_blocks": 17,
+      "ready_badge": "READY \u00b7 PROCESSED",
+      "page_horizontal_overflow_px": 0,
+      "timeline_internal_overflow_px": 9044,
+      "selected_event": "EV-016",
+      "inspector_controls_clear_of_research": true
+    },
+    "1024x768": {
+      "line_rows": 17,
+      "event_blocks": 17,
+      "ready_badge": "READY \u00b7 PROCESSED",
+      "page_horizontal_overflow_px": 0,
+      "timeline_internal_overflow_px": 9075
+    }
+  },
+  "temporal": {
+    "baseline": {
+      "a": 0.4000000059604645,
+      "bc": 0.800000011920929,
+      "pass": true
+    },
+    "shift_canary_observation": {
+      "a": 0.4000000059604645,
+      "bc": 0,
+      "pass": false
+    }
+  },
+  "interaction": {
+    "invalid_start_rejected": {
+      "restored": true,
+      "status": "Start time must be a whole number of milliseconds \u2265 0. Previous value kept.",
+      "score_calls_queued": 0
+    },
+    "invalid_gain_rejected": {
+      "restored": true,
+      "status": "gain_db must be between -60 and 12. Previous value kept.",
+      "score_calls_queued": 0
+    },
+    "immediate_after_processing_edit": {
+      "ready_badge": "BLOCKED",
+      "dirty_text": "UNSAVED CURRENT SCORE",
+      "export_disabled": true,
+      "event_state": "dry=READY \u00b7 variant=STALE \u00b7 route=STEREO_MAIN"
+    },
+    "api_calls": [
+      "/api/state",
+      "/api/score",
+      "/api/save-revision"
+    ],
+    "flush_before_revision": true,
+    "immediate_after_duplicate": {
+      "ready_badge": "BLOCKED",
+      "dirty_text": "UNSAVED CURRENT SCORE",
+      "event_state": "dry=READY \u00b7 variant=STALE \u00b7 route=STEREO_MAIN",
+      "start_preserved": true,
+      "gain_preserved": true,
+      "line_preserved": true,
+      "count_incremented": true
+    },
+    "immediate_after_add": {
+      "count_incremented": true,
+      "start_is_zero": true,
+      "gain_is_default": true,
+      "enabled": true,
+      "ready_badge": "BLOCKED",
+      "event_state": "dry=READY \u00b7 variant=STALE \u00b7 route=STEREO_MAIN"
+    },
+    "immediate_after_delete": {
+      "count_decremented": true,
+      "confirm_calls": [
+        "Delete EV-019? The current score has unsaved edits. The last saved revision remains recoverable."
+      ],
+      "revision_text": "Revision 99",
+      "dirty_text": "UNSAVED CURRENT SCORE"
+    }
+  },
+  "canaries": {
+    "geometry_overflow_detected": true,
+    "shifted_onset_turns_red": true,
+    "invalid_start_preserves_last_valid": true,
+    "invalid_processing_preserves_last_valid": true,
+    "processing_edit_blocks_stale_playback": true,
+    "save_revision_flushes_score_first": true,
+    "duplicate_event_preserves_semantics": true,
+    "duplicate_event_blocks_stale_playback": true,
+    "add_event_uses_authority_defaults": true,
+    "delete_dirty_score_confirms_and_keeps_revision": true
+  },
+  "pass": true
+}

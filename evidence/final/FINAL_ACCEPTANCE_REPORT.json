@@ -1,0 +1,235 @@
+{
+  "generated_at": "2026-09-20T09:32:10.495434+00:00",
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
+  "app_version": "0.6.0",
+  "compiler_source": "chatgpt_executable_handoff_v2.0",
+  "engineering_acceptance_pass": true,
+  "release_state": "CHATGPT_CRAFT_PASS_EXTERNAL_GATES_REMAIN",
+  "authority_closure": {
+    "horizons": [
+      "HZN-001",
+      "HZN-002",
+      "HZN-003",
+      "HZN-004",
+      "HZN-005",
+      "HZN-006",
+      "HZN-007",
+      "HZN-008",
+      "HZN-009",
+      "HZN-010",
+      "HZN-011",
+      "HZN-012"
+    ],
+    "objects": [
+      "OBJ-001",
+      "OBJ-002",
+      "OBJ-003",
+      "OBJ-004",
+      "OBJ-005",
+      "OBJ-006",
+      "OBJ-007",
+      "OBJ-008",
+      "OBJ-009",
+      "OBJ-010",
+      "OBJ-011"
+    ],
+    "scenarios": [
+      "SCN-001",
+      "SCN-002",
+      "SCN-003",
+      "SCN-004",
+      "SCN-005",
+      "SCN-006",
+      "SCN-007",
+      "SCN-008",
+      "SCN-009",
+      "SCN-010",
+      "SCN-011",
+      "SCN-012",
+      "SCN-013",
+      "SCN-014",
+      "SCN-015",
+      "SCN-016",
+      "SCN-017",
+      "SCN-018",
+      "SCN-019",
+      "SCN-020",
+      "SCN-021",
+      "SCN-022",
+      "SCN-023",
+      "SCN-024",
+      "SCN-025",
+      "SCN-026",
+      "SCN-027",
+      "SCN-028",
+      "SCN-029",
+      "SCN-030",
+      "SCN-031",
+      "SCN-032"
+    ],
+    "cross_scenarios": [
+      "SCN-X-01",
+      "SCN-X-02",
+      "SCN-X-03",
+      "SCN-X-04",
+      "SCN-X-05",
+      "SCN-X-06",
+      "SCN-X-07",
+      "SCN-X-08"
+    ],
+    "oracles": [
+      "ORACLE-001",
+      "ORACLE-002",
+      "ORACLE-003",
+      "ORACLE-004",
+      "ORACLE-005",
+      "ORACLE-006",
+      "ORACLE-007",
+      "ORACLE-008",
+      "ORACLE-009",
+      "ORACLE-010",
+      "ORACLE-011",
+      "ORACLE-012",
+      "ORACLE-013",
+      "ORACLE-014",
+      "ORACLE-015",
+      "ORACLE-016",
+      "ORACLE-017",
+      "ORACLE-018",
+      "ORACLE-019",
+      "ORACLE-020",
+      "ORACLE-021",
+      "ORACLE-022",
+      "ORACLE-023",
+      "ORACLE-024",
+      "ORACLE-025",
+      "ORACLE-026",
+      "ORACLE-027",
+      "ORACLE-028"
+    ],
+    "source_units": 17,
+    "unique_source_ids": 17,
+    "authority_closed_marker": true,
+    "pass": true
+  },
+  "identity_consistency": {
+    "pass": true,
+    "checks": {
+      "state_app_version": true,
+      "runtime_manifest_version": true,
+      "catalog_candidate": true,
+      "traceability_candidate": true,
+      "html_dynamic_version_slot": true
+    },
+    "stale_active_identity": []
+  },
+  "artifact_registry": {
+    "pass": true,
+    "mismatches": [],
+    "artifact_count": 8
+  },
+  "scenario_traceability": {
+    "pass": true,
+    "expected_count": 40,
+    "classified_count": 40,
+    "missing": [],
+    "extra": [],
+    "unknown_evidence": [],
+    "proof_status_counts": {
+      "AUTOMATED_PROVEN": 25,
+      "PARTIAL_AUTOMATED": 1,
+      "IMPLEMENTED_PARTIAL_PROOF": 12,
+      "ARCHITECTURAL_PROOF_TARGET_SMOKE_PENDING": 2
+    }
+  },
+  "component_integration_reality_qa": {
+    "strict": true,
+    "pass": true,
+    "checks": {
+      "pytest": {
+        "cmd": [
+          "/opt/pyvenv/bin/python",
+          "-m",
+          "pytest",
+          "-q"
+        ],
+        "returncode": 0,
+        "stdout": ".......................                                                  [100%]\n",
+        "stderr": "",
+        "pass": true
+      },
+      "node_app": {
+        "cmd": [
+          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "--check",
+          "web/app.js"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "pass": true
+      },
+      "node_scheduler": {
+        "cmd": [
+          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "--check",
+          "web/audio-scheduler.js"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "pass": true
+      },
+      "scheduler_lifecycle": {
+        "cmd": [
+          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "tests/browser/stop_harness.mjs"
+        ],
+        "returncode": 0,
+        "stdout": "PASS stop cleanup + play-from-selection deltas\n",
+        "stderr": "",
+        "pass": true
+      },
+      "browser_qa": {
+        "cmd": [
+          "/opt/pyvenv/bin/python",
+          "tests/browser/run_candidate_browser_qa.py"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"viewports\": {\n    \"1440x900\": {\n      \"line_rows\": 17,\n      \"event_blocks\": 17,\n      \"ready_badge\": \"READY \\u00b7 PROCESSED\",\n      \"page_horizontal_overflow_px\": 0,\n      \"timeline_internal_overflow_px\": 9044,\n      \"selected_event\": \"EV-016\",\n      \"inspector_controls_clear_of_research\": true\n    },\n    \"1024x768\": {\n      \"line_rows\": 17,\n      \"event_blocks\": 17,\n      \"ready_badge\": \"READY \\u00b7 PROCESSED\",\n      \"page_horizontal_overflow_px\": 0,\n      \"timeline_internal_overflow_px\": 9075\n    }\n  },\n  \"temporal\": {\n    \"baseline\": {\n      \"a\": 0.4000000059604645,\n      \"bc\": 0.800000011920929,\n      \"pass\": true\n    },\n    \"shift_canary_observation\": {\n      \"a\": 0.4000000059604645,\n      \"bc\": 0,\n      \"pass\": false\n    }\n  },\n  \"interaction\": {\n    \"invalid_start_rejected\": {\n      \"restored\": true,\n      \"status\": \"Start time must be a whole number of milliseconds \\u2265 0. Previous value kept.\",\n      \"score_calls_queued\": 0\n    },\n    \"invalid_gain_rejected\": {\n      \"restored\": true,\n      \"status\": \"gain_db must be between -60 and 12. Previous value kept.\",\n      \"score_calls_queued\": 0\n    },\n    \"immediate_after_processing_edit\": {\n      \"ready_badge\": \"BLOCKED\",\n      \"dirty_text\": \"UNSAVED CURRENT SCORE\",\n      \"export_disabled\": true,\n      \"event_state\": \"dry=READY \\u00b7 variant=STALE \\u00b7 route=STEREO_MAIN\"\n    },\n    \"api_calls\": [\n      \"/api/state\",\n      \"/api/score\",\n      \"/api/save-revision\"\n    ],\n    \"flush_before_revision\": true,\n    \"immediate_after_duplicate\": {\n      \"ready_badge\": \"BLOCKED\",\n      \"dirty_text\": \"UNSAVED CURRENT SCORE\",\n      \"event_state\": \"dry=READY \\u00b7 variant=STALE \\u00b7 route=STEREO_MAIN\",\n      \"start_preserved\": true,\n      \"gain_preserved\": true,\n      \"line_preserved\": true,\n      \"count_incremented\": true\n    },\n    \"immediate_after_add\": {\n      \"count_incremented\": true,\n      \"start_is_zero\": true,\n      \"gain_is_default\": true,\n      \"enabled\": true,\n      \"ready_badge\": \"BLOCKED\",\n      \"event_state\": \"dry=READY \\u00b7 variant=STALE \\u00b7 route=STEREO_MAIN\"\n    },\n    \"immediate_after_delete\": {\n      \"count_decremented\": true,\n      \"confirm_calls\": [\n        \"Delete EV-019? The current score has unsaved edits. The last saved revision remains recoverable.\"\n      ],\n      \"revision_text\": \"Revision 99\",\n      \"dirty_text\": \"UNSAVED CURRENT SCORE\"\n    }\n  },\n  \"canaries\": {\n    \"geometry_overflow_detected\": true,\n    \"shifted_onset_turns_red\": true,\n    \"invalid_start_preserves_last_valid\": true,\n    \"invalid_processing_preserves_last_valid\": true,\n    \"processing_edit_blocks_stale_playback\": true,\n    \"save_revision_flushes_score_first\": true,\n    \"duplicate_event_preserves_semantics\": true,\n    \"duplicate_event_blocks_stale_playback\": true,\n    \"add_event_uses_authority_defaults\": true,\n    \"delete_dirty_score_confirms_and_keeps_revision\": true\n  },\n  \"pass\": true\n}\n",
+        "stderr": "",
+        "pass": true
+      }
+    },
+    "executed_count": 5,
+    "missing_required": false
+  },
+  "local_release": {
+    "base_candidate_pass": true,
+    "real_voice_engineering_pass": false,
+    "audio": {
+      "ready_line_count": 17,
+      "fixture_line_count": 17,
+      "piper_line_count": 0,
+      "engines": [
+        "espeak-fixture"
+      ],
+      "all_17_real_piper": false
+    },
+    "model": {
+      "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
+      "model_path": "models/fa_IR-mana-medium.onnx",
+      "config_path": "models/fa_IR-mana-medium.onnx.json",
+      "model_present": false,
+      "config_present": false,
+      "model_hash_ok": false,
+      "config_invariants_ok": false
+    }
+  },
+  "external_gates": [
+    "Persian pronunciation/prosody listening acceptance",
+    "actual Windows/default-audio-device smoke",
+    "optional visual PDF punctuation/typography confirmation",
+    "final performance Voice / physical speaker-field artistic decision"
+  ]
+}
