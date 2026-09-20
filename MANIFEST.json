@@ -1,15 +1,15 @@
 {
   "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
   "package": "niravana_voice_prototype_nearfinal_v0.6",
-  "generated_at": "2026-09-20T09:32:24.533300+00:00",
+  "generated_at": "2026-09-20T12:54:59.963697+00:00",
   "hash_algorithm": "sha256",
   "file_count_excluding_manifest": 164,
-  "total_bytes_excluding_manifest": 22064296,
+  "total_bytes_excluding_manifest": 22073236,
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 134,
-      "sha256": "921a4d7ba4f481b287a5d50dc374b6a0304d76231b1f7d6550e87faeea146f51"
+      "bytes": 230,
+      "sha256": "395ed1deb4c47e45c95a5dc15e6493de7ab30319f3ef0fd444c32006b9fa79d3"
     },
     {
       "path": "00_START_HERE.md",
@@ -483,8 +483,8 @@
     },
     {
       "path": "evidence/final/FINAL_ACCEPTANCE_REPORT.json",
-      "bytes": 8514,
-      "sha256": "f6cea0225ba8cd286a65465e8f1308cc742eab457f6a06918c18dad41a565db8"
+      "bytes": 8486,
+      "sha256": "b91b6f5458699c5733259404405222b84894b6580ff0c2365431c2f114b9c247"
     },
     {
       "path": "evidence/final/FINAL_ACCEPTANCE_REPORT.md",
@@ -493,13 +493,13 @@
     },
     {
       "path": "evidence/local/local_release_report.json",
-      "bytes": 2783,
-      "sha256": "bc52baadb26725a272b68b19095789075e03be7a0bff20c75792dd3e09d1f282"
+      "bytes": 2774,
+      "sha256": "e2c55ef00a80314a41e0b4791a64874b85c62ddb4e8636816188806559492064"
     },
     {
       "path": "evidence/local/local_release_report.md",
       "bytes": 624,
-      "sha256": "cf6ab44a41fedbaa92cf1b956bb10901e4b9c1453560ad129045165b1fb0161c"
+      "sha256": "d8ea69d3357610e91a79d1ea9a0c38dbd4eb156a534756fb7047b319ef1dd13a"
     },
     {
       "path": "evidence/qa/api_state_snapshot.json",
@@ -518,8 +518,8 @@
     },
     {
       "path": "evidence/qa/workbench_1440x900.png",
-      "bytes": 179349,
-      "sha256": "7e3b8fb40ccf7a014db94504d456b744a55b586107a1b4963fb187038d76ed90"
+      "bytes": 188163,
+      "sha256": "885e2969af23b3d68d8926855c91c4c0329168c8d159b7654830e9030bae6dc7"
     },
     {
       "path": "execution/AGENTIC_EXECUTION_INTAKE.md",
@@ -649,7 +649,7 @@
     {
       "path": "quality/ARTIFACT_REGISTRY.json",
       "bytes": 28414,
-      "sha256": "e158367914b90ee1403ab6955627c5485100ba66a7ffe8c3304fe4e6e7ef819d"
+      "sha256": "d03d1dda6f495d0dabea4b001b0558a22631630982ac5ed64b92c5272d80642f"
     },
     {
       "path": "quality/COMPILER_APPLIED.md",
@@ -723,8 +723,8 @@
     },
     {
       "path": "tests/browser/run_candidate_browser_qa.py",
-      "bytes": 13910,
-      "sha256": "74c0803b78dd577ec4c9e0849a0473675bdfaf9993a787688b5d821885b01f29"
+      "bytes": 13977,
+      "sha256": "b6fc53a1858b0c031d289bab4930620990af5fb8d17fd95c57ce10a6933ffe14"
     },
     {
       "path": "tests/browser/stop_harness.mjs",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T09:32:10.495434+00:00",
+  "generated_at": "2026-09-20T12:54:20.080410+00:00",
   "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
   "app_version": "0.6.0",
   "compiler_source": "chatgpt_executable_handoff_v2.0",
@@ -148,7 +148,7 @@
     "checks": {
       "pytest": {
         "cmd": [
-          "/opt/pyvenv/bin/python",
+          "/home/user/mere-voice/.venv/bin/python",
           "-m",
           "pytest",
           "-q"
@@ -160,7 +160,7 @@
       },
       "node_app": {
         "cmd": [
-          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "/opt/node22/bin/node",
           "--check",
           "web/app.js"
         ],
@@ -171,7 +171,7 @@
       },
       "node_scheduler": {
         "cmd": [
-          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "/opt/node22/bin/node",
           "--check",
           "web/audio-scheduler.js"
         ],
@@ -182,7 +182,7 @@
       },
       "scheduler_lifecycle": {
         "cmd": [
-          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "/opt/node22/bin/node",
           "tests/browser/stop_harness.mjs"
         ],
         "returncode": 0,
@@ -192,7 +192,7 @@
       },
       "browser_qa": {
         "cmd": [
-          "/opt/pyvenv/bin/python",
+          "/home/user/mere-voice/.venv/bin/python",
           "tests/browser/run_candidate_browser_qa.py"
         ],
         "returncode": 0,

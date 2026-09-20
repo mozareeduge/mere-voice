@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
-  "generated_at": "2026-09-20T09:32:04.931702+00:00",
+  "generated_at": "2026-09-20T12:54:15.811919+00:00",
   "artifact_count": 8,
   "artifacts": [
     {
@@ -658,7 +658,7 @@
         "Traceability classifies unproven scenarios explicitly instead of treating implementation as proof."
       ],
       "fingerprint_algorithm": "sha256(path\\0sha256\\0bytes rows)",
-      "fingerprint": "d6e4598a28bf617d75e941dd6928236c4e3e99383940ac5c52629bac6dd338ba",
+      "fingerprint": "cdaed47ec339a06c77eb44de0669bd8a55c1ee2450952ef670bbfa70d6630ede",
       "members": [
         {
           "path": "qa/AGENT_QA_CONTRACT.md",
@@ -682,8 +682,8 @@
         },
         {
           "path": "tests/browser/run_candidate_browser_qa.py",
-          "bytes": 13910,
-          "sha256": "74c0803b78dd577ec4c9e0849a0473675bdfaf9993a787688b5d821885b01f29"
+          "bytes": 13977,
+          "sha256": "b6fc53a1858b0c031d289bab4930620990af5fb8d17fd95c57ce10a6933ffe14"
         },
         {
           "path": "tests/browser/temporal_harness.html",

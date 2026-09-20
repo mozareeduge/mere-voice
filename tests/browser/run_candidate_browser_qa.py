@@ -30,7 +30,8 @@ def main():
     combined=stub+scheduler+'\n'+app
     report={'viewports':{},'temporal':{},'interaction':{},'canaries':{}}
     with sync_playwright() as p:
-        b=p.chromium.launch(headless=True, executable_path='/usr/bin/chromium' if Path('/usr/bin/chromium').exists() else None, args=['--no-sandbox','--disable-dev-shm-usage'])
+        chromium_path=next((p_ for p_ in ('/opt/pw-browsers/chromium', '/usr/bin/chromium') if Path(p_).exists()), None)
+        b=p.chromium.launch(headless=True, executable_path=chromium_path, args=['--no-sandbox','--disable-dev-shm-usage'])
         for width,height,label in [(1440,900,'1440x900'),(1024,768,'1024x768')]:
             pg=b.new_page(viewport={'width':width,'height':height}); pg.set_content(html,wait_until='domcontentloaded'); pg.add_script_tag(content=combined,type='module'); pg.wait_for_function("(n)=>document.querySelectorAll('.event-block').length===n", arg=expected_events, timeout=5000)
             metrics={

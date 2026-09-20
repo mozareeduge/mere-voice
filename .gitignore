@@ -4,3 +4,7 @@ __pycache__/
 .DS_Store
 execution-state/
 # Keep supplied fixture audio and score revisions versioned for reproducibility.
+
+# Export runs are regenerable QA/session byproducts, not source.
+/exports/*
+!/exports/.gitkeep
