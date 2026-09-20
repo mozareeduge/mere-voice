@@ -1,0 +1,15 @@
+{
+  "asset_id": "FIXTURE-VOICE-017-e1a97aa2e734",
+  "line_id": "VOICE-017",
+  "status": "READY",
+  "source_text_sha256": "8a7f7baf887e266e62bf4291c042ce98681ef77bd3d08ec2c056eb936f00be24",
+  "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+  "engine": "espeak-fixture",
+  "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+  "wav_path": "data/assets/dry/FIXTURE-VOICE-017-e1a97aa2e734.wav",
+  "wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5",
+  "duration_ms": 2446,
+  "rendered_at": "2026-09-20T08:34:47.859124+00:00",
+  "fixture": true,
+  "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance."
+}

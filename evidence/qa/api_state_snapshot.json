@@ -1,0 +1,1805 @@
+{
+  "app_version": "0.6.0",
+  "source": {
+    "schema_version": 2,
+    "source_mode": "PRIMARY_PDF_WITNESS",
+    "authority": "primary play-text witness; supersedes dossier excerpts for prototype source wording",
+    "warning": "The 17 spoken Voice entries are reconstructed from the primary PDF’s indexed text. Obvious PDF extraction spacing/glyph splits are repaired and embedded stage directions are separated from speech. Lexical changes are not allowed; the one non-whitespace repair (المسه → لامسه) is explicitly recorded. Final visual typography/punctuation confirmation against the PDF page remains a human source-fidelity check, not an engineering blocker.",
+    "derived_from": "چرا که تو بذل عشق می_کنی..pdf",
+    "primary_witness_sha256_inherited_from_dossier_ledger": "898064d027e370e83a1df813b3ae79a8c1587084c5b44022048caed5cf7c91c1",
+    "extraction_witness_sha256_inherited_from_dossier_ledger": "c7c9d7c3219ed1f8f99a1a1d731eaa7773bead1ec65408bd79bc2d965c439736",
+    "source_fidelity": "PRIMARY_WITNESS_TEXT_WITH_DECLARED_EXTRACTION_NORMALIZATION",
+    "ui_notice": "PRIMARY WITNESS SOURCE · 17 Voice units · extraction-normalized; visual PDF punctuation/typography check pending.",
+    "source_sha256": "a39ea2bb1eba3d50393b2573a4af21b65ed4bfbb13551e157dcf87b91c598397"
+  },
+  "lines": [
+    {
+      "line_id": "VOICE-001",
+      "order_hint": 1,
+      "text_fa": "بدن زندگی رو پس می‌زنه، غذا، هوا رو پس می‌زنه. به سیاهی میوفتی چون چشم، بدن رو پس می‌زنه.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا: بدن زندگی رو پس میزنه، غذا، هوا رو پس میزنه. به سیاهی میوفتی چون چش م، بدن رو پس میزنه.",
+      "normalization_notes": [
+        "rejoined PDF text-extraction glyph split in «چشم»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-001-81564a4cbc30",
+        "line_id": "VOICE-001",
+        "status": "READY",
+        "source_text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-001-81564a4cbc30.wav",
+        "wav_sha256": "8763710d126b1d853ef4147f166aa35c882f141bbcfcb9db470be2d2369135be",
+        "duration_ms": 9724,
+        "rendered_at": "2026-09-20T08:34:47.851040+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "8763710d126b1d853ef4147f166aa35c882f141bbcfcb9db470be2d2369135be"
+      }
+    },
+    {
+      "line_id": "VOICE-002",
+      "order_hint": 2,
+      "text_fa": "نفس زندگی رو پس می‌زنه و بعد خواب به آرومی جای سیاهی رو پر می‌کنه.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا: نفس زندگی رو پس میزنه و بعد خواب به آرومی جای سیاهی رو پر می کنه.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "06e99bc261a0041158b4c58c3be17b1fa9c362dda43734c7ab3abc665b4ea1ff",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-002-7b6dacf155d7",
+        "line_id": "VOICE-002",
+        "status": "READY",
+        "source_text_sha256": "06e99bc261a0041158b4c58c3be17b1fa9c362dda43734c7ab3abc665b4ea1ff",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-002-7b6dacf155d7.wav",
+        "wav_sha256": "6d1b0582b9623b4d48a4e3510b121e24c708b425a09bcd90dcbdf34a6c51db67",
+        "duration_ms": 6242,
+        "rendered_at": "2026-09-20T08:34:47.851624+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "6d1b0582b9623b4d48a4e3510b121e24c708b425a09bcd90dcbdf34a6c51db67"
+      }
+    },
+    {
+      "line_id": "VOICE-003",
+      "order_hint": 3,
+      "text_fa": "برای درمان کوتاه مدت اضطراب، حملات پانیک، بی خوابی مرتبط با استرس و اختلال استرس پس از سانحه تجویز می‌شود.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا: برای درمان کوتاه مدت اضطراب، حمالت پانیک، بی خوابی مرتبط با استرس)صدای درآوردن دانه دانه قرص ها( و اختالل استرس پس از سانحه تجویز می شود.",
+      "source_segments": [
+        {
+          "type": "speech",
+          "text": "برای درمان کوتاه مدت اضطراب، حملات پانیک، بی خوابی مرتبط با استرس"
+        },
+        {
+          "type": "stage_direction",
+          "text": "صدای درآوردن دانه دانه قرص ها"
+        },
+        {
+          "type": "speech",
+          "text": "و اختلال استرس پس از سانحه تجویز می‌شود."
+        }
+      ],
+      "normalization_notes": [
+        "stage direction separated from spoken Voice material",
+        "obvious PDF extraction character joins repaired",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "f2ef4abe328d49dc9057ad53d8d92b6a47ff5ad6d32aba45f6e5bcc3e3eabbb1",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-003-7ce241b67a34",
+        "line_id": "VOICE-003",
+        "status": "READY",
+        "source_text_sha256": "f2ef4abe328d49dc9057ad53d8d92b6a47ff5ad6d32aba45f6e5bcc3e3eabbb1",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-003-7ce241b67a34.wav",
+        "wav_sha256": "eb8fb6584b7f849d1327350bbf4a27e3949c6856c64bd8f7657c1cdfd15167dd",
+        "duration_ms": 10723,
+        "rendered_at": "2026-09-20T08:34:47.852252+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "eb8fb6584b7f849d1327350bbf4a27e3949c6856c64bd8f7657c1cdfd15167dd"
+      }
+    },
+    {
+      "line_id": "VOICE-004",
+      "order_hint": 4,
+      "text_fa": "عوارض شایع شامل خواب آلودگی، سرگیجه و خشکی دهان است اما خطرات جدی‌تر مانند وابستگی و اعتیاد، مشکلات حافظه، تشنج در صورت ترک ناگهانی و اختلالات تنفسی نیز وجود دارد. مصرف در بارداری و شیردهی ممنوع است. و با داروهای زیادی مانند الکل، اوپیوم، قرص‌های ضدافسردگی و آنتی بیوتیک‌ها تداخل دارد.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا:عوارض شایع شامل خواب آلودگی )پتو کنار زده می شود( سرگیجه و خشکی دهان است )هیبت مادر روی تخت می نشیند( اما خطرات جدی تر مانند وابستگی و اعتیاد)به سقف خیره میماند(مشکالت حافظه)به زمین خیره می ماند( تشنج در صورت ترک ناگهانی)به دست هایش( و اختالالت تنفسی نیز وجود دارد .)به پاهایش( مصرف در بارداری و شیردهی ممنوع است.) به میانه پاهایش( و با داروهای زیادی مانند الکل)تالش میکند نفس بکشد ( اوپیوم)پلک زدن سریع( قرص های ضدافسردگی)نمیتواند.دوباره تالش میکند ( و انتی بیوتیکها تداخل دارد.)نفس میکشد (",
+      "source_segments": [
+        {
+          "type": "speech",
+          "text": "عوارض شایع شامل خواب آلودگی"
+        },
+        {
+          "type": "stage_direction",
+          "text": "پتو کنار زده می شود"
+        },
+        {
+          "type": "speech",
+          "text": "سرگیجه و خشکی دهان است"
+        },
+        {
+          "type": "stage_direction",
+          "text": "هیبت مادر روی تخت می نشیند"
+        },
+        {
+          "type": "speech",
+          "text": "اما خطرات جدی‌تر مانند وابستگی و اعتیاد"
+        },
+        {
+          "type": "stage_direction",
+          "text": "به سقف خیره میماند"
+        },
+        {
+          "type": "speech",
+          "text": "مشکلات حافظه"
+        },
+        {
+          "type": "stage_direction",
+          "text": "به زمین خیره می ماند"
+        },
+        {
+          "type": "speech",
+          "text": "تشنج در صورت ترک ناگهانی"
+        },
+        {
+          "type": "stage_direction",
+          "text": "به دست هایش"
+        },
+        {
+          "type": "speech",
+          "text": "و اختلالات تنفسی نیز وجود دارد."
+        },
+        {
+          "type": "stage_direction",
+          "text": "به پاهایش"
+        },
+        {
+          "type": "speech",
+          "text": "مصرف در بارداری و شیردهی ممنوع است."
+        },
+        {
+          "type": "stage_direction",
+          "text": "به میانه پاهایش"
+        },
+        {
+          "type": "speech",
+          "text": "و با داروهای زیادی مانند الکل"
+        },
+        {
+          "type": "stage_direction",
+          "text": "تلاش میکند نفس بکشد"
+        },
+        {
+          "type": "speech",
+          "text": "اوپیوم"
+        },
+        {
+          "type": "stage_direction",
+          "text": "پلک زدن سریع"
+        },
+        {
+          "type": "speech",
+          "text": "قرص‌های ضدافسردگی"
+        },
+        {
+          "type": "stage_direction",
+          "text": "نمیتواند.دوباره تلاش میکند"
+        },
+        {
+          "type": "speech",
+          "text": "و آنتی بیوتیک‌ها تداخل دارد."
+        },
+        {
+          "type": "stage_direction",
+          "text": "نفس میکشد"
+        }
+      ],
+      "normalization_notes": [
+        "all embedded stage directions separated from spoken Voice material",
+        "PDF extraction letter-form errors repaired where unambiguous (e.g. حملات/اختلال/تلاش)",
+        "normalized spacing/ZWNJ and punctuation between spoken segments; no speech content omitted"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "af558b35208e72da4c393aa43553683129b51c6baeee5b4be76d9ab380253079",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-004-2923de8a0863",
+        "line_id": "VOICE-004",
+        "status": "READY",
+        "source_text_sha256": "af558b35208e72da4c393aa43553683129b51c6baeee5b4be76d9ab380253079",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-004-2923de8a0863.wav",
+        "wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107",
+        "duration_ms": 29442,
+        "rendered_at": "2026-09-20T08:34:47.853597+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107"
+      }
+    },
+    {
+      "line_id": "VOICE-005",
+      "order_hint": 5,
+      "text_fa": "دارای تمامی علایم حیاتی ثابت. تمامی علایم حیاتی دارن از بین میرن.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: دارای تمامی عالیم حیاتی ثابت . )مادر نفس عمیق میکشد و گرم میکند( تمامی عالیم حیاتی دارن از بین میرن.",
+      "source_segments": [
+        {
+          "type": "speech",
+          "text": "دارای تمامی علایم حیاتی ثابت."
+        },
+        {
+          "type": "stage_direction",
+          "text": "مادر نفس عمیق میکشد و گرم میکند"
+        },
+        {
+          "type": "speech",
+          "text": "تمامی علایم حیاتی دارن از بین میرن."
+        }
+      ],
+      "normalization_notes": [
+        "PDF indexed extraction «عالیم» repaired to «علایم», supported by the dossier witness and Persian lexical context",
+        "stage direction separated from spoken Voice material",
+        "normalized spacing only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "1c3dbdca0d2d72e10f750605af069748438ca23235b0de9df8e4aa05866c8bad",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-005-f2e07c8b219a",
+        "line_id": "VOICE-005",
+        "status": "READY",
+        "source_text_sha256": "1c3dbdca0d2d72e10f750605af069748438ca23235b0de9df8e4aa05866c8bad",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-005-f2e07c8b219a.wav",
+        "wav_sha256": "5eb35d1a2e73213fa469e7508757a3465abdc91c1a3d3686c864460125149341",
+        "duration_ms": 6548,
+        "rendered_at": "2026-09-20T08:34:47.854068+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "5eb35d1a2e73213fa469e7508757a3465abdc91c1a3d3686c864460125149341"
+      }
+    },
+    {
+      "line_id": "VOICE-006",
+      "order_hint": 6,
+      "text_fa": "ذهن به زندگی چنگ می‌زنه، زندگی ذهن رو پس می‌زنه.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: ذهن به زندگی چنگ میزنه، زندگی ذهن رو پس می زنه.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "351bc46ebc4e3574ca1df696f52bec16c2bf3410345cf72fb7baa5588a6d18a7",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-006-e74ce8141077",
+        "line_id": "VOICE-006",
+        "status": "READY",
+        "source_text_sha256": "351bc46ebc4e3574ca1df696f52bec16c2bf3410345cf72fb7baa5588a6d18a7",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-006-e74ce8141077.wav",
+        "wav_sha256": "289ea63e9546d8ba13d5161ef7a60cea5317a37e8ea66bac09cfe3f51910cef7",
+        "duration_ms": 5108,
+        "rendered_at": "2026-09-20T08:34:47.854471+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "289ea63e9546d8ba13d5161ef7a60cea5317a37e8ea66bac09cfe3f51910cef7"
+      }
+    },
+    {
+      "line_id": "VOICE-007",
+      "order_hint": 7,
+      "text_fa": "به دست‌ها دستور داده شده به زندگی چنگ بزنن، دست‌ها اما خشک فرو می‌افتند، در روزها و سال‌ها، در لحظه می‌افتند.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: به دست ها دستور داده شده به زندگی چنگ بزنن ، دست ها اما خشک فرو میافتند ،د ر روز ها و سالها، در لحظه می افتند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «در»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "a83b1ecdc2e258982261d7273a5dd11604e487422fda9fbc530315c7381adf3c",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-007-82a7b25eec6d",
+        "line_id": "VOICE-007",
+        "status": "READY",
+        "source_text_sha256": "a83b1ecdc2e258982261d7273a5dd11604e487422fda9fbc530315c7381adf3c",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-007-82a7b25eec6d.wav",
+        "wav_sha256": "e05aec345b000725b22ea1826a3ad21be1e8a012c0c86b29c7c08251958a1877",
+        "duration_ms": 10562,
+        "rendered_at": "2026-09-20T08:34:47.855042+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "e05aec345b000725b22ea1826a3ad21be1e8a012c0c86b29c7c08251958a1877"
+      }
+    },
+    {
+      "line_id": "VOICE-008",
+      "order_hint": 8,
+      "text_fa": "زندگی در بدن جا نمی‌شود، جا کم می‌آورد. ذهن، زندگی در بدن را پس می‌زند.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: زندگی در بدن جا نمیشود، جا کم می آورد. ذهن، زندگی در بدن را پس میزند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "27441921f9d139b55256a282c4bbf6188d8ed2ef031f233310afa2591861a30f",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-008-c4ba665f0916",
+        "line_id": "VOICE-008",
+        "status": "READY",
+        "source_text_sha256": "27441921f9d139b55256a282c4bbf6188d8ed2ef031f233310afa2591861a30f",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-008-c4ba665f0916.wav",
+        "wav_sha256": "9d99641a8ac1516e495958b48e8d7dc19fcc3cffab50937b33d0e642aeb1aa17",
+        "duration_ms": 7830,
+        "rendered_at": "2026-09-20T08:34:47.855518+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "9d99641a8ac1516e495958b48e8d7dc19fcc3cffab50937b33d0e642aeb1aa17"
+      }
+    },
+    {
+      "line_id": "VOICE-009",
+      "order_hint": 9,
+      "text_fa": "خاطره در حافظه محو می‌شود، حافظه خاطره را پس می‌زند.",
+      "source_page": 3,
+      "source_raw_excerpt": "صدا: خاطره در حافظه محو می شود، حافظه خاطره را پس می زند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-009-2703da460ccd",
+        "line_id": "VOICE-009",
+        "status": "READY",
+        "source_text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-009-2703da460ccd.wav",
+        "wav_sha256": "0ab9d6bc9e888315de8c23ab1ed2b3090b9ee7f6f3135366d50345beb714f698",
+        "duration_ms": 5759,
+        "rendered_at": "2026-09-20T08:34:47.855937+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "0ab9d6bc9e888315de8c23ab1ed2b3090b9ee7f6f3135366d50345beb714f698"
+      }
+    },
+    {
+      "line_id": "VOICE-010",
+      "order_hint": 10,
+      "text_fa": "صدا در حلق می‌شکند، واژه الکن بیان می‌شود. کلمات بیان را پس می‌زنند.",
+      "source_page": 3,
+      "source_raw_excerpt": "صدا: صدا د ر حلق می شکند، واژه الکن بیان می شود.کلمات بیان را پس می زنند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «در»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "868d43a72eca24027042743c852077d2ea06971131a63641c24fd32beaee5583",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-010-d778bcc7a56a",
+        "line_id": "VOICE-010",
+        "status": "READY",
+        "source_text_sha256": "868d43a72eca24027042743c852077d2ea06971131a63641c24fd32beaee5583",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-010-d778bcc7a56a.wav",
+        "wav_sha256": "afda20bfa719fbda0dfcb19b494988fe865be302f5dfd0fc4d614a1344a7f3b3",
+        "duration_ms": 7243,
+        "rendered_at": "2026-09-20T08:34:47.856415+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "afda20bfa719fbda0dfcb19b494988fe865be302f5dfd0fc4d614a1344a7f3b3"
+      }
+    },
+    {
+      "line_id": "VOICE-011",
+      "order_hint": 11,
+      "text_fa": "تن در تن جا نمی‌شود، از خطوط بیرون می‌زند، مکان، بدن را پس می‌زند.",
+      "source_page": 3,
+      "source_raw_excerpt": "صدا: تن در تن جا نمی شود،از خطوط بیرون می زند، مکان، بدن را پس می زند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-011-cc0608bb277a",
+        "line_id": "VOICE-011",
+        "status": "READY",
+        "source_text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-011-cc0608bb277a.wav",
+        "wav_sha256": "a61cfd716d65c914675723d01e8c587a7621d151d38c006ec812bd7b6cdd3a01",
+        "duration_ms": 7239,
+        "rendered_at": "2026-09-20T08:34:47.856904+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "a61cfd716d65c914675723d01e8c587a7621d151d38c006ec812bd7b6cdd3a01"
+      }
+    },
+    {
+      "line_id": "VOICE-012",
+      "order_hint": 12,
+      "text_fa": "ذهن در تاریخ جا نمی‌شود، پس تاریخ ذهن را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: ذهن در تاریخ جا نمیشود ، پس تاریخ ذ هن را پس می زند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «ذهن»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "79956e934d66e84c7a73a6fa8c0047410143204068a685be03d56018866564a5",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-012-9ef1d36a5d3c",
+        "line_id": "VOICE-012",
+        "status": "READY",
+        "source_text_sha256": "79956e934d66e84c7a73a6fa8c0047410143204068a685be03d56018866564a5",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-012-9ef1d36a5d3c.wav",
+        "wav_sha256": "386ad5713bd70754a8af0f702ef1b13dd64745bac868d8abc7ae74caa68df65c",
+        "duration_ms": 5323,
+        "rendered_at": "2026-09-20T08:34:47.857413+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "386ad5713bd70754a8af0f702ef1b13dd64745bac868d8abc7ae74caa68df65c"
+      }
+    },
+    {
+      "line_id": "VOICE-013",
+      "order_hint": 13,
+      "text_fa": "رویا بین مفاصل و رگ و پی تجسد نمی‌یابد. جسم رویا را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: رویا بین مفاصل و رگ و پی تجسد نم یابد. جسم رویا را پس می زند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «نمی‌یابد»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-013-1119117cb248",
+        "line_id": "VOICE-013",
+        "status": "READY",
+        "source_text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-013-1119117cb248.wav",
+        "wav_sha256": "7d0d1b8a211add7977d8ebbc8c98ffa546442ffc833ab6772e4011a2f2e4e566",
+        "duration_ms": 6763,
+        "rendered_at": "2026-09-20T08:34:47.857875+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "7d0d1b8a211add7977d8ebbc8c98ffa546442ffc833ab6772e4011a2f2e4e566"
+      }
+    },
+    {
+      "line_id": "VOICE-014",
+      "order_hint": 14,
+      "text_fa": "لامسه دست را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: المسه دست را پس میزند.",
+      "normalization_notes": [
+        "primary indexed extraction begins «المسه»; normalized to «لامسه» using the dossier witness and lexical context",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "56df3d81872bf5167f1f540ab00e463c5b66787e98cb680b0274c6bf233078f7",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-014-67a79d565652",
+        "line_id": "VOICE-014",
+        "status": "READY",
+        "source_text_sha256": "56df3d81872bf5167f1f540ab00e463c5b66787e98cb680b0274c6bf233078f7",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-014-67a79d565652.wav",
+        "wav_sha256": "2c80c3a95efc1148d667b89250e30b67b2f7c4c2a6840c3daf558ee2c5126eb9",
+        "duration_ms": 2458,
+        "rendered_at": "2026-09-20T08:34:47.858188+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "2c80c3a95efc1148d667b89250e30b67b2f7c4c2a6840c3daf558ee2c5126eb9"
+      }
+    },
+    {
+      "line_id": "VOICE-015",
+      "order_hint": 15,
+      "text_fa": "خواستن میل را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: خواستن میل را پس میزند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "6098d2cc1429edc48cb6d2e9c52cbb4ca9813aba78330c5c783a160c022e31c6",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-015-381bd88881a1",
+        "line_id": "VOICE-015",
+        "status": "READY",
+        "source_text_sha256": "6098d2cc1429edc48cb6d2e9c52cbb4ca9813aba78330c5c783a160c022e31c6",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-015-381bd88881a1.wav",
+        "wav_sha256": "201124719943dfa966f429a244b4f41029a98d6b8eaab11ed49610c0c35bd0c6",
+        "duration_ms": 2584,
+        "rendered_at": "2026-09-20T08:34:47.858500+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "201124719943dfa966f429a244b4f41029a98d6b8eaab11ed49610c0c35bd0c6"
+      }
+    },
+    {
+      "line_id": "VOICE-016",
+      "order_hint": 16,
+      "text_fa": "میل خواهش را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: میل خواهش را پس میزند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "4cc4813546343c17e0d803d9392ce3edca3167be9c99345bbb072ad8cba1d96b",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-016-c7817762644d",
+        "line_id": "VOICE-016",
+        "status": "READY",
+        "source_text_sha256": "4cc4813546343c17e0d803d9392ce3edca3167be9c99345bbb072ad8cba1d96b",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-016-c7817762644d.wav",
+        "wav_sha256": "60cf9c9460b2746020fb09fc6f3987aa9f102aadd18442954c98584d14e35e42",
+        "duration_ms": 2514,
+        "rendered_at": "2026-09-20T08:34:47.858810+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "60cf9c9460b2746020fb09fc6f3987aa9f102aadd18442954c98584d14e35e42"
+      }
+    },
+    {
+      "line_id": "VOICE-017",
+      "order_hint": 17,
+      "text_fa": "لخته خون را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: لخته خون را پس می زند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false,
+      "text_sha256": "8a7f7baf887e266e62bf4291c042ce98681ef77bd3d08ec2c056eb936f00be24",
+      "asset": {
+        "asset_id": "FIXTURE-VOICE-017-e1a97aa2e734",
+        "line_id": "VOICE-017",
+        "status": "READY",
+        "source_text_sha256": "8a7f7baf887e266e62bf4291c042ce98681ef77bd3d08ec2c056eb936f00be24",
+        "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+        "engine": "espeak-fixture",
+        "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+        "wav_path": "data/assets/dry/FIXTURE-VOICE-017-e1a97aa2e734.wav",
+        "wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5",
+        "duration_ms": 2446,
+        "rendered_at": "2026-09-20T08:34:47.859124+00:00",
+        "fixture": true,
+        "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+        "verified_wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5"
+      }
+    }
+  ],
+  "score": {
+    "score_id": "SCORE-PRIMARY-WITNESS-LAB-01",
+    "revision": 2,
+    "name": "Primary-witness Voice temporal laboratory — explicit prototype timing, not play cue timing",
+    "events": [
+      {
+        "event_id": "EV-001",
+        "line_id": "VOICE-001",
+        "start_ms": 0,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.0,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "بدن زندگی رو پس می‌زنه، غذا، هوا رو پس می‌زنه. به سیاهی میوفتی چون چشم، بدن رو پس می‌زنه.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-001-81564a4cbc30",
+          "line_id": "VOICE-001",
+          "status": "READY",
+          "source_text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-001-81564a4cbc30.wav",
+          "wav_sha256": "8763710d126b1d853ef4147f166aa35c882f141bbcfcb9db470be2d2369135be",
+          "duration_ms": 9724,
+          "rendered_at": "2026-09-20T08:34:47.851040+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "8763710d126b1d853ef4147f166aa35c882f141bbcfcb9db470be2d2369135be"
+        },
+        "variant": {
+          "variant_id": "VAR-debcd498f49e81aca0df14b5",
+          "variant_key": "debcd498f49e81aca0df14b5",
+          "line_id": "VOICE-001",
+          "asset_id": "FIXTURE-VOICE-001-81564a4cbc30",
+          "dry_wav_sha256": "8763710d126b1d853ef4147f166aa35c882f141bbcfcb9db470be2d2369135be",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.0,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "41e7d4941de6ee85387813eac438b779099553dbbcc104f03cb9dc81a0616f85",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/debcd498f49e81aca0df14b5.wav",
+          "wav_sha256": "922c3e3e6c9f4516fc7be129de7d3b3c6be7e589bf3e439cf0eadf1fe4e5abb4",
+          "duration_ms": 12744,
+          "prepared_at": "2026-09-20T08:34:47.973236+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "922c3e3e6c9f4516fc7be129de7d3b3c6be7e589bf3e439cf0eadf1fe4e5abb4"
+        }
+      },
+      {
+        "event_id": "EV-002",
+        "line_id": "VOICE-002",
+        "start_ms": 10500,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.5,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "نفس زندگی رو پس می‌زنه و بعد خواب به آرومی جای سیاهی رو پر می‌کنه.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-002-7b6dacf155d7",
+          "line_id": "VOICE-002",
+          "status": "READY",
+          "source_text_sha256": "06e99bc261a0041158b4c58c3be17b1fa9c362dda43734c7ab3abc665b4ea1ff",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-002-7b6dacf155d7.wav",
+          "wav_sha256": "6d1b0582b9623b4d48a4e3510b121e24c708b425a09bcd90dcbdf34a6c51db67",
+          "duration_ms": 6242,
+          "rendered_at": "2026-09-20T08:34:47.851624+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "6d1b0582b9623b4d48a4e3510b121e24c708b425a09bcd90dcbdf34a6c51db67"
+        },
+        "variant": {
+          "variant_id": "VAR-bb24355ccaa1bf00d8618134",
+          "variant_key": "bb24355ccaa1bf00d8618134",
+          "line_id": "VOICE-002",
+          "asset_id": "FIXTURE-VOICE-002-7b6dacf155d7",
+          "dry_wav_sha256": "6d1b0582b9623b4d48a4e3510b121e24c708b425a09bcd90dcbdf34a6c51db67",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.5,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "b23a4eddea22ffb124362a8acef0f989bfc3ad7058cb7ed68026de62108c6ab9",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/bb24355ccaa1bf00d8618134.wav",
+          "wav_sha256": "cd478990beab5fb2c01bd1adcb8ce566cf377abb8bbb20dfe3ac5636f244a131",
+          "duration_ms": 9262,
+          "prepared_at": "2026-09-20T08:34:48.054119+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "cd478990beab5fb2c01bd1adcb8ce566cf377abb8bbb20dfe3ac5636f244a131"
+        }
+      },
+      {
+        "event_id": "EV-003",
+        "line_id": "VOICE-003",
+        "start_ms": 17550,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": 0.0,
+          "reverb_mix": 0.04,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 0,
+          "release_ms": 120
+        },
+        "line_text_fa": "برای درمان کوتاه مدت اضطراب، حملات پانیک، بی خوابی مرتبط با استرس و اختلال استرس پس از سانحه تجویز می‌شود.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-003-7ce241b67a34",
+          "line_id": "VOICE-003",
+          "status": "READY",
+          "source_text_sha256": "f2ef4abe328d49dc9057ad53d8d92b6a47ff5ad6d32aba45f6e5bcc3e3eabbb1",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-003-7ce241b67a34.wav",
+          "wav_sha256": "eb8fb6584b7f849d1327350bbf4a27e3949c6856c64bd8f7657c1cdfd15167dd",
+          "duration_ms": 10723,
+          "rendered_at": "2026-09-20T08:34:47.852252+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "eb8fb6584b7f849d1327350bbf4a27e3949c6856c64bd8f7657c1cdfd15167dd"
+        },
+        "variant": {
+          "variant_id": "VAR-258a320d254b4e3c338e77c8",
+          "variant_key": "258a320d254b4e3c338e77c8",
+          "line_id": "VOICE-003",
+          "asset_id": "FIXTURE-VOICE-003-7ce241b67a34",
+          "dry_wav_sha256": "eb8fb6584b7f849d1327350bbf4a27e3949c6856c64bd8f7657c1cdfd15167dd",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": 0.0,
+            "reverb_mix": 0.04,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 0,
+            "release_ms": 120
+          },
+          "processing_hash": "18f705d544e17b82adbd946adb0b5fe83720ff6357f0f6ace29fa15101076093",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/258a320d254b4e3c338e77c8.wav",
+          "wav_sha256": "12732926aac5c982b24d08bfaa0d36c030c7d51cb925483ca131f7a857fd48fe",
+          "duration_ms": 12923,
+          "prepared_at": "2026-09-20T08:34:48.069224+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "12732926aac5c982b24d08bfaa0d36c030c7d51cb925483ca131f7a857fd48fe"
+        }
+      },
+      {
+        "event_id": "EV-004",
+        "line_id": "VOICE-004",
+        "start_ms": 28800,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": 0.0,
+          "reverb_mix": 0.04,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 0,
+          "release_ms": 120
+        },
+        "line_text_fa": "عوارض شایع شامل خواب آلودگی، سرگیجه و خشکی دهان است اما خطرات جدی‌تر مانند وابستگی و اعتیاد، مشکلات حافظه، تشنج در صورت ترک ناگهانی و اختلالات تنفسی نیز وجود دارد. مصرف در بارداری و شیردهی ممنوع است. و با داروهای زیادی مانند الکل، اوپیوم، قرص‌های ضدافسردگی و آنتی بیوتیک‌ها تداخل دارد.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-004-2923de8a0863",
+          "line_id": "VOICE-004",
+          "status": "READY",
+          "source_text_sha256": "af558b35208e72da4c393aa43553683129b51c6baeee5b4be76d9ab380253079",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-004-2923de8a0863.wav",
+          "wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107",
+          "duration_ms": 29442,
+          "rendered_at": "2026-09-20T08:34:47.853597+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107"
+        },
+        "variant": {
+          "variant_id": "VAR-76a269f579ebff1242e0fa37",
+          "variant_key": "76a269f579ebff1242e0fa37",
+          "line_id": "VOICE-004",
+          "asset_id": "FIXTURE-VOICE-004-2923de8a0863",
+          "dry_wav_sha256": "2f46df74c2dc079b1d5776796c3881bacfcb39171a4cf7b2619bf6ea68f0b107",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": 0.0,
+            "reverb_mix": 0.04,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 0,
+            "release_ms": 120
+          },
+          "processing_hash": "18f705d544e17b82adbd946adb0b5fe83720ff6357f0f6ace29fa15101076093",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/76a269f579ebff1242e0fa37.wav",
+          "wav_sha256": "9f5cccd95f726134309ce6fad1cd2e22ee97dec81741c8804057f8e576492f2d",
+          "duration_ms": 31642,
+          "prepared_at": "2026-09-20T08:34:48.106911+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "9f5cccd95f726134309ce6fad1cd2e22ee97dec81741c8804057f8e576492f2d"
+        }
+      },
+      {
+        "event_id": "EV-005",
+        "line_id": "VOICE-005",
+        "start_ms": 58750,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": 0.0,
+          "reverb_mix": 0.04,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 0,
+          "release_ms": 120
+        },
+        "line_text_fa": "دارای تمامی علایم حیاتی ثابت. تمامی علایم حیاتی دارن از بین میرن.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-005-f2e07c8b219a",
+          "line_id": "VOICE-005",
+          "status": "READY",
+          "source_text_sha256": "1c3dbdca0d2d72e10f750605af069748438ca23235b0de9df8e4aa05866c8bad",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-005-f2e07c8b219a.wav",
+          "wav_sha256": "5eb35d1a2e73213fa469e7508757a3465abdc91c1a3d3686c864460125149341",
+          "duration_ms": 6548,
+          "rendered_at": "2026-09-20T08:34:47.854068+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "5eb35d1a2e73213fa469e7508757a3465abdc91c1a3d3686c864460125149341"
+        },
+        "variant": {
+          "variant_id": "VAR-acd3079c7b62dd973a0d334a",
+          "variant_key": "acd3079c7b62dd973a0d334a",
+          "line_id": "VOICE-005",
+          "asset_id": "FIXTURE-VOICE-005-f2e07c8b219a",
+          "dry_wav_sha256": "5eb35d1a2e73213fa469e7508757a3465abdc91c1a3d3686c864460125149341",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": 0.0,
+            "reverb_mix": 0.04,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 0,
+            "release_ms": 120
+          },
+          "processing_hash": "18f705d544e17b82adbd946adb0b5fe83720ff6357f0f6ace29fa15101076093",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/acd3079c7b62dd973a0d334a.wav",
+          "wav_sha256": "0af2ac6a5e3591c9778f3f064239448733f6a8915b124a7ad06934ea2cf0d8c2",
+          "duration_ms": 8748,
+          "prepared_at": "2026-09-20T08:34:48.119651+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "0af2ac6a5e3591c9778f3f064239448733f6a8915b124a7ad06934ea2cf0d8c2"
+        }
+      },
+      {
+        "event_id": "EV-006",
+        "line_id": "VOICE-006",
+        "start_ms": 66000,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.5,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "ذهن به زندگی چنگ می‌زنه، زندگی ذهن رو پس می‌زنه.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-006-e74ce8141077",
+          "line_id": "VOICE-006",
+          "status": "READY",
+          "source_text_sha256": "351bc46ebc4e3574ca1df696f52bec16c2bf3410345cf72fb7baa5588a6d18a7",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-006-e74ce8141077.wav",
+          "wav_sha256": "289ea63e9546d8ba13d5161ef7a60cea5317a37e8ea66bac09cfe3f51910cef7",
+          "duration_ms": 5108,
+          "rendered_at": "2026-09-20T08:34:47.854471+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "289ea63e9546d8ba13d5161ef7a60cea5317a37e8ea66bac09cfe3f51910cef7"
+        },
+        "variant": {
+          "variant_id": "VAR-32c9282272b27e24d421b890",
+          "variant_key": "32c9282272b27e24d421b890",
+          "line_id": "VOICE-006",
+          "asset_id": "FIXTURE-VOICE-006-e74ce8141077",
+          "dry_wav_sha256": "289ea63e9546d8ba13d5161ef7a60cea5317a37e8ea66bac09cfe3f51910cef7",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.5,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "b23a4eddea22ffb124362a8acef0f989bfc3ad7058cb7ed68026de62108c6ab9",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/32c9282272b27e24d421b890.wav",
+          "wav_sha256": "7537d43d0edd453c1d6d103ae81fcf285243dd58fa5a8e0f01ddc7a5af414ee0",
+          "duration_ms": 8128,
+          "prepared_at": "2026-09-20T08:34:48.189858+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "7537d43d0edd453c1d6d103ae81fcf285243dd58fa5a8e0f01ddc7a5af414ee0"
+        }
+      },
+      {
+        "event_id": "EV-007",
+        "line_id": "VOICE-007",
+        "start_ms": 71800,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.0,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "به دست‌ها دستور داده شده به زندگی چنگ بزنن، دست‌ها اما خشک فرو می‌افتند، در روزها و سال‌ها، در لحظه می‌افتند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-007-82a7b25eec6d",
+          "line_id": "VOICE-007",
+          "status": "READY",
+          "source_text_sha256": "a83b1ecdc2e258982261d7273a5dd11604e487422fda9fbc530315c7381adf3c",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-007-82a7b25eec6d.wav",
+          "wav_sha256": "e05aec345b000725b22ea1826a3ad21be1e8a012c0c86b29c7c08251958a1877",
+          "duration_ms": 10562,
+          "rendered_at": "2026-09-20T08:34:47.855042+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "e05aec345b000725b22ea1826a3ad21be1e8a012c0c86b29c7c08251958a1877"
+        },
+        "variant": {
+          "variant_id": "VAR-eedc64e61992f8d83657a3e6",
+          "variant_key": "eedc64e61992f8d83657a3e6",
+          "line_id": "VOICE-007",
+          "asset_id": "FIXTURE-VOICE-007-82a7b25eec6d",
+          "dry_wav_sha256": "e05aec345b000725b22ea1826a3ad21be1e8a012c0c86b29c7c08251958a1877",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.0,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "41e7d4941de6ee85387813eac438b779099553dbbcc104f03cb9dc81a0616f85",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/eedc64e61992f8d83657a3e6.wav",
+          "wav_sha256": "503bf23f8c06777cfad5682f8368c993887e54fbee2ccef190785f0cf978ca72",
+          "duration_ms": 13582,
+          "prepared_at": "2026-09-20T08:34:48.304960+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "503bf23f8c06777cfad5682f8368c993887e54fbee2ccef190785f0cf978ca72"
+        }
+      },
+      {
+        "event_id": "EV-008",
+        "line_id": "VOICE-008",
+        "start_ms": 83100,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.5,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "زندگی در بدن جا نمی‌شود، جا کم می‌آورد. ذهن، زندگی در بدن را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-008-c4ba665f0916",
+          "line_id": "VOICE-008",
+          "status": "READY",
+          "source_text_sha256": "27441921f9d139b55256a282c4bbf6188d8ed2ef031f233310afa2591861a30f",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-008-c4ba665f0916.wav",
+          "wav_sha256": "9d99641a8ac1516e495958b48e8d7dc19fcc3cffab50937b33d0e642aeb1aa17",
+          "duration_ms": 7830,
+          "rendered_at": "2026-09-20T08:34:47.855518+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "9d99641a8ac1516e495958b48e8d7dc19fcc3cffab50937b33d0e642aeb1aa17"
+        },
+        "variant": {
+          "variant_id": "VAR-6ebc8e15f1c59623d2ef80bd",
+          "variant_key": "6ebc8e15f1c59623d2ef80bd",
+          "line_id": "VOICE-008",
+          "asset_id": "FIXTURE-VOICE-008-c4ba665f0916",
+          "dry_wav_sha256": "9d99641a8ac1516e495958b48e8d7dc19fcc3cffab50937b33d0e642aeb1aa17",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.5,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "b23a4eddea22ffb124362a8acef0f989bfc3ad7058cb7ed68026de62108c6ab9",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/6ebc8e15f1c59623d2ef80bd.wav",
+          "wav_sha256": "8a9b5379e2ddba07913f2c6c4545f67b22cee8ff624c99e4a70945fe5bdcb492",
+          "duration_ms": 10850,
+          "prepared_at": "2026-09-20T08:34:48.397021+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "8a9b5379e2ddba07913f2c6c4545f67b22cee8ff624c99e4a70945fe5bdcb492"
+        }
+      },
+      {
+        "event_id": "EV-009",
+        "line_id": "VOICE-009",
+        "start_ms": 91650,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.0,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "خاطره در حافظه محو می‌شود، حافظه خاطره را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-009-2703da460ccd",
+          "line_id": "VOICE-009",
+          "status": "READY",
+          "source_text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-009-2703da460ccd.wav",
+          "wav_sha256": "0ab9d6bc9e888315de8c23ab1ed2b3090b9ee7f6f3135366d50345beb714f698",
+          "duration_ms": 5759,
+          "rendered_at": "2026-09-20T08:34:47.855937+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "0ab9d6bc9e888315de8c23ab1ed2b3090b9ee7f6f3135366d50345beb714f698"
+        },
+        "variant": {
+          "variant_id": "VAR-1e1d99e60f910eb66e6c8160",
+          "variant_key": "1e1d99e60f910eb66e6c8160",
+          "line_id": "VOICE-009",
+          "asset_id": "FIXTURE-VOICE-009-2703da460ccd",
+          "dry_wav_sha256": "0ab9d6bc9e888315de8c23ab1ed2b3090b9ee7f6f3135366d50345beb714f698",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.0,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "41e7d4941de6ee85387813eac438b779099553dbbcc104f03cb9dc81a0616f85",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/1e1d99e60f910eb66e6c8160.wav",
+          "wav_sha256": "2adb25a4468c4ea6d539eb7bdbcf81347503fa99292d98206a2ed534b535abdc",
+          "duration_ms": 8779,
+          "prepared_at": "2026-09-20T08:34:48.471077+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "2adb25a4468c4ea6d539eb7bdbcf81347503fa99292d98206a2ed534b535abdc"
+        }
+      },
+      {
+        "event_id": "EV-010",
+        "line_id": "VOICE-010",
+        "start_ms": 98150,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.5,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "صدا در حلق می‌شکند، واژه الکن بیان می‌شود. کلمات بیان را پس می‌زنند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-010-d778bcc7a56a",
+          "line_id": "VOICE-010",
+          "status": "READY",
+          "source_text_sha256": "868d43a72eca24027042743c852077d2ea06971131a63641c24fd32beaee5583",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-010-d778bcc7a56a.wav",
+          "wav_sha256": "afda20bfa719fbda0dfcb19b494988fe865be302f5dfd0fc4d614a1344a7f3b3",
+          "duration_ms": 7243,
+          "rendered_at": "2026-09-20T08:34:47.856415+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "afda20bfa719fbda0dfcb19b494988fe865be302f5dfd0fc4d614a1344a7f3b3"
+        },
+        "variant": {
+          "variant_id": "VAR-51470dec448398f658fdadd3",
+          "variant_key": "51470dec448398f658fdadd3",
+          "line_id": "VOICE-010",
+          "asset_id": "FIXTURE-VOICE-010-d778bcc7a56a",
+          "dry_wav_sha256": "afda20bfa719fbda0dfcb19b494988fe865be302f5dfd0fc4d614a1344a7f3b3",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.5,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "b23a4eddea22ffb124362a8acef0f989bfc3ad7058cb7ed68026de62108c6ab9",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/51470dec448398f658fdadd3.wav",
+          "wav_sha256": "996fb740e1991e3fca1477a435f7750e081fc273652cdd891cd1a3d1e2fa495a",
+          "duration_ms": 10263,
+          "prepared_at": "2026-09-20T08:34:48.557900+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "996fb740e1991e3fca1477a435f7750e081fc273652cdd891cd1a3d1e2fa495a"
+        }
+      },
+      {
+        "event_id": "EV-011",
+        "line_id": "VOICE-011",
+        "start_ms": 106100,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.0,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "تن در تن جا نمی‌شود، از خطوط بیرون می‌زند، مکان، بدن را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-011-cc0608bb277a",
+          "line_id": "VOICE-011",
+          "status": "READY",
+          "source_text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-011-cc0608bb277a.wav",
+          "wav_sha256": "a61cfd716d65c914675723d01e8c587a7621d151d38c006ec812bd7b6cdd3a01",
+          "duration_ms": 7239,
+          "rendered_at": "2026-09-20T08:34:47.856904+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "a61cfd716d65c914675723d01e8c587a7621d151d38c006ec812bd7b6cdd3a01"
+        },
+        "variant": {
+          "variant_id": "VAR-2938935ca394ae7eb6662061",
+          "variant_key": "2938935ca394ae7eb6662061",
+          "line_id": "VOICE-011",
+          "asset_id": "FIXTURE-VOICE-011-cc0608bb277a",
+          "dry_wav_sha256": "a61cfd716d65c914675723d01e8c587a7621d151d38c006ec812bd7b6cdd3a01",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.0,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "41e7d4941de6ee85387813eac438b779099553dbbcc104f03cb9dc81a0616f85",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/2938935ca394ae7eb6662061.wav",
+          "wav_sha256": "097ffee916f006f16a2f5478b83c4e8efc736f58021fcbf462e27b6cee9eba6e",
+          "duration_ms": 10259,
+          "prepared_at": "2026-09-20T08:34:48.647275+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "097ffee916f006f16a2f5478b83c4e8efc736f58021fcbf462e27b6cee9eba6e"
+        }
+      },
+      {
+        "event_id": "EV-012",
+        "line_id": "VOICE-012",
+        "start_ms": 114050,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.5,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "ذهن در تاریخ جا نمی‌شود، پس تاریخ ذهن را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-012-9ef1d36a5d3c",
+          "line_id": "VOICE-012",
+          "status": "READY",
+          "source_text_sha256": "79956e934d66e84c7a73a6fa8c0047410143204068a685be03d56018866564a5",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-012-9ef1d36a5d3c.wav",
+          "wav_sha256": "386ad5713bd70754a8af0f702ef1b13dd64745bac868d8abc7ae74caa68df65c",
+          "duration_ms": 5323,
+          "rendered_at": "2026-09-20T08:34:47.857413+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "386ad5713bd70754a8af0f702ef1b13dd64745bac868d8abc7ae74caa68df65c"
+        },
+        "variant": {
+          "variant_id": "VAR-0147965eb1713c81800a1b55",
+          "variant_key": "0147965eb1713c81800a1b55",
+          "line_id": "VOICE-012",
+          "asset_id": "FIXTURE-VOICE-012-9ef1d36a5d3c",
+          "dry_wav_sha256": "386ad5713bd70754a8af0f702ef1b13dd64745bac868d8abc7ae74caa68df65c",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.5,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "b23a4eddea22ffb124362a8acef0f989bfc3ad7058cb7ed68026de62108c6ab9",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/0147965eb1713c81800a1b55.wav",
+          "wav_sha256": "16c4734040ebc6499446995728eb984ed27e41c8d4e2acdea2414aca673e9304",
+          "duration_ms": 8343,
+          "prepared_at": "2026-09-20T08:34:48.719918+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "16c4734040ebc6499446995728eb984ed27e41c8d4e2acdea2414aca673e9304"
+        }
+      },
+      {
+        "event_id": "EV-013",
+        "line_id": "VOICE-013",
+        "start_ms": 120100,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.0,
+          "reverb_mix": 0.26,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 20,
+          "release_ms": 500
+        },
+        "line_text_fa": "رویا بین مفاصل و رگ و پی تجسد نمی‌یابد. جسم رویا را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-013-1119117cb248",
+          "line_id": "VOICE-013",
+          "status": "READY",
+          "source_text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-013-1119117cb248.wav",
+          "wav_sha256": "7d0d1b8a211add7977d8ebbc8c98ffa546442ffc833ab6772e4011a2f2e4e566",
+          "duration_ms": 6763,
+          "rendered_at": "2026-09-20T08:34:47.857875+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "7d0d1b8a211add7977d8ebbc8c98ffa546442ffc833ab6772e4011a2f2e4e566"
+        },
+        "variant": {
+          "variant_id": "VAR-397ef460084ebdd7b4df2549",
+          "variant_key": "397ef460084ebdd7b4df2549",
+          "line_id": "VOICE-013",
+          "asset_id": "FIXTURE-VOICE-013-1119117cb248",
+          "dry_wav_sha256": "7d0d1b8a211add7977d8ebbc8c98ffa546442ffc833ab6772e4011a2f2e4e566",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.0,
+            "reverb_mix": 0.26,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 20,
+            "release_ms": 500
+          },
+          "processing_hash": "41e7d4941de6ee85387813eac438b779099553dbbcc104f03cb9dc81a0616f85",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/397ef460084ebdd7b4df2549.wav",
+          "wav_sha256": "bdf7c30382980db34d26b92bb3f7740c0972fd944eec0cd4e0e9e1f67858affd",
+          "duration_ms": 9783,
+          "prepared_at": "2026-09-20T08:34:48.800959+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "bdf7c30382980db34d26b92bb3f7740c0972fd944eec0cd4e0e9e1f67858affd"
+        }
+      },
+      {
+        "event_id": "EV-014",
+        "line_id": "VOICE-014",
+        "start_ms": 128100,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -4.0,
+          "pan": -0.35,
+          "pitch_semitones": -3.0,
+          "reverb_mix": 0.38,
+          "delay_ms": 90,
+          "delay_feedback": 0.12,
+          "attack_ms": 10,
+          "release_ms": 700
+        },
+        "line_text_fa": "لامسه دست را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-014-67a79d565652",
+          "line_id": "VOICE-014",
+          "status": "READY",
+          "source_text_sha256": "56df3d81872bf5167f1f540ab00e463c5b66787e98cb680b0274c6bf233078f7",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-014-67a79d565652.wav",
+          "wav_sha256": "2c80c3a95efc1148d667b89250e30b67b2f7c4c2a6840c3daf558ee2c5126eb9",
+          "duration_ms": 2458,
+          "rendered_at": "2026-09-20T08:34:47.858188+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "2c80c3a95efc1148d667b89250e30b67b2f7c4c2a6840c3daf558ee2c5126eb9"
+        },
+        "variant": {
+          "variant_id": "VAR-9e6c1008d464340c20bed059",
+          "variant_key": "9e6c1008d464340c20bed059",
+          "line_id": "VOICE-014",
+          "asset_id": "FIXTURE-VOICE-014-67a79d565652",
+          "dry_wav_sha256": "2c80c3a95efc1148d667b89250e30b67b2f7c4c2a6840c3daf558ee2c5126eb9",
+          "processing": {
+            "gain_db": -4.0,
+            "pan": -0.35,
+            "pitch_semitones": -3.0,
+            "reverb_mix": 0.38,
+            "delay_ms": 90,
+            "delay_feedback": 0.12,
+            "attack_ms": 10,
+            "release_ms": 700
+          },
+          "processing_hash": "9303358c6a46b353acbab915d05b9b3df9abdf1098c6d047e0771849bcb47cef",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/9e6c1008d464340c20bed059.wav",
+          "wav_sha256": "ff59c9e5c0036b5da7828e69d5a601e03798a0434cc53eee51ed8ed1c5372f9a",
+          "duration_ms": 6052,
+          "prepared_at": "2026-09-20T08:34:48.852289+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "ff59c9e5c0036b5da7828e69d5a601e03798a0434cc53eee51ed8ed1c5372f9a"
+        }
+      },
+      {
+        "event_id": "EV-015",
+        "line_id": "VOICE-015",
+        "start_ms": 128650,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -5.0,
+          "pan": 0.0,
+          "pitch_semitones": -1.0,
+          "reverb_mix": 0.24,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 10,
+          "release_ms": 550
+        },
+        "line_text_fa": "خواستن میل را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-015-381bd88881a1",
+          "line_id": "VOICE-015",
+          "status": "READY",
+          "source_text_sha256": "6098d2cc1429edc48cb6d2e9c52cbb4ca9813aba78330c5c783a160c022e31c6",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-015-381bd88881a1.wav",
+          "wav_sha256": "201124719943dfa966f429a244b4f41029a98d6b8eaab11ed49610c0c35bd0c6",
+          "duration_ms": 2584,
+          "rendered_at": "2026-09-20T08:34:47.858500+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "201124719943dfa966f429a244b4f41029a98d6b8eaab11ed49610c0c35bd0c6"
+        },
+        "variant": {
+          "variant_id": "VAR-2cfaeb16251d7584500327c9",
+          "variant_key": "2cfaeb16251d7584500327c9",
+          "line_id": "VOICE-015",
+          "asset_id": "FIXTURE-VOICE-015-381bd88881a1",
+          "dry_wav_sha256": "201124719943dfa966f429a244b4f41029a98d6b8eaab11ed49610c0c35bd0c6",
+          "processing": {
+            "gain_db": -5.0,
+            "pan": 0.0,
+            "pitch_semitones": -1.0,
+            "reverb_mix": 0.24,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 10,
+            "release_ms": 550
+          },
+          "processing_hash": "c479abd4fa70fa758842b35cc25dd1f998ce90210dfcbfef9691b94fe518d130",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/2cfaeb16251d7584500327c9.wav",
+          "wav_sha256": "aa3b7a75054b2c669598109eaef6a0224c3c0037c8137573a9b7dba68c4bb2ae",
+          "duration_ms": 5614,
+          "prepared_at": "2026-09-20T08:34:48.897629+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "aa3b7a75054b2c669598109eaef6a0224c3c0037c8137573a9b7dba68c4bb2ae"
+        }
+      },
+      {
+        "event_id": "EV-016",
+        "line_id": "VOICE-016",
+        "start_ms": 129200,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -5.0,
+          "pan": 0.35,
+          "pitch_semitones": 1.0,
+          "reverb_mix": 0.32,
+          "delay_ms": 130,
+          "delay_feedback": 0.12,
+          "attack_ms": 10,
+          "release_ms": 650
+        },
+        "line_text_fa": "میل خواهش را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-016-c7817762644d",
+          "line_id": "VOICE-016",
+          "status": "READY",
+          "source_text_sha256": "4cc4813546343c17e0d803d9392ce3edca3167be9c99345bbb072ad8cba1d96b",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-016-c7817762644d.wav",
+          "wav_sha256": "60cf9c9460b2746020fb09fc6f3987aa9f102aadd18442954c98584d14e35e42",
+          "duration_ms": 2514,
+          "rendered_at": "2026-09-20T08:34:47.858810+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "60cf9c9460b2746020fb09fc6f3987aa9f102aadd18442954c98584d14e35e42"
+        },
+        "variant": {
+          "variant_id": "VAR-7359a10ae34f1b06b508dbec",
+          "variant_key": "7359a10ae34f1b06b508dbec",
+          "line_id": "VOICE-016",
+          "asset_id": "FIXTURE-VOICE-016-c7817762644d",
+          "dry_wav_sha256": "60cf9c9460b2746020fb09fc6f3987aa9f102aadd18442954c98584d14e35e42",
+          "processing": {
+            "gain_db": -5.0,
+            "pan": 0.35,
+            "pitch_semitones": 1.0,
+            "reverb_mix": 0.32,
+            "delay_ms": 130,
+            "delay_feedback": 0.12,
+            "attack_ms": 10,
+            "release_ms": 650
+          },
+          "processing_hash": "69f8a6e4f533a854cf252dd52e598169f13dd23d6db19fea145f75b53cb5fec4",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/7359a10ae34f1b06b508dbec.wav",
+          "wav_sha256": "328e422dcd8701b56d01b77e3195f637236705b109107aa123adbc85bab43aae",
+          "duration_ms": 5997,
+          "prepared_at": "2026-09-20T08:34:48.950161+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "328e422dcd8701b56d01b77e3195f637236705b109107aa123adbc85bab43aae"
+        }
+      },
+      {
+        "event_id": "EV-017",
+        "line_id": "VOICE-017",
+        "start_ms": 132500,
+        "enabled": true,
+        "route_id": "STEREO_MAIN",
+        "processing": {
+          "gain_db": -3.0,
+          "pan": 0.0,
+          "pitch_semitones": -2.0,
+          "reverb_mix": 0.18,
+          "delay_ms": 0,
+          "delay_feedback": 0.0,
+          "attack_ms": 10,
+          "release_ms": 450
+        },
+        "line_text_fa": "لخته خون را پس می‌زند.",
+        "asset": {
+          "asset_id": "FIXTURE-VOICE-017-e1a97aa2e734",
+          "line_id": "VOICE-017",
+          "status": "READY",
+          "source_text_sha256": "8a7f7baf887e266e62bf4291c042ce98681ef77bd3d08ec2c056eb936f00be24",
+          "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+          "engine": "espeak-fixture",
+          "profile_id": "PRIMARY-WITNESS-ESPEAK-FIXTURE-FA",
+          "wav_path": "data/assets/dry/FIXTURE-VOICE-017-e1a97aa2e734.wav",
+          "wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5",
+          "duration_ms": 2446,
+          "rendered_at": "2026-09-20T08:34:47.859124+00:00",
+          "fixture": true,
+          "warning": "Temporal/UI fixture only over primary-witness text. Not Piper and not artistic Voice acceptance.",
+          "verified_wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5"
+        },
+        "variant": {
+          "variant_id": "VAR-2646439034a027fe0b81beb5",
+          "variant_key": "2646439034a027fe0b81beb5",
+          "line_id": "VOICE-017",
+          "asset_id": "FIXTURE-VOICE-017-e1a97aa2e734",
+          "dry_wav_sha256": "b09a52a61a312572ccbd3e2ddf046033883335e1c430014d3c63a3088bab9ab5",
+          "processing": {
+            "gain_db": -3.0,
+            "pan": 0.0,
+            "pitch_semitones": -2.0,
+            "reverb_mix": 0.18,
+            "delay_ms": 0,
+            "delay_feedback": 0.0,
+            "attack_ms": 10,
+            "release_ms": 450
+          },
+          "processing_hash": "80f74dd97cb493a822a7b0d1a6a0a0036cbe1f2e16ad95a60646d1c2578fca4a",
+          "processor": {
+            "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+            "mode": "pedalboard-offline",
+            "pedalboard_version": "0.9.23",
+            "numpy_version": "2.3.5"
+          },
+          "status": "READY",
+          "wav_path": "data/assets/processed/2646439034a027fe0b81beb5.wav",
+          "wav_sha256": "53fc6091ffbd2d9a7537675556839355a20126625eef6813e8a8f1fc24e33412",
+          "duration_ms": 5256,
+          "prepared_at": "2026-09-20T08:34:48.994803+00:00",
+          "fixture": true,
+          "verified_wav_sha256": "53fc6091ffbd2d9a7537675556839355a20126625eef6813e8a8f1fc24e33412"
+        }
+      }
+    ],
+    "notes_summary": "Lines 1–13 are spaced for inspection using prebuilt fixture durations. VOICE-014/015/016 are deliberately staggered by 550 ms to test the slashed late polyphony as separate events; VOICE-017 follows. All onset values are prototype lab choices, not authored performance cue times."
+  },
+  "readiness": {
+    "dry_ready": true,
+    "processed_ready": true,
+    "state": "READY_PROCESSED"
+  },
+  "dirty": false,
+  "latest_saved_revision": {
+    "revision": 2,
+    "score_hash": "552837d71c2e9fb13e08e48d891160a873cb0f06741ac4be5dba508c7436c5a2",
+    "path": "data/scores/revisions/rev-0002.json"
+  },
+  "fixture_mode": false,
+  "source_primary_witness": true,
+  "audio_fixture_mode": true,
+  "tts": {
+    "piper_ready": false,
+    "recommended_render_mode": "fixture_espeak"
+  }
+}

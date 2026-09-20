@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Niravana Voice Temporal Workbench</title>
+  <link rel="stylesheet" href="/web/styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="transport" aria-label="Transport and readiness">
+      <div class="brand-block">
+        <span class="eyebrow">NIRAVANA × MOZARE / VOICE LAB</span>
+        <strong>Temporal Workbench <span class="version" id="appVersion">v0.6</span></strong>
+      </div>
+      <div id="sourceWarning" class="source-warning" hidden></div>
+      <div class="transport-state">
+        <span id="readyBadge" class="state-badge blocked">BLOCKED</span>
+        <span id="elapsed" class="time-readout">00:00.000</span>
+      </div>
+      <div class="transport-actions">
+        <button id="renderDryBtn" class="btn quiet">RENDER DRY</button>
+        <button id="prepareBtn" class="btn quiet">PREPARE SCORE</button>
+        <button id="playBtn" class="btn primary">PLAY FULL</button>
+        <button id="playSelectionBtn" class="btn">FROM SELECTION</button>
+        <button id="stopBtn" class="btn danger">STOP / RESET</button>
+        <label class="mode-switch"><input id="dryBypass" type="checkbox" /> <span>DRY BYPASS</span></label>
+      </div>
+      <div id="statusText" class="status-text" aria-live="polite"></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="library" aria-label="Voice line library">
+        <div class="panel-head">
+          <div><span class="section-kicker">AUTHORED MATERIAL</span><h2>Voice lines</h2></div>
+          <button id="reloadBtn" class="icon-btn" title="Reload source">↻</button>
+        </div>
+        <div id="lineList" class="line-list"></div>
+      </aside>
+
+      <section class="timeline-panel" aria-label="Temporal score">
+        <div class="timeline-toolbar">
+          <div>
+            <span class="section-kicker">TEMPORAL SCORE</span>
+            <h2 id="scoreName">Voice temporal laboratory</h2>
+          </div>
+          <div class="zoom-control"><label>ZOOM <input id="zoom" type="range" min="30" max="140" value="70" /></label></div>
+        </div>
+        <div id="timelineScroll" class="timeline-scroll" tabindex="0">
+          <div id="timelineContent" class="timeline-content">
+            <div id="ruler" class="ruler"></div>
+            <div id="timeline" class="timeline">
+              <div id="playhead" class="playhead" hidden></div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-legend"><span>empty field = authored silence</span><span>blocks may overlap; list order never drives onset</span></div>
+      </section>
+
+      <aside class="inspector" aria-label="Selected event inspector">
+        <div class="panel-head"><div><span class="section-kicker">EVENT</span><h2 id="inspectorTitle">No selection</h2></div></div>
+        <div id="inspectorEmpty" class="empty-state">Select an event block or add one from the line library.</div>
+        <form id="inspectorForm" hidden>
+          <div class="source-quote"><span id="selectedLineId" class="mono"></span><p id="selectedText" dir="rtl" lang="fa"></p></div>
+          <label class="toggle-row"><input id="enabledInput" type="checkbox" /> Enabled</label>
+          <fieldset><legend>TIME</legend><label>Start <div class="input-unit"><input id="startInput" type="number" min="0" step="10" /><span>ms</span></div></label><div id="durationReadout" class="derived"></div></fieldset>
+          <fieldset><legend>LEVEL / SPACE</legend><label>Gain <div class="input-unit"><input data-proc="gain_db" type="number" min="-60" max="12" step="0.5" /><span>dB</span></div></label><label>Pan <input data-proc="pan" type="range" min="-1" max="1" step="0.05" /></label></fieldset>
+          <fieldset><legend>PITCH</legend><label>Semitones <input data-proc="pitch_semitones" type="range" min="-12" max="12" step="0.5" /></label><output id="pitchOut" class="param-output"></output></fieldset>
+          <fieldset><legend>TAIL</legend><label>Reverb <input data-proc="reverb_mix" type="range" min="0" max="1" step="0.01" /></label><label>Delay <div class="input-unit"><input data-proc="delay_ms" type="number" min="0" max="2000" step="10" /><span>ms</span></div></label><label>Feedback <input data-proc="delay_feedback" type="range" min="0" max="0.95" step="0.01" /></label></fieldset>
+          <fieldset><legend>ENVELOPE</legend><label>Attack <div class="input-unit"><input data-proc="attack_ms" type="number" min="0" max="5000" step="10" /><span>ms</span></div></label><label>Release <div class="input-unit"><input data-proc="release_ms" type="number" min="0" max="5000" step="10" /><span>ms</span></div></label></fieldset>
+          <div class="event-state" id="eventState"></div>
+          <div class="button-grid"><button type="button" id="auditionEventBtn" class="btn primary">AUDITION EVENT</button><button type="button" id="duplicateBtn" class="btn">DUPLICATE</button><button type="button" id="deleteBtn" class="btn danger-outline">DELETE</button></div>
+        </form>
+      </aside>
+    </main>
+
+    <section class="research" aria-label="Revision and research notes">
+      <div class="research-meta">
+        <span class="section-kicker">RESEARCH EVIDENCE</span>
+        <strong id="revisionText">Revision —</strong>
+        <span id="dirtyText" class="dirty">UNSAVED</span>
+      </div>
+      <button id="saveBtn" class="btn">SAVE REVISION</button>
+      <select id="disposition"><option>KEEP</option><option selected>RETRY</option><option>HOLD</option><option>DROP</option></select>
+      <input id="noteInput" type="text" placeholder="What did this relation produce? What masked what?" />
+      <button id="noteBtn" class="btn quiet">RECORD NOTE</button>
+      <button id="exportBtn" class="btn quiet">EXPORT RUN</button>
+      <span id="exportResult" class="export-result"></span>
+    </section>
+  </div>
+  <script type="module" src="/web/app.js"></script>
+</body>
+</html>

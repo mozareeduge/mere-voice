@@ -1,0 +1,381 @@
+{
+  "schema_version": 2,
+  "source_mode": "PRIMARY_PDF_WITNESS",
+  "authority": "primary play-text witness; supersedes dossier excerpts for prototype source wording",
+  "warning": "The 17 spoken Voice entries are reconstructed from the primary PDF’s indexed text. Obvious PDF extraction spacing/glyph splits are repaired and embedded stage directions are separated from speech. Lexical changes are not allowed; the one non-whitespace repair (المسه → لامسه) is explicitly recorded. Final visual typography/punctuation confirmation against the PDF page remains a human source-fidelity check, not an engineering blocker.",
+  "derived_from": "چرا که تو بذل عشق می_کنی..pdf",
+  "primary_witness_sha256_inherited_from_dossier_ledger": "898064d027e370e83a1df813b3ae79a8c1587084c5b44022048caed5cf7c91c1",
+  "extraction_witness_sha256_inherited_from_dossier_ledger": "c7c9d7c3219ed1f8f99a1a1d731eaa7773bead1ec65408bd79bc2d965c439736",
+  "source_fidelity": "PRIMARY_WITNESS_TEXT_WITH_DECLARED_EXTRACTION_NORMALIZATION",
+  "lines": [
+    {
+      "line_id": "VOICE-001",
+      "order_hint": 1,
+      "text_fa": "بدن زندگی رو پس می‌زنه، غذا، هوا رو پس می‌زنه. به سیاهی میوفتی چون چشم، بدن رو پس می‌زنه.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا: بدن زندگی رو پس میزنه، غذا، هوا رو پس میزنه. به سیاهی میوفتی چون چش م، بدن رو پس میزنه.",
+      "normalization_notes": [
+        "rejoined PDF text-extraction glyph split in «چشم»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-002",
+      "order_hint": 2,
+      "text_fa": "نفس زندگی رو پس می‌زنه و بعد خواب به آرومی جای سیاهی رو پر می‌کنه.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا: نفس زندگی رو پس میزنه و بعد خواب به آرومی جای سیاهی رو پر می کنه.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-003",
+      "order_hint": 3,
+      "text_fa": "برای درمان کوتاه مدت اضطراب، حملات پانیک، بی خوابی مرتبط با استرس و اختلال استرس پس از سانحه تجویز می‌شود.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا: برای درمان کوتاه مدت اضطراب، حمالت پانیک، بی خوابی مرتبط با استرس)صدای درآوردن دانه دانه قرص ها( و اختالل استرس پس از سانحه تجویز می شود.",
+      "source_segments": [
+        {
+          "type": "speech",
+          "text": "برای درمان کوتاه مدت اضطراب، حملات پانیک، بی خوابی مرتبط با استرس"
+        },
+        {
+          "type": "stage_direction",
+          "text": "صدای درآوردن دانه دانه قرص ها"
+        },
+        {
+          "type": "speech",
+          "text": "و اختلال استرس پس از سانحه تجویز می‌شود."
+        }
+      ],
+      "normalization_notes": [
+        "stage direction separated from spoken Voice material",
+        "obvious PDF extraction character joins repaired",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-004",
+      "order_hint": 4,
+      "text_fa": "عوارض شایع شامل خواب آلودگی، سرگیجه و خشکی دهان است اما خطرات جدی‌تر مانند وابستگی و اعتیاد، مشکلات حافظه، تشنج در صورت ترک ناگهانی و اختلالات تنفسی نیز وجود دارد. مصرف در بارداری و شیردهی ممنوع است. و با داروهای زیادی مانند الکل، اوپیوم، قرص‌های ضدافسردگی و آنتی بیوتیک‌ها تداخل دارد.",
+      "source_page": 1,
+      "source_raw_excerpt": "صدا:عوارض شایع شامل خواب آلودگی )پتو کنار زده می شود( سرگیجه و خشکی دهان است )هیبت مادر روی تخت می نشیند( اما خطرات جدی تر مانند وابستگی و اعتیاد)به سقف خیره میماند(مشکالت حافظه)به زمین خیره می ماند( تشنج در صورت ترک ناگهانی)به دست هایش( و اختالالت تنفسی نیز وجود دارد .)به پاهایش( مصرف در بارداری و شیردهی ممنوع است.) به میانه پاهایش( و با داروهای زیادی مانند الکل)تالش میکند نفس بکشد ( اوپیوم)پلک زدن سریع( قرص های ضدافسردگی)نمیتواند.دوباره تالش میکند ( و انتی بیوتیکها تداخل دارد.)نفس میکشد (",
+      "source_segments": [
+        {
+          "type": "speech",
+          "text": "عوارض شایع شامل خواب آلودگی"
+        },
+        {
+          "type": "stage_direction",
+          "text": "پتو کنار زده می شود"
+        },
+        {
+          "type": "speech",
+          "text": "سرگیجه و خشکی دهان است"
+        },
+        {
+          "type": "stage_direction",
+          "text": "هیبت مادر روی تخت می نشیند"
+        },
+        {
+          "type": "speech",
+          "text": "اما خطرات جدی‌تر مانند وابستگی و اعتیاد"
+        },
+        {
+          "type": "stage_direction",
+          "text": "به سقف خیره میماند"
+        },
+        {
+          "type": "speech",
+          "text": "مشکلات حافظه"
+        },
+        {
+          "type": "stage_direction",
+          "text": "به زمین خیره می ماند"
+        },
+        {
+          "type": "speech",
+          "text": "تشنج در صورت ترک ناگهانی"
+        },
+        {
+          "type": "stage_direction",
+          "text": "به دست هایش"
+        },
+        {
+          "type": "speech",
+          "text": "و اختلالات تنفسی نیز وجود دارد."
+        },
+        {
+          "type": "stage_direction",
+          "text": "به پاهایش"
+        },
+        {
+          "type": "speech",
+          "text": "مصرف در بارداری و شیردهی ممنوع است."
+        },
+        {
+          "type": "stage_direction",
+          "text": "به میانه پاهایش"
+        },
+        {
+          "type": "speech",
+          "text": "و با داروهای زیادی مانند الکل"
+        },
+        {
+          "type": "stage_direction",
+          "text": "تلاش میکند نفس بکشد"
+        },
+        {
+          "type": "speech",
+          "text": "اوپیوم"
+        },
+        {
+          "type": "stage_direction",
+          "text": "پلک زدن سریع"
+        },
+        {
+          "type": "speech",
+          "text": "قرص‌های ضدافسردگی"
+        },
+        {
+          "type": "stage_direction",
+          "text": "نمیتواند.دوباره تلاش میکند"
+        },
+        {
+          "type": "speech",
+          "text": "و آنتی بیوتیک‌ها تداخل دارد."
+        },
+        {
+          "type": "stage_direction",
+          "text": "نفس میکشد"
+        }
+      ],
+      "normalization_notes": [
+        "all embedded stage directions separated from spoken Voice material",
+        "PDF extraction letter-form errors repaired where unambiguous (e.g. حملات/اختلال/تلاش)",
+        "normalized spacing/ZWNJ and punctuation between spoken segments; no speech content omitted"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-005",
+      "order_hint": 5,
+      "text_fa": "دارای تمامی علایم حیاتی ثابت. تمامی علایم حیاتی دارن از بین میرن.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: دارای تمامی عالیم حیاتی ثابت . )مادر نفس عمیق میکشد و گرم میکند( تمامی عالیم حیاتی دارن از بین میرن.",
+      "source_segments": [
+        {
+          "type": "speech",
+          "text": "دارای تمامی علایم حیاتی ثابت."
+        },
+        {
+          "type": "stage_direction",
+          "text": "مادر نفس عمیق میکشد و گرم میکند"
+        },
+        {
+          "type": "speech",
+          "text": "تمامی علایم حیاتی دارن از بین میرن."
+        }
+      ],
+      "normalization_notes": [
+        "PDF indexed extraction «عالیم» repaired to «علایم», supported by the dossier witness and Persian lexical context",
+        "stage direction separated from spoken Voice material",
+        "normalized spacing only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-006",
+      "order_hint": 6,
+      "text_fa": "ذهن به زندگی چنگ می‌زنه، زندگی ذهن رو پس می‌زنه.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: ذهن به زندگی چنگ میزنه، زندگی ذهن رو پس می زنه.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-007",
+      "order_hint": 7,
+      "text_fa": "به دست‌ها دستور داده شده به زندگی چنگ بزنن، دست‌ها اما خشک فرو می‌افتند، در روزها و سال‌ها، در لحظه می‌افتند.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: به دست ها دستور داده شده به زندگی چنگ بزنن ، دست ها اما خشک فرو میافتند ،د ر روز ها و سالها، در لحظه می افتند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «در»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-008",
+      "order_hint": 8,
+      "text_fa": "زندگی در بدن جا نمی‌شود، جا کم می‌آورد. ذهن، زندگی در بدن را پس می‌زند.",
+      "source_page": 2,
+      "source_raw_excerpt": "صدا: زندگی در بدن جا نمیشود، جا کم می آورد. ذهن، زندگی در بدن را پس میزند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-009",
+      "order_hint": 9,
+      "text_fa": "خاطره در حافظه محو می‌شود، حافظه خاطره را پس می‌زند.",
+      "source_page": 3,
+      "source_raw_excerpt": "صدا: خاطره در حافظه محو می شود، حافظه خاطره را پس می زند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-010",
+      "order_hint": 10,
+      "text_fa": "صدا در حلق می‌شکند، واژه الکن بیان می‌شود. کلمات بیان را پس می‌زنند.",
+      "source_page": 3,
+      "source_raw_excerpt": "صدا: صدا د ر حلق می شکند، واژه الکن بیان می شود.کلمات بیان را پس می زنند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «در»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-011",
+      "order_hint": 11,
+      "text_fa": "تن در تن جا نمی‌شود، از خطوط بیرون می‌زند، مکان، بدن را پس می‌زند.",
+      "source_page": 3,
+      "source_raw_excerpt": "صدا: تن در تن جا نمی شود،از خطوط بیرون می زند، مکان، بدن را پس می زند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-012",
+      "order_hint": 12,
+      "text_fa": "ذهن در تاریخ جا نمی‌شود، پس تاریخ ذهن را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: ذهن در تاریخ جا نمیشود ، پس تاریخ ذ هن را پس می زند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «ذهن»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-013",
+      "order_hint": 13,
+      "text_fa": "رویا بین مفاصل و رگ و پی تجسد نمی‌یابد. جسم رویا را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: رویا بین مفاصل و رگ و پی تجسد نم یابد. جسم رویا را پس می زند.",
+      "normalization_notes": [
+        "rejoined PDF extraction split in «نمی‌یابد»",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-014",
+      "order_hint": 14,
+      "text_fa": "لامسه دست را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: المسه دست را پس میزند.",
+      "normalization_notes": [
+        "primary indexed extraction begins «المسه»; normalized to «لامسه» using the dossier witness and lexical context",
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-015",
+      "order_hint": 15,
+      "text_fa": "خواستن میل را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: خواستن میل را پس میزند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-016",
+      "order_hint": 16,
+      "text_fa": "میل خواهش را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: میل خواهش را پس میزند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    },
+    {
+      "line_id": "VOICE-017",
+      "order_hint": 17,
+      "text_fa": "لخته خون را پس می‌زند.",
+      "source_page": 4,
+      "source_raw_excerpt": "صدا: لخته خون را پس می زند.",
+      "normalization_notes": [
+        "normalized spacing/ZWNJ only"
+      ],
+      "source_ref": "چرا که تو بذل عشق می_کنی..pdf / primary five-page play witness",
+      "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
+      "canonical_for_prototype": true,
+      "canonical_typography_visually_confirmed": false
+    }
+  ],
+  "ui_notice": "PRIMARY WITNESS SOURCE · 17 Voice units · extraction-normalized; visual PDF punctuation/typography check pending."
+}

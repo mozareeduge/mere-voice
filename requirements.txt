@@ -1,0 +1,6 @@
+# Runtime server/UI uses Python standard library only.
+# These are needed for real Persian TTS and processed-audio generation.
+# Supported setup intersection: Python 3.10–3.13.
+piper-tts>=1.8,<2
+pedalboard>=0.9.23,<0.10
+numpy>=1.26,<3

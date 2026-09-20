@@ -1,0 +1,297 @@
+{
+  "score_id": "SCORE-PRIMARY-WITNESS-LAB-01",
+  "revision": 2,
+  "name": "Primary-witness Voice temporal laboratory — explicit prototype timing, not play cue timing",
+  "events": [
+    {
+      "event_id": "EV-001",
+      "line_id": "VOICE-001",
+      "start_ms": 0,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.0,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-002",
+      "line_id": "VOICE-002",
+      "start_ms": 10500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-003",
+      "line_id": "VOICE-003",
+      "start_ms": 17550,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": 0.0,
+        "reverb_mix": 0.04,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 0,
+        "release_ms": 120
+      }
+    },
+    {
+      "event_id": "EV-004",
+      "line_id": "VOICE-004",
+      "start_ms": 28800,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": 0.0,
+        "reverb_mix": 0.04,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 0,
+        "release_ms": 120
+      }
+    },
+    {
+      "event_id": "EV-005",
+      "line_id": "VOICE-005",
+      "start_ms": 58750,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": 0.0,
+        "reverb_mix": 0.04,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 0,
+        "release_ms": 120
+      }
+    },
+    {
+      "event_id": "EV-006",
+      "line_id": "VOICE-006",
+      "start_ms": 66000,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-007",
+      "line_id": "VOICE-007",
+      "start_ms": 71800,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.0,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-008",
+      "line_id": "VOICE-008",
+      "start_ms": 83100,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-009",
+      "line_id": "VOICE-009",
+      "start_ms": 91650,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.0,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-010",
+      "line_id": "VOICE-010",
+      "start_ms": 98150,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-011",
+      "line_id": "VOICE-011",
+      "start_ms": 106100,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.0,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-012",
+      "line_id": "VOICE-012",
+      "start_ms": 114050,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-013",
+      "line_id": "VOICE-013",
+      "start_ms": 120100,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.0,
+        "reverb_mix": 0.26,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-014",
+      "line_id": "VOICE-014",
+      "start_ms": 128100,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -4.0,
+        "pan": -0.35,
+        "pitch_semitones": -3.0,
+        "reverb_mix": 0.38,
+        "delay_ms": 90,
+        "delay_feedback": 0.12,
+        "attack_ms": 10,
+        "release_ms": 700
+      }
+    },
+    {
+      "event_id": "EV-015",
+      "line_id": "VOICE-015",
+      "start_ms": 128650,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -5.0,
+        "pan": 0.0,
+        "pitch_semitones": -1.0,
+        "reverb_mix": 0.24,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 10,
+        "release_ms": 550
+      }
+    },
+    {
+      "event_id": "EV-016",
+      "line_id": "VOICE-016",
+      "start_ms": 129200,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -5.0,
+        "pan": 0.35,
+        "pitch_semitones": 1.0,
+        "reverb_mix": 0.32,
+        "delay_ms": 130,
+        "delay_feedback": 0.12,
+        "attack_ms": 10,
+        "release_ms": 650
+      }
+    },
+    {
+      "event_id": "EV-017",
+      "line_id": "VOICE-017",
+      "start_ms": 132500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -3.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.0,
+        "reverb_mix": 0.18,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 10,
+        "release_ms": 450
+      }
+    }
+  ],
+  "notes_summary": "Lines 1–13 are spaced for inspection using prebuilt fixture durations. VOICE-014/015/016 are deliberately staggered by 550 ms to test the slashed late polyphony as separate events; VOICE-017 follows. All onset values are prototype lab choices, not authored performance cue times."
+}

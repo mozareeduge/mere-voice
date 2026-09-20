@@ -1,0 +1,248 @@
+{
+  "score_id": "SCORE-DOSSIER-FIXTURE-01",
+  "revision": 1,
+  "name": "Dossier Voice temporal fixture — explicit lab timing, not play cue timing",
+  "events": [
+    {
+      "event_id": "EV-001",
+      "line_id": "VOICE-001",
+      "start_ms": 0,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -1.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-002",
+      "line_id": "VOICE-002",
+      "start_ms": 5600,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-003",
+      "line_id": "VOICE-003",
+      "start_ms": 11600,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": 0.0,
+        "reverb_mix": 0.04,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 0,
+        "release_ms": 100
+      }
+    },
+    {
+      "event_id": "EV-004",
+      "line_id": "VOICE-004",
+      "start_ms": 18000,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": 0.0,
+        "reverb_mix": 0.04,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 0,
+        "release_ms": 100
+      }
+    },
+    {
+      "event_id": "EV-005",
+      "line_id": "VOICE-005",
+      "start_ms": 25500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": 0.0,
+        "reverb_mix": 0.04,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 0,
+        "release_ms": 100
+      }
+    },
+    {
+      "event_id": "EV-006",
+      "line_id": "VOICE-006",
+      "start_ms": 32500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-007",
+      "line_id": "VOICE-007",
+      "start_ms": 38500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -1.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-008",
+      "line_id": "VOICE-008",
+      "start_ms": 45000,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-009",
+      "line_id": "VOICE-009",
+      "start_ms": 51500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -1.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-010",
+      "line_id": "VOICE-010",
+      "start_ms": 58000,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-011",
+      "line_id": "VOICE-011",
+      "start_ms": 64500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -1.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-012",
+      "line_id": "VOICE-012",
+      "start_ms": 71000,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.0,
+        "pitch_semitones": -2.5,
+        "reverb_mix": 0.28,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-013",
+      "line_id": "VOICE-013",
+      "start_ms": 76500,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": -0.28,
+        "pitch_semitones": -1.5,
+        "reverb_mix": 0.38,
+        "delay_ms": 110,
+        "delay_feedback": 0.15,
+        "attack_ms": 20,
+        "release_ms": 500
+      }
+    },
+    {
+      "event_id": "EV-014",
+      "line_id": "VOICE-014",
+      "start_ms": 79200,
+      "enabled": true,
+      "route_id": "STEREO_MAIN",
+      "processing": {
+        "gain_db": -2.0,
+        "pan": 0.28,
+        "pitch_semitones": -4.0,
+        "reverb_mix": 0.48,
+        "delay_ms": 0,
+        "delay_feedback": 0.0,
+        "attack_ms": 20,
+        "release_ms": 900
+      }
+    }
+  ],
+  "notes_summary": "Prebuilt temporal laboratory. Event onsets are prototype fixtures authored for testing overlap, silence, processing and UI; they do not claim to reproduce Niravana's final performance timing.",
+  "score_hash": "5e6ea68c90665d3678375c43c14dfc8891f5ec46a2be0ecb08639de74634c2fe",
+  "saved_at": "2026-09-17T00:00:00+00:00"
+}

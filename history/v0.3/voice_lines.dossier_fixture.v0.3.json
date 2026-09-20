@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "source_mode": "DOSSIER_FIXTURE",
+  "warning": "These 14 Voice strings are extracted from the dossier operational score, not verified against Niravana’s primary play-text witness. Ellipses in several entries are dossier excerpts. Replace this file with the exact canonical Voice text before artistic/rehearsal acceptance.",
+  "derived_from": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html",
+  "lines": [
+    {
+      "line_id": "VOICE-001",
+      "text_fa": "بدن زندگی رو پس می‌زنه، غذا، هوا رو پس می‌زنه.",
+      "english_gloss_from_dossier": "The body rejects life, rejects food, air.",
+      "order_hint": 1,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 1",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-002",
+      "text_fa": "نفس زندگی رو پس می‌زنه و بعد خواب به آرومی جای سیاهی رو پر می‌کنه.",
+      "english_gloss_from_dossier": "Breath rejects life, and then sleep slowly fills the blackness.",
+      "order_hint": 2,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 3",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-003",
+      "text_fa": "برای درمان کوتاه مدت اضطراب، حملات پانیک، بی‌خوابی… تجویز می‌شود.",
+      "english_gloss_from_dossier": "Prescribed for the short-term treatment of anxiety, panic attacks, stress-related insomnia…",
+      "order_hint": 3,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 5",
+      "source_status": "dossier_excerpt_with_ellipsis",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-004",
+      "text_fa": "عوارض شایع شامل خواب‌آلودگی… اما خطرات جدی‌تر مانند وابستگی و اعتیاد…",
+      "english_gloss_from_dossier": "Common side effects include drowsiness… more serious risks such as dependence…",
+      "order_hint": 4,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 7",
+      "source_status": "dossier_excerpt_with_ellipsis",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-005",
+      "text_fa": "دارای تمامی علایم حیاتی ثابت. … تمامی علایم حیاتی دارن از بین میرن.",
+      "english_gloss_from_dossier": "All vital signs stable. … All vital signs are vanishing.",
+      "order_hint": 5,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 9",
+      "source_status": "dossier_excerpt_with_ellipsis",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-006",
+      "text_fa": "ذهن به زندگی چنگ می‌زنه، زندگی ذهن رو پس می‌زنه.",
+      "english_gloss_from_dossier": "The mind claws at life; life rejects the mind.",
+      "order_hint": 6,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 12",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-007",
+      "text_fa": "به دست‌ها دستور داده شده به زندگی چنگ بزنن، دست‌ها اما خشک فرو می‌افتند…",
+      "english_gloss_from_dossier": "The hands were ordered to grasp at life, but the hands fall, dry…",
+      "order_hint": 7,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 15",
+      "source_status": "dossier_excerpt_with_ellipsis",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-008",
+      "text_fa": "زندگی در بدن جا نمی‌شود، جا کم می‌آورد.",
+      "english_gloss_from_dossier": "Life doesn’t fit in the body; it runs out of room.",
+      "order_hint": 8,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 17",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-009",
+      "text_fa": "خاطره در حافظه محو می‌شود، حافظه خاطره را پس می‌زند.",
+      "english_gloss_from_dossier": "The memory fades in the memory; the memory rejects the memory.",
+      "order_hint": 9,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 18",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-010",
+      "text_fa": "صدا در حلق می‌شکند، واژه الکن بیان می‌شود.",
+      "english_gloss_from_dossier": "The voice breaks in the throat; the word comes out stammering.",
+      "order_hint": 10,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 19",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-011",
+      "text_fa": "تن در تن جا نمی‌شود، از خطوط بیرون می‌زند، مکان، بدن را پس می‌زند.",
+      "english_gloss_from_dossier": "Body doesn’t fit in body; it spills out of the lines; place rejects the body.",
+      "order_hint": 11,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 22",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-012",
+      "text_fa": "رویا بین مفاصل و رگ و پی تجسد نمی‌یابد. جسم رویا را پس می‌زند.",
+      "english_gloss_from_dossier": "The dream won’t take flesh among the joints and veins and sinews. The body rejects the dream.",
+      "order_hint": 12,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 24",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-013",
+      "text_fa": "لامسه دست را پس می‌زند / خواستن میل را پس می‌زند / میل خواهش را پس می‌زند",
+      "english_gloss_from_dossier": "Touch rejects the hand / wanting rejects desire / desire rejects wanting",
+      "order_hint": 13,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 25",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    },
+    {
+      "line_id": "VOICE-014",
+      "text_fa": "لخته خون را پس می‌زند.",
+      "english_gloss_from_dossier": "The clot rejects the blood.",
+      "order_hint": 14,
+      "source_ref": "NIRAVANA_MOZARE_DIVERGENT_PERFORMANCE_DOSSIER_ARCHIVE_v0.6.html / 28-beat score / beat 25",
+      "source_status": "dossier_quote_unverified_against_primary_text",
+      "canonical": false
+    }
+  ]
+}

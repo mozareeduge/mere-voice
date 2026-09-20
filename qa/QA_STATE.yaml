@@ -1,0 +1,144 @@
+qa_snapshot_id: VOICE-PROTOTYPE-QA-2026-09-20-R5-COMPILER
+revision: 5
+authority_snapshot_id: VOICE-PROTOTYPE-PD-2026-09-17-R2+SOURCE-CLOSURE-2026-09-20
+candidate:
+  status: NEARFINAL_LOCAL_CANDIDATE
+  candidate_id: NIRAVANA-VOICE-NEARFINAL-0.6
+  implementation_version: 0.6.0
+  source_mode: PRIMARY_PDF_WITNESS
+  source_units: 17
+  score_events: 17
+  dry_audio_engine: espeak-fixture
+  commit: null
+  build: local_source_tree
+mode: QA_ONLY
+qa_level: QA-B_WITH_ELEVATED_TEMPORAL_PROVENANCE_GATES
+status: LOCAL_CANDIDATE_QA_PASS_EXTERNAL_GATES_REMAIN
+verdict: READY_FOR_TARGET_PIPER_AND_WINDOWS_AUDIO_VERIFICATION
+
+executed_evidence:
+  - id: EV-PYTEST-002
+    mode: CANDIDATE_EXECUTION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: SUFFICIENT_FOR_LOCAL_DOMAIN_API_INTEGRITY
+    result: PASS
+    detail: 23 unit/integration/API tests; includes source/byte canaries, atomic-write failure preservation, pitch semantics, deterministic rerun, note binding, processor/export provenance and compiler integrity
+  - id: EV-TEMPORAL-002
+    mode: SIMULATION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: SUFFICIENT_FOR_SCHEDULER_MECHANISM
+    result: PASS
+    detail: actual candidate scheduler executed in Chromium OfflineAudioContext; onset/overlap proof passes and shifted-onset canary turns red
+  - id: EV-UI-002
+    mode: SIMULATION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: PARTIAL
+    result: PASS
+    detail: 17 lines/events render READY_PROCESSED at 1440x900 and 1024x768; zero page horizontal overflow; timeline owns internal horizontal overflow
+  - id: EV-EXPORT-002
+    mode: CANDIDATE_EXECUTION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: PARTIAL
+    result: PASS
+    detail: dry and processed exports generated; sidecar binds candidate/source/model/runtime/event-audio hashes
+  - id: EV-INTERACTION-003
+    mode: SIMULATION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: SUFFICIENT_FOR_LOCAL_MUTATION_ORDERING
+    result: PASS
+    detail: invalid values preserve the previous valid value; Add Event uses authority defaults; Duplicate preserves line/timing/processing; dirty Delete confirms and preserves saved revision; stale processing blocks playback; immediate Save flushes score first
+  - id: EV-LOCAL-RELEASE-001
+    mode: CANDIDATE_EXECUTION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: SUFFICIENT_FOR_MACHINE_READINESS_CLASSIFICATION
+    result: PASS
+    detail: local_release.py reports runnable fixture baseline separately from 17/17 real-Piper engineering state
+  - id: EV-SCHEDULER-LIFECYCLE-001
+    mode: CANDIDATE_EXECUTION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: SUFFICIENT_FOR_SELECTION_STOP_AND_DISABLED_EVENT_MECHANICS
+    result: PASS
+    detail: Node harness proves play-from-selection future deltas, disabled-event exclusion, and full active-source stop/disconnect cleanup
+  - id: EV-FINAL-ACCEPTANCE-001
+    mode: CANDIDATE_EXECUTION
+    provenance: VERIFIED_CANDIDATE
+    oracle_fit: PACKAGE_LEVEL_COMPILER_ACCEPTANCE
+    result: PASS
+    detail: strict acceptance closes authority identity, artifact fingerprints, 40/40 scenario classification, pytest, Node lifecycle, Chromium QA, and runnable local release state
+
+verified_defects_closed:
+  - id: DEFECT-PRE-001
+    oracle: ORACLE-020
+    closure: timeline owns horizontal scroll; zero page overflow at tested desktop sizes
+  - id: DEFECT-PRE-002
+    oracle: ORACLE-001
+    observation: v0.3 dossier fixture lost/merged primary Voice wording and omitted one Voice unit
+    closure: 17-unit primary-witness source layer built with declared extraction normalization and separate late polyphony units
+  - id: DEFECT-PRE-003
+    oracle: ORACLE-028
+    observation: readiness trusted metadata without checking referenced WAV bytes
+    closure: dry and processed readiness now require file existence plus SHA-256 equality; corruption/missing-file canaries turn readiness red
+  - id: DEFECT-PRE-004
+    oracle: DERIVED_EXECUTION
+    observation: direct `python scripts/prepare_all.py` failed because project root was absent from sys.path
+    closure: script self-adds project root; direct invocation verified
+
+  - id: DEFECT-PRE-005
+    oracle: DERIVED_INTERACTION_INTEGRITY
+    observation: debounced client score writes could lag Prepare/Audition/Save/Export and temporarily expose stale processed state
+    closure: local mutations mark stale/dirty immediately; dependent operations flush latest score; Chromium ordering canary passes
+  - id: DEFECT-PRE-006
+    oracle: DERIVED_PROVENANCE
+    observation: processor and export provenance were weaker than the reproducibility horizon
+    closure: variants bind pipeline/dependency versions; exports bind candidate/source/model/runtime metadata
+
+  - id: DEFECT-V06-001
+    oracle: ORACLE-005
+    observation: invalid onset/processing edits could be silently clamped or leave invalid local state before server rejection
+    closure: invalid numeric edits are rejected inline, previous valid values remain, and no score write is queued
+  - id: DEFECT-V06-002
+    oracle: ORACLE-005
+    observation: Add Event auto-placed after the current score instead of using the authority-defined start_ms=0 default
+    closure: new events now start at 0 ms with DRY/default processing and enabled=true; browser canary passes
+  - id: DEFECT-V06-003
+    oracle: ORACLE-005
+    observation: Duplicate Event added +250 ms and therefore did not preserve timing exactly
+    closure: duplicate now preserves line, timing and processing exactly before later independent edits; browser canary passes
+  - id: DEFECT-V06-004
+    oracle: ORACLE-005
+    observation: deleting while the current score was dirty did not require the authority-defined confirmation
+    closure: dirty deletion now requires confirmation and preserves the prior saved revision; browser canary passes
+
+canaries:
+  status: LOCAL_CRITICAL_CANARIES_PASS
+  executed:
+    - source-text mutation -> dry and processed readiness blocked
+    - dry-WAV byte corruption -> HASH_MISMATCH and readiness blocked
+    - processed-WAV deletion -> processed blocked while dry remains ready
+    - temporal onset mutation -> timing proof red
+    - page overflow mutation -> geometry proof red
+    - processing edit -> immediate BLOCKED + STALE + UNSAVED state
+    - immediate Save after edit -> /api/score precedes /api/save-revision
+    - duplicate event -> immediate BLOCKED + STALE state before debounced persistence
+    - invalid onset/processing edit -> rejected inline; previous value retained; no score write queued
+    - Add Event -> new stable event at 0 ms with DRY/default processing and enabled=true
+    - Duplicate Event -> exact line/timing/processing semantics preserved before later edits
+    - dirty Delete Event -> confirmation required; prior saved revision remains recoverable
+    - atomic write replace failure -> prior file preserved
+    - play-from-selection / stop -> future deltas preserved; all active sources stopped/disconnected
+
+known_proof_gaps:
+  - primary PDF typography/punctuation has not been visually compared page-by-page against the stored normalized transcription in this runtime
+  - piper-tts/Mana model cannot be downloaded/executed in this sandbox; downloader, exact model SHA and config invariants are implemented
+  - Persian Mana/Piper pronunciation/intelligibility requires human listening
+  - actual Windows 10/11 browser/default-audio-device playback has not run in this Linux sandbox
+  - stage-volume masking/intelligibility remains rehearsal judgment
+
+human_or_external_gates:
+  - GATE-SOURCE-FIDELITY-01: visual PDF text confirmation before final textual-edition claim
+  - GATE-REAL-TTS: target machine Mana/Piper render + human Persian listening
+  - GATE-WINDOWS-AUDIO-SMOKE: actual Windows/default-output browser run
+  - GATE-HUMAN-VOICE-01: final performance Voice identity remains later production authority
+
+engineering_blockers: []
+next_required_gate: GATE-REAL-TTS

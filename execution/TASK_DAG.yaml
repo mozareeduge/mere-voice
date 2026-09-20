@@ -1,0 +1,41 @@
+version: 4
+project: niravana-voice-prototype
+candidate: NIRAVANA-VOICE-NEARFINAL-0.6
+terminal_state: CANDIDATE_READY_FOR_REHEARSAL_REVIEW
+rules:
+  - Do not redesign, reconstruct source text, or change stack from preference.
+  - Use root one-click commands before manual operations.
+  - Repair only reproduced defects against current product/QA authority.
+
+tasks:
+  - id: TASK-R00
+    objective: Reproduce the supplied candidate without edits.
+    depends_on: []
+    actions:
+      - run `VERIFY_LOCAL.bat`
+      - run `RUN_WORKBENCH.bat`
+      - confirm 17 Voice lines, 17 baseline events, and `READY · PROCESSED`
+    gate: GATE-NEARFINAL-BASELINE
+    done_when: `evidence/local/local_release_report.json` says base_candidate_pass=true and the workbench opens.
+
+  - id: TASK-R01
+    objective: Convert the supplied fixture-audio candidate to verified real Mana/Piper audio.
+    depends_on: [TASK-R00]
+    actions:
+      - run `FINALIZE_REAL_VOICE.bat`
+      - do not manually duplicate setup/download/render steps unless this command reports a precise blocker
+      - inspect `evidence/local/local_release_report.md`
+    gate: GATE-REAL-TTS
+    done_when: report says real_voice_engineering_pass=true and piper_line_count=17.
+
+  - id: TASK-R02
+    objective: Perform the remaining human/physical target proof and freeze the exact candidate.
+    depends_on: [TASK-R01]
+    actions:
+      - listen to representative clinical, rejection and late-overlap passages for Persian pronunciation/prosody
+      - play processed and DRY BYPASS through the actual Windows default output/headphones
+      - confirm VOICE-014/015/016 are audibly separate staggered events; save a revision, note and export
+      - run `VERIFY_LOCAL.bat` again after any evidence-backed repair
+      - optionally visually confirm PDF punctuation/typography; any source correction must be explicit and followed by audio regeneration
+    gate: GATE-WINDOWS-AUDIO-SMOKE + GATE-HUMAN-VOICE-LISTENING
+    done_when: Remaining issues are artistic rehearsal decisions rather than engineering uncertainty.

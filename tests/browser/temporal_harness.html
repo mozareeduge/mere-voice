@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><title>Temporal harness</title><pre id="result">RUNNING</pre>
+<script type="module">
+import { scheduleBuffers, computeRelativeSchedule } from '/web/audio-scheduler.js';
+const out = document.querySelector('#result');
+try {
+  const sr = 48000;
+  const ctx = new OfflineAudioContext(1, sr * 2, sr);
+  function pulse() {
+    const b = ctx.createBuffer(1, Math.floor(sr * 0.02), sr);
+    b.getChannelData(0).fill(0.4);
+    return b;
+  }
+  const events = [
+    { event_id:'A', enabled:true, start_ms:100 },
+    { event_id:'B', enabled:true, start_ms:350 },
+    { event_id:'C', enabled:true, start_ms:350 },
+  ];
+  const items = events.map(event => ({event, buffer:pulse()}));
+  scheduleBuffers(ctx, items, {baseAudioTime:0, fromMs:0});
+  const rendered = await ctx.startRendering();
+  const x = rendered.getChannelData(0);
+  const expectedA = Math.round(sr * .100);
+  const expectedBC = Math.round(sr * .350);
+  function firstAbove(center, radius=4, threshold=.1){
+    for(let i=Math.max(0,center-radius); i<=Math.min(x.length-1,center+radius); i++) if(Math.abs(x[i])>threshold) return i;
+    return -1;
+  }
+  const a = firstAbove(expectedA);
+  const bc = firstAbove(expectedBC);
+  const sum = x[expectedBC];
+  const relative = computeRelativeSchedule(events, 100);
+  const pass = Math.abs(a-expectedA)<=1 && Math.abs(bc-expectedBC)<=1 && sum > .75 && relative[0].relative_ms===0 && relative[1].relative_ms===250;
+  const report = {pass, expectedA, observedA:a, expectedBC, observedBC:bc, simultaneousAmplitude:sum, relative};
+  out.textContent = (pass?'PASS\n':'FAIL\n') + JSON.stringify(report,null,2);
+  document.body.dataset.result = pass?'PASS':'FAIL';
+} catch (e) {
+  out.textContent='FAIL\n'+e.stack; document.body.dataset.result='FAIL';
+}
+</script>

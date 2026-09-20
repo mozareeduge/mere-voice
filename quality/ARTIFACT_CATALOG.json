@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
+  "artifacts": [
+    {
+      "artifact_id": "ART-PRODUCT-AUTHORITY-001",
+      "name": "Closed product authority",
+      "paths": [
+        "product_design/*.md"
+      ],
+      "implemented_scenarios": [
+        "SCN-001..SCN-032",
+        "SCN-X-01..SCN-X-08"
+      ],
+      "validation_evidence": [
+        "EV-AUTHORITY-CLOSURE-001"
+      ],
+      "known_limits": [
+        "Human/artistic gates remain outside engineering authority."
+      ]
+    },
+    {
+      "artifact_id": "ART-SOURCE-001",
+      "name": "Primary-witness Voice source",
+      "paths": [
+        "data/source/voice_lines.primary_witness.json",
+        "data/source/SOURCE_PROVENANCE.md"
+      ],
+      "implemented_scenarios": [
+        "SCN-004",
+        "SCN-X-06"
+      ],
+      "validation_evidence": [
+        "EV-PYTEST-002"
+      ],
+      "known_limits": [
+        "Page-by-page visual PDF typography/punctuation comparison remains optional external editorial proof."
+      ]
+    },
+    {
+      "artifact_id": "ART-RUNTIME-001",
+      "name": "Local service and domain runtime",
+      "paths": [
+        "app.py",
+        "voice_proto/*.py"
+      ],
+      "implemented_scenarios": [
+        "SCN-001..SCN-029"
+      ],
+      "validation_evidence": [
+        "EV-PYTEST-002",
+        "EV-LOCAL-RELEASE-001"
+      ],
+      "known_limits": [
+        "Actual Windows/default-audio-device behavior requires target-machine proof."
+      ]
+    },
+    {
+      "artifact_id": "ART-WORKBENCH-001",
+      "name": "Browser workbench and temporal scheduler",
+      "paths": [
+        "web/*.html",
+        "web/*.css",
+        "web/*.js"
+      ],
+      "implemented_scenarios": [
+        "SCN-006..SCN-025",
+        "SCN-030",
+        "SCN-031",
+        "SCN-032"
+      ],
+      "validation_evidence": [
+        "EV-TEMPORAL-002",
+        "EV-UI-002",
+        "EV-INTERACTION-003"
+      ],
+      "known_limits": [
+        "Browser simulation cannot prove physical audio output or artistic audibility."
+      ]
+    },
+    {
+      "artifact_id": "ART-CANDIDATE-DATA-001",
+      "name": "17-event runnable candidate data",
+      "paths": [
+        "data/scores/current.json",
+        "data/scores/revisions/*.json",
+        "data/config/model_profile.json"
+      ],
+      "implemented_scenarios": [
+        "SCN-015..SCN-029"
+      ],
+      "validation_evidence": [
+        "EV-PYTEST-002",
+        "EV-EXPORT-002",
+        "EV-LOCAL-RELEASE-001"
+      ],
+      "known_limits": [
+        "Bundled dry audio remains explicit eSpeak fixture audio until target real-Voice finalization."
+      ]
+    },
+    {
+      "artifact_id": "ART-AUDIO-FIXTURE-001",
+      "name": "Runnable fixture dry and processed corpus",
+      "paths": [
+        "data/assets/dry/*",
+        "data/assets/processed/*"
+      ],
+      "implemented_scenarios": [
+        "SCN-002",
+        "SCN-011",
+        "SCN-012",
+        "SCN-021",
+        "SCN-022",
+        "SCN-028",
+        "SCN-029"
+      ],
+      "validation_evidence": [
+        "EV-PYTEST-002",
+        "EV-EXPORT-002",
+        "EV-LOCAL-RELEASE-001"
+      ],
+      "known_limits": [
+        "Fixture audio is workflow evidence, not Persian Mana/Piper listening acceptance."
+      ]
+    },
+    {
+      "artifact_id": "ART-QA-001",
+      "name": "Executable QA and canary suite",
+      "paths": [
+        "tests/**/*.py",
+        "tests/**/*.js",
+        "tests/**/*.html",
+        "qa/*"
+      ],
+      "implemented_scenarios": [
+        "SCN-004",
+        "SCN-007",
+        "SCN-010",
+        "SCN-013..SCN-018",
+        "SCN-021",
+        "SCN-022",
+        "SCN-026",
+        "SCN-028..SCN-032"
+      ],
+      "validation_evidence": [
+        "EV-PYTEST-002",
+        "EV-TEMPORAL-002",
+        "EV-UI-002",
+        "EV-INTERACTION-003"
+      ],
+      "known_limits": [
+        "Traceability classifies unproven scenarios explicitly instead of treating implementation as proof."
+      ]
+    },
+    {
+      "artifact_id": "ART-RELEASE-001",
+      "name": "Target finalizer and release/reality probes",
+      "paths": [
+        "FINALIZE_REAL_VOICE.bat",
+        "VERIFY_LOCAL.bat",
+        "VERIFY_DEVELOPER.bat",
+        "FINAL_ACCEPTANCE.bat",
+        "scripts/local_release.py",
+        "scripts/final_acceptance.py",
+        "scripts/build_artifact_registry.py"
+      ],
+      "implemented_scenarios": [
+        "SCN-002",
+        "SCN-025",
+        "SCN-028",
+        "SCN-029"
+      ],
+      "validation_evidence": [
+        "EV-LOCAL-RELEASE-001",
+        "EV-FINAL-ACCEPTANCE-001"
+      ],
+      "known_limits": [
+        "Real Mana/Piper render and physical Windows audio remain target gates in this packaged sandbox state."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
+  "classification_rule": "Implementation is never promoted to proof without cited evidence. Target/human gates remain explicit.",
+  "scenarios": {
+    "SCN-004": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-007": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-013": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-021": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-015": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-TEMPORAL-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-016": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-TEMPORAL-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-017": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-TEMPORAL-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-022": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-028": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002",
+        "EV-EXPORT-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-029": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002",
+        "EV-EXPORT-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-030": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-UI-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-002": {
+      "proof_status": "PARTIAL_AUTOMATED",
+      "evidence_ids": [
+        "EV-PYTEST-002",
+        "EV-LOCAL-RELEASE-001"
+      ],
+      "external_gate": "GATE-REAL-TTS",
+      "note": "Fixture preparation is proven; real Mana/Piper execution/listening is target-bound."
+    },
+    "SCN-001": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-003": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-005": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-006": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": "Add-event browser canary verifies stable event creation defaults and immediate stale state."
+    },
+    "SCN-008": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-SCHEDULER-LIFECYCLE-001"
+      ],
+      "external_gate": null,
+      "note": "Scheduler lifecycle harness proves disabled events are excluded from relative scheduling."
+    },
+    "SCN-009": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": "Dirty-score delete browser canary requires confirmation, removes the event, and preserves the saved revision marker."
+    },
+    "SCN-010": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": "Invalid onset and processing values are rejected inline with the prior valid value retained and no score write queued."
+    },
+    "SCN-011": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-012": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-014": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": "Static implementation test binds pitch semantics to Pedalboard PitchShift and rejects playback-rate substitution."
+    },
+    "SCN-018": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-019": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": "Two processed exports of the same saved score produce identical WAV SHA-256."
+    },
+    "SCN-020": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-SCHEDULER-LIFECYCLE-001"
+      ],
+      "external_gate": null,
+      "note": "Relative-schedule harness proves play-from-selection drops prior events and preserves future deltas."
+    },
+    "SCN-023": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-SCHEDULER-LIFECYCLE-001"
+      ],
+      "external_gate": null,
+      "note": "Stop harness proves every active source is stopped/disconnected and engine state is cleared."
+    },
+    "SCN-024": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-026": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": "Injected atomic replace failure preserves the prior file and removes the temporary write."
+    },
+    "SCN-027": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": "Note API test proves current revision, mode, disposition and listening setup are bound to the note."
+    },
+    "SCN-031": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-032": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-025": {
+      "proof_status": "ARCHITECTURAL_PROOF_TARGET_SMOKE_PENDING",
+      "evidence_ids": [
+        "EV-LOCAL-RELEASE-001"
+      ],
+      "external_gate": "GATE-WINDOWS-AUDIO-SMOKE",
+      "note": ""
+    },
+    "SCN-X-01": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002",
+        "EV-INTERACTION-003"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-X-02": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-X-03": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-SCHEDULER-LIFECYCLE-001"
+      ],
+      "external_gate": null,
+      "note": "Stop cleanup covers multiple simultaneously active sources."
+    },
+    "SCN-X-04": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-X-05": {
+      "proof_status": "AUTOMATED_PROVEN",
+      "evidence_ids": [
+        "EV-UI-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-X-06": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [
+        "EV-PYTEST-002"
+      ],
+      "external_gate": null,
+      "note": ""
+    },
+    "SCN-X-07": {
+      "proof_status": "ARCHITECTURAL_PROOF_TARGET_SMOKE_PENDING",
+      "evidence_ids": [
+        "EV-LOCAL-RELEASE-001"
+      ],
+      "external_gate": "GATE-WINDOWS-AUDIO-SMOKE",
+      "note": ""
+    },
+    "SCN-X-08": {
+      "proof_status": "IMPLEMENTED_PARTIAL_PROOF",
+      "evidence_ids": [],
+      "external_gate": null,
+      "note": ""
+    }
+  }
+}
