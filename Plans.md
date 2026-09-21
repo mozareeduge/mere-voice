@@ -59,3 +59,25 @@ Notes:
 - DEC-016..019 recorded in product_design/05 ledger; 01 object model amended (tempo_scale, spoken-text layer).
 - Version/candidate: 0.6.1 / NIRAVANA-VOICE-NEARFINAL-0.6.1.
 - The two fixture-baseline test failures remain an owner decision (AUTHORITY_CONTRADICTION note), not touched.
+
+## Phase 5 — Continuation handoff v2.0 (Voice Laboratory; supersedes the "perfect Mana" direction of Phase 4)
+
+Source: `mere-voice-continuation-handoff-v2.0-2026-09-21.zip` (decisions A–I). Verified locally 2026-09-21: `text_fa_vocalized` breaks lexical invariance on 11/17 lines (001–010, 012). Target: `VOICE_LAB_CANDIDATE_FROZEN`. Rule: never reset a legitimate descendant of `cba031f`; preserve the 18-event artistic score and all tempo/timeline/export behaviour.
+
+| Task | 内容 | DoD | Depends | Status |
+|------|------|-----|---------|--------|
+| 5.0 | Freeze v0.6.1 evidence (score, processed variants, vocalized text kept as history only) | tag/commit `v0.6.1-frozen`; audit tool output saved in `evidence/local/` | – | cc:TODO |
+| 5.1 | Stop `text_fa_vocalized` driving synthesis (`voice_proto/tts.py::_spoken_text` → `text_fa` only) | 17 assets built from exact `text_fa`; test asserts strip-marks invariant | 5.0 | cc:TODO |
+| 5.2 | Prosody baseline: keep commas inside sentence-level spans; optional sentence gap only; drop 190 ms clause hard-chunking as default | asset meta records span policy; A/B against commit `920a479` assets | 5.1 | cc:TODO |
+| 5.3 | Exact-span pronunciation override layer (Piper raw `[[phoneme]]` blocks), empty by default | schema from handoff `pronunciation_overrides.example.json`; unit tests | 5.1 | cc:TODO |
+| 5.4 | Re-render 17 dry lines + variants; state `SYNTHETIC_CONTROL_READY` | `local_release --prepare-real` passes, `piper_lines=17` | 5.2, 5.3 | cc:TODO |
+| 5.5 | Source-body bench (independent local page, not in main UI): VOICE-004, 001, 009; slots canonical-Mana dry / recorded-human dry / v0.6.1 reference; non-destructive level normalisation; fields intelligibility, bodily presence, distance, unwanted connotation, latency, Man–Voice reach, KEEP/RETRY/DROP/HOLD | bench opens locally; results saved as structured JSON | 5.4 | cc:TODO |
+| 5.6 | **HUMAN GATE** — record/read the same 3 lines dry, drop in bench, log verdicts | state `VOICE_SOURCE_DIRECTION_SELECTED` | 5.5 | blocked (needs Mohammad's voice + ears) |
+| 5.7a | If TTS kept: 17-line listening manifest; failed-span overrides only; LCA/Gooya only if corrections are contextual/recurrent | affected lines re-rendered | 5.6 | conditional |
+| 5.7b | If recorded human wins: minimal `import_recorded_dry` provider, same cache/processing path | imported WAV processed like synthetic dry | 5.6 | conditional |
+| 5.8 | Temporal truth: `buffer_duration_ms` + `audible_duration_ms` (energy-derived); timeline shows audible length; scheduler keeps full buffer | Hermes samples with 2.2–4.6 s silent tails display correct audible duration | 5.6 | cc:TODO |
+| 5.9 | QA/state cleanup: fix 2 fixture-vs-real acceptance tests, regression tests, unify docs, model/asset policy, strict final acceptance | `VOICE_LAB_CANDIDATE_FROZEN` | 5.7*, 5.8 | cc:TODO |
+
+Notes:
+- 5.0–5.5 and 5.8 are agent-owned and can run now; 5.6 is the only step software cannot decide.
+- LCA stays deferred; ParsVoice-XTTS is a later artistic branch only.
