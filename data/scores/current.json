@@ -12,6 +12,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.7,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.0,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -29,6 +30,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.5,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -46,6 +48,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": 0.0,
         "reverb_mix": 0.04,
         "delay_ms": 0,
@@ -63,12 +66,13 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
-        "pitch_semitones": -9.5,
-        "reverb_mix": 0.88,
-        "delay_ms": 40,
+        "tempo_scale": 0.75,
+        "pitch_semitones": 9.0,
+        "reverb_mix": 0.0,
+        "delay_ms": 10,
         "delay_feedback": 0.0,
         "attack_ms": 0,
-        "release_ms": 120
+        "release_ms": 0
       }
     },
     {
@@ -80,6 +84,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": 4.0,
         "reverb_mix": 0.73,
         "delay_ms": 110,
@@ -97,6 +102,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.5,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -114,6 +120,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.0,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -131,6 +138,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.5,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -148,6 +156,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.0,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -165,6 +174,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.5,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -182,6 +192,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": 6.5,
         "reverb_mix": 0.26,
         "delay_ms": 50,
@@ -199,6 +210,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.5,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -216,6 +228,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": 4.5,
         "reverb_mix": 0.26,
         "delay_ms": 0,
@@ -233,6 +246,7 @@
       "processing": {
         "gain_db": -4.0,
         "pan": -0.35,
+        "tempo_scale": 1.0,
         "pitch_semitones": -3.0,
         "reverb_mix": 0.38,
         "delay_ms": 90,
@@ -250,6 +264,7 @@
       "processing": {
         "gain_db": -5.0,
         "pan": -0.7,
+        "tempo_scale": 1.0,
         "pitch_semitones": 9.5,
         "reverb_mix": 0.9,
         "delay_ms": 210,
@@ -267,6 +282,7 @@
       "processing": {
         "gain_db": -5.0,
         "pan": 0.35,
+        "tempo_scale": 1.0,
         "pitch_semitones": 1.0,
         "reverb_mix": 0.32,
         "delay_ms": 130,
@@ -284,6 +300,7 @@
       "processing": {
         "gain_db": -3.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": -2.0,
         "reverb_mix": 0.18,
         "delay_ms": 0,
@@ -301,6 +318,7 @@
       "processing": {
         "gain_db": 0.0,
         "pan": 0.0,
+        "tempo_scale": 1.0,
         "pitch_semitones": 0.0,
         "reverb_mix": 0.0,
         "delay_ms": 0,
@@ -311,5 +329,5 @@
     }
   ],
   "notes_summary": "Lines 1–13 are spaced for inspection using prebuilt fixture durations. VOICE-014/015/016 are deliberately staggered by 550 ms to test the slashed late polyphony as separate events; VOICE-017 follows. All onset values are prototype lab choices, not authored performance cue times.",
-  "updated_at": "2026-09-20T19:48:52.901703+00:00"
+  "updated_at": "2026-09-21T10:39:43.557661+00:00"
 }
