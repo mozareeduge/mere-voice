@@ -1,11 +1,12 @@
 {
-  "asset_id": "ASSET-VOICE-009-19baafc86adb",
+  "asset_id": "ASSET-VOICE-009-a2fed1d77448",
   "line_id": "VOICE-009",
   "status": "READY",
   "source_text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
-  "spoken_text": "خاطِرِه دَر حافِزِه مَحو می‌شَوَد، حافِزِه خاطِرِه را پَس می‌زَنَد.",
-  "spoken_text_sha256": "4059d52182eeaac56ef6e4508474a9293120a3db5ee42c8c938db16e2643cfb4",
-  "spoken_text_vocalized": true,
+  "spoken_text": "خاطره در حافظه محو می‌شود، حافظه خاطره را پس می‌زند.",
+  "spoken_text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
+  "spoken_text_is_canonical": true,
+  "pronunciation_overrides": [],
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
@@ -13,9 +14,9 @@
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
   "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
-    "pause_ms_sentence": 420,
-    "pause_ms_clause": 190,
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
     "render_parameters": {
       "volume": 1.0,
       "length_scale": 1.0,
@@ -24,19 +25,15 @@
       "normalize_audio": false
     }
   },
-  "pause_chunks": [
+  "synthesis_spans": [
     {
-      "text_sha256": "86aa34f33aead2d0a5eff80d79397350050ebb11747d47108e3591b4c82115f2",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "971d6183c98174a8d46d93708b5268a0b7018b34f4826ee4ed0058f47367da01",
+      "text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
       "pause_after_ms": 0
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-009-19baafc86adb.wav",
-  "wav_sha256": "bf253d1fa1b7fcd05ada3ec954e9f2ca93dc33e3be4cad588af7b99a01cba8e4",
-  "duration_ms": 4904,
-  "rendered_at": "2026-09-21T09:30:10.129584+00:00",
+  "wav_path": "data/assets/dry/ASSET-VOICE-009-a2fed1d77448.wav",
+  "wav_sha256": "8c7d22e46b69abde6f22440f98b553c6805fb527b888b440bf948375160e7f35",
+  "duration_ms": 4551,
+  "rendered_at": "2026-09-21T18:17:16.759347+00:00",
   "fixture": false
 }

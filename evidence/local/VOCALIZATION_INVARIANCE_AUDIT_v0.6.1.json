@@ -1,0 +1,16 @@
+{
+  "result": "FAIL",
+  "violations": [
+    "VOICE-001",
+    "VOICE-002",
+    "VOICE-003",
+    "VOICE-004",
+    "VOICE-005",
+    "VOICE-006",
+    "VOICE-007",
+    "VOICE-008",
+    "VOICE-009",
+    "VOICE-010",
+    "VOICE-012"
+  ]
+}

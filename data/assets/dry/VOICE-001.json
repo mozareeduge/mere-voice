@@ -1,11 +1,12 @@
 {
-  "asset_id": "ASSET-VOICE-001-9ab92efd0d01",
+  "asset_id": "ASSET-VOICE-001-c57c529a62c9",
   "line_id": "VOICE-001",
   "status": "READY",
   "source_text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
-  "spoken_text": "بَدَن زِندِگی رو پَس می‌زَنَه، غَذا، هَوا رو پَس می‌زَنَه. بِه سیاهی می‌اُفتَه چون چَشم، بَدَن رو پَس می‌زَنَه.",
-  "spoken_text_sha256": "01615a2f5248558545700aa43a4aea4a65f4ac950e7d64230397e46feb4f5f86",
-  "spoken_text_vocalized": true,
+  "spoken_text": "بدن زندگی رو پس می‌زنه، غذا، هوا رو پس می‌زنه. به سیاهی میوفتی چون چشم، بدن رو پس می‌زنه.",
+  "spoken_text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
+  "spoken_text_is_canonical": true,
+  "pronunciation_overrides": [],
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
@@ -13,9 +14,9 @@
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
   "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
-    "pause_ms_sentence": 420,
-    "pause_ms_clause": 190,
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
     "render_parameters": {
       "volume": 1.0,
       "length_scale": 1.0,
@@ -24,31 +25,15 @@
       "normalize_audio": false
     }
   },
-  "pause_chunks": [
+  "synthesis_spans": [
     {
-      "text_sha256": "67b89f368e5a9292af4a3ed9cafa5679f1c59f21bc90d8e5509497405cd944d9",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "4f758f7f2faca5d200ac28cf20d58c263aa36fa108b31ba3bcb30499210a4c35",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "fb01d27610b3f7e283bd6d0ee4d6f0a5a1ed2f6a0d217334bbbd169a66ab7a97",
-      "pause_after_ms": 420
-    },
-    {
-      "text_sha256": "e84620b3a3edef8d31be7a637e7a5ee00096a4e5493a900c495f71f171d8cc20",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "f59c2889443db00a147a0de5656e3fca529a8e43a630660f9559eddc79db823a",
+      "text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
       "pause_after_ms": 0
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-001-9ab92efd0d01.wav",
-  "wav_sha256": "92e5c986e6038285ef5f7f3046751164ad3e77a97e7f97d415ab5c47352df5c8",
-  "duration_ms": 8118,
-  "rendered_at": "2026-09-21T09:29:37.494258+00:00",
+  "wav_path": "data/assets/dry/ASSET-VOICE-001-c57c529a62c9.wav",
+  "wav_sha256": "77ace22885cd47e5c2f36b8286618869a35e30b1c524ce0d28a7830fd96dd0b8",
+  "duration_ms": 6374,
+  "rendered_at": "2026-09-21T18:17:16.571471+00:00",
   "fixture": false
 }

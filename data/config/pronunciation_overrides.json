@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "note": "Exact-span raw eSpeak phoneme overrides for Mana/Piper. Only entries with status 'approved' are applied. Add one only after a recorded listening failure on that exact span (source, occurrence, raw_espeak_ipa, reason).",
+  "lines": {}
+}

@@ -66,7 +66,7 @@ Source: `mere-voice-continuation-handoff-v2.0-2026-09-21.zip` (decisions A–I).
 
 | Task | 内容 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
-| 5.0 | Freeze v0.6.1 evidence (score, processed variants, vocalized text kept as history only) | tag/commit `v0.6.1-frozen`; audit tool output saved in `evidence/local/` | – | cc:TODO |
+| 5.0 | Freeze v0.6.1 evidence (score, processed variants, vocalized text kept as history only) | tag/commit `v0.6.1-frozen`; audit tool output saved in `evidence/local/` | – | cc:完了 (tag `v0.6.1-frozen`; audit in `evidence/local/VOCALIZATION_INVARIANCE_AUDIT_v0.6.1.json`) |
 | 5.1 | Stop `text_fa_vocalized` driving synthesis (`voice_proto/tts.py::_spoken_text` → `text_fa` only) | 17 assets built from exact `text_fa`; test asserts strip-marks invariant | 5.0 | cc:TODO |
 | 5.2 | Prosody baseline: keep commas inside sentence-level spans; optional sentence gap only; drop 190 ms clause hard-chunking as default | asset meta records span policy; A/B against commit `920a479` assets | 5.1 | cc:TODO |
 | 5.3 | Exact-span pronunciation override layer (Piper raw `[[phoneme]]` blocks), empty by default | schema from handoff `pronunciation_overrides.example.json`; unit tests | 5.1 | cc:TODO |

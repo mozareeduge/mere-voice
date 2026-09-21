@@ -27,5 +27,9 @@
     "espeak_voice": "fa",
     "phoneme_type": "espeak",
     "num_speakers": 1
+  },
+  "prosody": {
+    "sentence_gap_ms": 0,
+    "note": "0 = one native Piper call per line (commas stay in-span). >0 = split only at sentence terminals and insert this explicit silence between completed sentences."
   }
 }

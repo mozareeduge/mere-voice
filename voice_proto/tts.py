@@ -15,13 +15,14 @@ from .domain import canonical_json, sha256_bytes, sha256_text
 from .storage import DRY_DIR, MODEL_PROFILE, ROOT, atomic_write_json, load_lines, now_iso, read_json
 from .wavio import duration_ms
 
-# Inter-chunk silence inserted at punctuation boundaries, in milliseconds.
-# A period/exclamation/question mark ends a sentence: long pause.
-# A comma (، or ,) or semicolon/colon marks a clause: short pause.
-PAUSE_MS_SENTENCE = 420
-PAUSE_MS_CLAUSE = 190
-SYNTHESIS_PIPELINE_REVISION = "PIPER-CHUNKED-PAUSES-V1"
-_CHUNK_SPLIT = re.compile(r"(?<=[.!?؟…؛،,;:])\s+")
+# v2 synthetic control (handoff v2.0, Decision C): canonical text_fa is the only input authority.
+# Commas/colons/semicolons stay INSIDE a synthesis span so Piper/eSpeak realises ordinary clause prosody.
+# With sentence_gap_ms == 0 (default) the whole line is one native Piper call; with a positive gap the line is
+# split ONLY at sentence terminals and that explicit, versioned silence is inserted between completed sentences.
+SYNTHESIS_PIPELINE_REVISION = "PIPER-CANONICAL-SPANS-V2"
+DEFAULT_SENTENCE_GAP_MS = 0
+PRONUNCIATION_OVERRIDES = ROOT / "data" / "config" / "pronunciation_overrides.json"
+_SENTENCE_SPLIT = re.compile(r"(?<=[.!?؟…])\s+")
 
 
 def _line_map():
@@ -37,39 +38,72 @@ def _file_sha(path: Path) -> str:
 
 
 def _spoken_text(line: dict) -> str:
-    """Text actually synthesized: vocalized variant when present, else source text."""
-    text = str(line.get("text_fa_vocalized") or "").strip()
-    return text or line["text_fa"]
+    """Text fed to synthesis: always the canonical source text.
+
+    `text_fa_vocalized` is historical evidence only (it violates lexical invariance on 11/17 lines) and must
+    never drive release synthesis. Pronunciation repair is done by exact-span overrides (see load_overrides).
+    """
+    return line["text_fa"]
 
 
-def _asset_key(line: dict, profile_identity: dict) -> str:
+def load_overrides(path: Path | None = None) -> dict[str, list[dict]]:
+    """Approved exact-span raw-phoneme overrides, keyed by line_id. Draft entries are ignored."""
+    doc = read_json(path or PRONUNCIATION_OVERRIDES, {"lines": {}})
+    out: dict[str, list[dict]] = {}
+    for line_id, entries in (doc.get("lines") or {}).items():
+        approved = [e for e in entries if e.get("status") == "approved"]
+        if approved:
+            out[line_id] = approved
+    return out
+
+
+def apply_overrides(text: str, overrides: list[dict]) -> str:
+    """Replace each exact source span (nth occurrence) with a Piper raw eSpeak phoneme block `[[ ... ]]`."""
+    spans = []
+    for entry in overrides:
+        span, nth = entry["source"], int(entry.get("occurrence", 1))
+        start = -1
+        for _ in range(nth):
+            start = text.find(span, start + 1)
+            if start < 0:
+                raise RuntimeError(f"Pronunciation override {entry.get('id')}: span {span!r} occurrence {nth} not found in source text")
+        spans.append((start, start + len(span), entry["raw_espeak_ipa"].strip()))
+    spans.sort()
+    for (_, prev_end, _), (start, _, _) in zip(spans, spans[1:]):
+        if start < prev_end:
+            raise RuntimeError("Pronunciation overrides overlap")
+    for start, end, ipa in reversed(spans):
+        text = text[:start] + f"[[ {ipa} ]]" + text[end:]
+    return text
+
+
+def _override_identity(overrides: list[dict]) -> list[dict]:
+    return [{k: e.get(k) for k in ("id", "source", "occurrence", "raw_espeak_ipa")} for e in overrides]
+
+
+def _asset_key(line: dict, profile_identity: dict, overrides: list[dict] | None = None) -> str:
     material = {
         "text_sha256": sha256_text(_spoken_text(line)),
+        "overrides": _override_identity(overrides or []),
         "profile": profile_identity,
     }
     return sha256_text(canonical_json(material))
 
 
-def _pause_chunks(text: str) -> list[dict]:
-    """Split spoken text on terminal/clause punctuation and attach pause metadata."""
-    chunks: list[dict] = []
-    parts = [p for p in _CHUNK_SPLIT.split(text.strip()) if p and p.strip()]
-    for index, part in enumerate(parts):
-        stripped = part.strip()
-        pause_ms = PAUSE_MS_SENTENCE if index < len(parts) - 1 and stripped[-1] in ".!?؟…" else (
-            PAUSE_MS_CLAUSE if index < len(parts) - 1 and stripped[-1] in "،,;؛:" else 0
-        )
-        chunks.append({"text": stripped, "pause_after_ms": pause_ms})
-    if not chunks and text.strip():
-        chunks = [{"text": text.strip(), "pause_after_ms": 0}]
-    return chunks
+def _synthesis_spans(text: str, sentence_gap_ms: int) -> list[dict]:
+    """Split only at sentence terminals, and only when an explicit sentence gap is requested."""
+    text = text.strip()
+    if sentence_gap_ms <= 0:
+        return [{"text": text, "pause_after_ms": 0}] if text else []
+    parts = [p.strip() for p in _SENTENCE_SPLIT.split(text) if p and p.strip()]
+    return [{"text": p, "pause_after_ms": sentence_gap_ms if i < len(parts) - 1 else 0} for i, p in enumerate(parts)]
 
 
-def _synthesis_identity(params: dict) -> dict:
+def _synthesis_identity(params: dict, sentence_gap_ms: int) -> dict:
     return {
         "pipeline_revision": SYNTHESIS_PIPELINE_REVISION,
-        "pause_ms_sentence": PAUSE_MS_SENTENCE,
-        "pause_ms_clause": PAUSE_MS_CLAUSE,
+        "input_authority": "text_fa",
+        "sentence_gap_ms": sentence_gap_ms,
         "render_parameters": params,
     }
 
@@ -106,6 +140,8 @@ def render_with_piper(line_ids: Iterable[str] | None = None) -> list[dict]:
     selected = list(line_ids or lines.keys())
     voice = PiperVoice.load(str(model_path))
     params = profile.get("render_parameters", {})
+    sentence_gap_ms = int((profile.get("prosody") or {}).get("sentence_gap_ms", DEFAULT_SENTENCE_GAP_MS))
+    overrides_by_line = load_overrides()
     cfg = SynthesisConfig(**params)
     engine_version = importlib.metadata.version("piper-tts")
     profile_identity = {
@@ -113,14 +149,15 @@ def render_with_piper(line_ids: Iterable[str] | None = None) -> list[dict]:
         "engine_version": engine_version,
         "model_sha256": actual_sha,
         "config_sha256": _file_sha(config_path),
-        "synthesis": _synthesis_identity(params),
+        "synthesis": _synthesis_identity(params, sentence_gap_ms),
     }
     sample_rate = int((config_doc.get("audio") or {}).get("sample_rate") or 22050)
     results = []
     for line_id in selected:
         line = lines[line_id]
-        chunks = _pause_chunks(_spoken_text(line))
-        key = _asset_key(line, profile_identity)
+        line_overrides = overrides_by_line.get(line_id, [])
+        chunks = _synthesis_spans(apply_overrides(_spoken_text(line), line_overrides), sentence_gap_ms)
+        key = _asset_key(line, profile_identity, line_overrides)
         asset_id = f"ASSET-{line_id}-{key[:12]}"
         wav_path = DRY_DIR / f"{asset_id}.wav"
         if not wav_path.exists():
@@ -154,15 +191,16 @@ def render_with_piper(line_ids: Iterable[str] | None = None) -> list[dict]:
             "source_text_sha256": sha256_text(line["text_fa"]),
             "spoken_text": _spoken_text(line),
             "spoken_text_sha256": sha256_text(_spoken_text(line)),
-            "spoken_text_vocalized": bool(str(line.get("text_fa_vocalized") or "").strip()),
+            "spoken_text_is_canonical": _spoken_text(line) == line["text_fa"],
+            "pronunciation_overrides": _override_identity(line_overrides),
             "source_status": line.get("source_status"),
             "engine": "piper-tts",
             "engine_version": engine_version,
             "profile_id": profile.get("profile_id"),
             "model_sha256": actual_sha,
             "config_sha256": profile_identity["config_sha256"],
-            "synthesis_pipeline": _synthesis_identity(params),
-            "pause_chunks": [{"text_sha256": sha256_text(c["text"]), "pause_after_ms": c["pause_after_ms"]} for c in chunks],
+            "synthesis_pipeline": _synthesis_identity(params, sentence_gap_ms),
+            "synthesis_spans": [{"text_sha256": sha256_text(c["text"]), "pause_after_ms": c["pause_after_ms"]} for c in chunks],
             "wav_path": str(wav_path.relative_to(ROOT)).replace("\\", "/"),
             "wav_sha256": _file_sha(wav_path),
             "duration_ms": duration_ms(wav_path),
