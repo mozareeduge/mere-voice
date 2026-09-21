@@ -1,17 +1,50 @@
 {
-  "asset_id": "ASSET-VOICE-011-f8e0b06c0eac",
+  "asset_id": "ASSET-VOICE-011-620b6ec312b7",
   "line_id": "VOICE-011",
   "status": "READY",
   "source_text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
+  "spoken_text": "تَن دَر تَن جا نَمی‌شَوَد، اَز خَطوط بِیروُن می‌زَنَد، مَکان، بَدَن را پَس می‌زَنَد.",
+  "spoken_text_sha256": "1594e3323feca22ba36331bc95433c85be6908844572d01c4554b5499f457460",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-011-f8e0b06c0eac.wav",
-  "wav_sha256": "fc5bda7cc775222729fe78ee6486112965e1a70751c570de5e8e975bf2c45df8",
-  "duration_ms": 5909,
-  "rendered_at": "2026-09-20T18:30:04.093235+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "728c94551a5bb36b89c7cd040989a04f7965dc4c13f635e12d75e1d83449a21c",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "0c1279a5bbe91eb189818c5cb6f79ccfe76852f0b3ada159076dbc5ef9674dd2",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "0ae537c4e307b4d074f80ec9bb8d2c77df2a97d4eb9a7da364723a979759e4ae",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "9ea87750eb6af2a67046e3b8e4f94341fe52d40b46769dda83691e9b680cbdf7",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-011-620b6ec312b7.wav",
+  "wav_sha256": "6700c83a78c8660c2f2c612c41b0d8344f5dffa4b9f7f5b3855f441cefba2b10",
+  "duration_ms": 6456,
+  "rendered_at": "2026-09-21T09:30:20.641560+00:00",
   "fixture": false
 }

@@ -11,7 +11,7 @@
     <header class="transport" aria-label="Transport and readiness">
       <div class="brand-block">
         <span class="eyebrow">NIRAVANA × MOZARE / VOICE LAB</span>
-        <strong>Temporal Workbench <span class="version" id="appVersion">v0.6</span></strong>
+        <strong>Temporal Workbench <span class="version" id="appVersion">v0.6.1</span></strong>
       </div>
       <div id="sourceWarning" class="source-warning" hidden></div>
       <div class="transport-state">
@@ -58,12 +58,31 @@
       </section>
 
       <aside class="inspector" aria-label="Selected event inspector">
-        <div class="panel-head"><div><span class="section-kicker">EVENT</span><h2 id="inspectorTitle">No selection</h2></div></div>
+        <div class="panel-head"><div><span class="section-kicker">EVENT</span><h2 id="inspectorTitle">No selection</h2></div><button id="guideBtn" class="btn quiet guide-btn" title="What these settings do">? GUIDE</button></div>
+        <div id="settingsGuide" class="settings-guide" hidden>
+          <button type="button" class="close-guide" id="guideCloseBtn" title="Close guide">✕</button>
+          <h3>What the right-side panel does</h3>
+          <dl>
+            <dt>Enabled</dt><dd>Untick to mute an event without deleting it. Disabled blocks stay on the timeline as grey placeholders.</dd>
+            <dt>Start (ms)</dt><dd>When this voice enters, measured from the top-left of the timeline in milliseconds (1000 ms = 1 s). Blocks may overlap; list order never drives onset — only this number does.</dd>
+            <dt>Tempo (tempo_scale)</dt><dd>Reading speed. 1.00 = normal. 0.5 = twice as slow (words stretched, pitch unchanged), 2.0 = twice as fast (compressed, pitch unchanged). Changing it marks the event variant stale — press PREPARE SCORE to hear it.</dd>
+            <dt>Gain (dB)</dt><dd>Loudness of this event. 0 = as recorded; −60 … +12. Lower a busy overlap here, not the whole mix.</dd>
+            <dt>Pan</dt><dd>Stereo position: −1 = fully left, 0 = centre, +1 = fully right. Use it to separate staggered voices like VOICE-014/015/016.</dd>
+            <dt>Pitch (semitones)</dt><dd>Voice character up or down, ±12 semitones. This is the only control that changes who the Voice sounds like.</dd>
+            <dt>Reverb</dt><dd>Room feel. 0 = dry and close; 1 = fully wet, distant, hollow. Good for the "body rejecting" passages.</dd>
+            <dt>Delay (ms) + Feedback</dt><dd>Echo repeats after the line. Delay sets the gap between repeats (0–2000 ms); Feedback sets how many times it repeats (0–0.95). Keep feedback low unless you want a trance effect.</dd>
+            <dt>Attack / Release (ms)</dt><dd>Fade-in and fade-out on this event only. 0 = abrupt. Release also shapes reverb/delay tails, not just the words.</dd>
+            <dt>AUDITION EVENT</dt><dd>Plays only this event with all its current settings (auto-prepares if needed).</dd>
+            <dt>DUPLICATE / DELETE</dt><dd>DUPLICATE copies line, timing and all processing into a new event. DELETE removes it from the current score; the last saved revision stays recoverable.</dd>
+            <dt>Preparing</dt><dd>Any change to these settings makes the processed audio stale until you press PREPARE SCORE in the top bar. Start times and Enabled don't need re-preparing.</dd>
+          </dl>
+        </div>
         <div id="inspectorEmpty" class="empty-state">Select an event block or add one from the line library.</div>
         <form id="inspectorForm" hidden>
           <div class="source-quote"><span id="selectedLineId" class="mono"></span><p id="selectedText" dir="rtl" lang="fa"></p></div>
           <label class="toggle-row"><input id="enabledInput" type="checkbox" /> Enabled</label>
           <fieldset><legend>TIME</legend><label>Start <div class="input-unit"><input id="startInput" type="number" min="0" step="10" /><span>ms</span></div></label><div id="durationReadout" class="derived"></div></fieldset>
+          <fieldset><legend>VOICE READ</legend><label>Tempo <div class="input-unit"><input data-proc="tempo_scale" type="number" min="0.5" max="2" step="0.05" /><span>×</span></div></label><input data-proc="tempo_scale" type="range" min="0.5" max="2" step="0.05" /><div class="derived">1.00 = normal · lower = slower · higher = faster (pitch unchanged)</div></fieldset>
           <fieldset><legend>LEVEL / SPACE</legend><label>Gain <div class="input-unit"><input data-proc="gain_db" type="number" min="-60" max="12" step="0.5" /><span>dB</span></div></label><label>Pan <input data-proc="pan" type="range" min="-1" max="1" step="0.05" /></label></fieldset>
           <fieldset><legend>PITCH</legend><label>Semitones <input data-proc="pitch_semitones" type="range" min="-12" max="12" step="0.5" /></label><output id="pitchOut" class="param-output"></output></fieldset>
           <fieldset><legend>TAIL</legend><label>Reverb <input data-proc="reverb_mix" type="range" min="0" max="1" step="0.01" /></label><label>Delay <div class="input-unit"><input data-proc="delay_ms" type="number" min="0" max="2000" step="10" /><span>ms</span></div></label><label>Feedback <input data-proc="delay_feedback" type="range" min="0" max="0.95" step="0.01" /></label></fieldset>

@@ -81,3 +81,17 @@ Engineering source reconstruction is complete. Before calling the transcription 
 Synthetic vs human/recorded/live/hybrid belongs to later rehearsal/convergence.
 
 **Status:** `PRODUCT_DESIGN_AUTHORITY_CLOSED_WITH_HUMAN_REVIEW_GATES`
+
+## v0.6.1 amendments (2026-09-21, owner-instructed)
+
+### DEC-016 — vocalized reading text is a synthesis layer, not a source replacement
+`text_fa_vocalized` (اعراب short-vowel diacritics) is added beside `text_fa` in the primary witness file. Synthesis reads the vocalized field when present; `text_fa` remains the authoritative witness and the UI remains read-only for both. Vocalization is agent-authored (declared in-file) and stays subject to the human Persian listening gate; it never upgrades source authority.
+
+### DEC-017 — punctuation pause semantics are part of the Voice read
+Sentence terminals (`. ! ? ؟ …`) insert a 420 ms silence; clause marks (`، , ; :`) insert 190 ms, applied between synthesis chunks in the dry render. Pause lengths are recorded in each asset's `synthesis_pipeline` evidence. This is authored reading behavior, not event timing; DEC-006 (absolute timeline) is untouched.
+
+### DEC-018 — tempo is an event-processing parameter
+New `tempo_scale` field, range 0.5–2.0, default 1.0, pitch-preserving time-stretch (pedalboard `time_stretch`, high quality). >1 reads faster, <1 slower; pitch identity is unchanged. It participates in `processing_hash`, so changing it stales the variant (OBJ-005 rule intact). "DRY" (neutral) now includes `tempo_scale == 1.0`.
+
+### DEC-019 — LCA phonemizer (option 3) evaluated: NOT adopted in v0.6.1
+Machine-fit verdict (lane-B-LCA-eval.md, 2026-09-21): feasible on CPU but requires a forked Piper build (no Windows wheel), torch+transformers (~200+ MB over the owner's slow/flaky connection), and a boot-time HuggingFace fetch that breaks local-only operation; benefit for the fixed 17-line corpus is unquantified. Any future adoption must be an optional, default-OFF path with offline-cached models, gated on audible homograph/ezafe defects found in listening.

@@ -61,12 +61,15 @@ status = MISSING | RENDERING | READY | FAILED | STALE
 
 A READY asset is never silently overwritten. New inputs produce a new asset revision.
 
+v0.6.1: the render input is the vocalized reading text (`text_fa_vocalized` when present, else `text_fa`) chunked on sentence/clause punctuation with recorded inter-chunk pauses; asset evidence carries `spoken_text_sha256`, `synthesis_pipeline` and `pause_chunks`. Source authority remains `text_fa` (DEC-016, DEC-017).
+
 ### OBJ-004 — ProcessingSpec
 Named semantic event-processing values.
 
 ```text
 gain_db          -60 .. +12
 pan               -1.0 .. +1.0
+tempo_scale        0.5 .. 2.0 (pitch-preserving reading speed; v0.6.1)
 pitch_semitones  -12 .. +12
 reverb_mix         0.0 .. 1.0
 delay_ms           0 .. 2000

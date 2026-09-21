@@ -3,8 +3,8 @@ revision: 5
 authority_snapshot_id: VOICE-PROTOTYPE-PD-2026-09-17-R2+SOURCE-CLOSURE-2026-09-20
 candidate:
   status: NEARFINAL_LOCAL_CANDIDATE
-  candidate_id: NIRAVANA-VOICE-NEARFINAL-0.6
-  implementation_version: 0.6.0
+  candidate_id: NIRAVANA-VOICE-NEARFINAL-0.6.1
+  implementation_version: 0.6.1
   source_mode: PRIMARY_PDF_WITNESS
   source_units: 17
   score_events: 17

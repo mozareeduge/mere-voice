@@ -41,3 +41,21 @@ Authority order: `product_design/*` > `qa/*` + `quality/SCENARIO_TRACEABILITY.js
 - 事項: external-send — `git push` of the work branch `claude/stoic-bardeen-5vm8rj` (new commit, no force)
   理由: keep local repo and cloud repo in sync
   scope: Phase 2 / Task 2.4
+
+## Phase 4 — v0.6.1: اعراب + pauses + tempo + guide (owner-instructed 2026-09-21, Hermes)
+
+| Task | DoD | Status |
+|------|-----|--------|
+| 4.1 Vocalize 17 lines (`text_fa_vocalized`, source untouched) | field present 17/17 + provenance block; text_fa unchanged | done |
+| 4.2 Pause-aware synthesis | chunks on sentence/clause punctuation; 420 ms / 190 ms silences in dry WAV; evidence in asset meta | done (code) |
+| 4.3 Tempo control end-to-end | `tempo_scale` 0.5–2.0 in domain/processing/UI; cached by processing_hash; guide documents it | done (code) |
+| 4.4 In-product settings guide | `? GUIDE` in right panel explains every control | done |
+| 4.5 Option-3 (LCA phonemizer) machine-fit verdict | lane-B-LCA-eval.md: feasible but NOT adopted now (fork build, ~340 MB risky downloads, boot-time HF fetch breaks local-only; default-OFF if ever) | done |
+| 4.6 Re-render 17 dry + variants at v0.6.1 | local_release --prepare-real passes; piper_lines=17 | in progress |
+| 4.7 Verify | pytest (no new failures vs baseline 19/23; 2 pre-recorded contradiction failures), VERIFY_LOCAL, node --check, browser QA | pending |
+| 4.8 Deliver | commit+push; restart workbench; listening checklist for new voice | pending |
+
+Notes:
+- DEC-016..019 recorded in product_design/05 ledger; 01 object model amended (tempo_scale, spoken-text layer).
+- Version/candidate: 0.6.1 / NIRAVANA-VOICE-NEARFINAL-0.6.1.
+- The two fixture-baseline test failures remain an owner decision (AUTHORITY_CONTRADICTION note), not touched.

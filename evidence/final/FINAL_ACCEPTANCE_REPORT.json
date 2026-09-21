@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-20T18:30:46.223141+00:00",
-  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
-  "app_version": "0.6.0",
+  "generated_at": "2026-09-21T09:35:26.335478+00:00",
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6.1",
+  "app_version": "0.6.1",
   "compiler_source": "chatgpt_executable_handoff_v2.0",
   "engineering_acceptance_pass": false,
   "release_state": "ENGINEERING_ACCEPTANCE_FAIL",
@@ -160,7 +160,7 @@
       },
       "node_app": {
         "cmd": [
-          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:\\Users\\Zarinpal\\AppData\\Local\\hermes\\node\\node.EXE",
           "--check",
           "web/app.js"
         ],
@@ -171,7 +171,7 @@
       },
       "node_scheduler": {
         "cmd": [
-          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:\\Users\\Zarinpal\\AppData\\Local\\hermes\\node\\node.EXE",
           "--check",
           "web/audio-scheduler.js"
         ],
@@ -182,7 +182,7 @@
       },
       "scheduler_lifecycle": {
         "cmd": [
-          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:\\Users\\Zarinpal\\AppData\\Local\\hermes\\node\\node.EXE",
           "tests/browser/stop_harness.mjs"
         ],
         "returncode": 0,

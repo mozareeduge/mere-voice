@@ -1,6 +1,6 @@
-# Final Acceptance Report — v0.6
+# Final Acceptance Report — v0.6.1
 
-Candidate: `NIRAVANA-VOICE-NEARFINAL-0.6`
+Candidate: `NIRAVANA-VOICE-NEARFINAL-0.6.1`
 Engineering acceptance: **FAIL**
 Release state: `ENGINEERING_ACCEPTANCE_FAIL`
 

@@ -1,17 +1,66 @@
 {
-  "asset_id": "ASSET-VOICE-004-ed58e9c176c3",
+  "asset_id": "ASSET-VOICE-004-935617dd0ba5",
   "line_id": "VOICE-004",
   "status": "READY",
   "source_text_sha256": "af558b35208e72da4c393aa43553683129b51c6baeee5b4be76d9ab380253079",
+  "spoken_text": "عَوارِضِ شایِع شامِل خَواب‌آلودِگی، سَرگیجِه و خُشکیِ دَهاَن اَست اَمّا خَطَراتِ جِدّی‌تَر مَانَندِ وابَستِگی و اِعتِیاد، مَشاکِلِ حافِزِه، تَشَنُّج دَر صورَتِ تَرکِ ناگَهانی و اِختیلالاتِ تَنَفُسی نیَز وُجود دارد. مَصرَف دَر بارداری و شیردِهی مَمنوع اَست. و با دَروهای زیادَتی مَانَندِ اَلکُل، اوپیوم، قُرص‌های ضِدافسُردِگی و اَنتی‌بیوتیک‌ها تَداخُل دارد.",
+  "spoken_text_sha256": "00dac125b7912181d10fe02e485f26c812b8ca27e70530c903269767c30d85e9",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-004-ed58e9c176c3.wav",
-  "wav_sha256": "cb17730c518fd5ce62c67c1bfc31df787a134520d4dc085ac6972c7a9d08ef8f",
-  "duration_ms": 23975,
-  "rendered_at": "2026-09-20T18:30:02.579928+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "30e85349a8c7452230cb93cefbc5bbb59403ebbf5a958aeb381dcb52d0d163bd",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "857beadf2792d87bc1ce2f3dfc8e40afc8ac8eda18312e6499ed26b264d52ef3",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "b761a336d0a09c43baf6d8bec642c2d791a8539d8c22a1cef36e8083ad0206ee",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "2f75cbf06995b38338b7af3dc4ea15195da981c22ae69f99981095c2372324f4",
+      "pause_after_ms": 420
+    },
+    {
+      "text_sha256": "8e2900232baee80bd180743a762de622f21cc208fa1425d97044b545dd85b5b3",
+      "pause_after_ms": 420
+    },
+    {
+      "text_sha256": "6990f67f5a0e9aa4b07ac3c2320c0ac3bd484fe93b55d0876e155ea551f284e9",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "882084b5c85b8b1caa7a8c4a215c8039e4dc3d822f4996c40726800e4fbc31cc",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "d7df199adb6a6a5898738537b3c515da5a9bad1993edab4c76a9c7cbbe88893b",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-004-935617dd0ba5.wav",
+  "wav_sha256": "bcb5ab0fd8e051784488d35d9e897197ff2adf1ba430455db2ec5a604365a087",
+  "duration_ms": 27576,
+  "rendered_at": "2026-09-21T09:29:53.970683+00:00",
   "fixture": false
 }

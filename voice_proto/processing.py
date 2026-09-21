@@ -69,6 +69,13 @@ def prepare_variant(line_id: str, spec: dict) -> dict:
         if plugins:
             audio = Pedalboard(plugins)(audio, sr)
 
+        # Tempo: pitch-preserving time-stretch. stretch_factor > 1 reads faster
+        # (shorter), < 1 reads slower (longer). Applied before the envelope so
+        # attack/release keep their absolute millisecond meaning on the final audio.
+        if abs(spec["tempo_scale"] - 1.0) > 1e-9:
+            from pedalboard import time_stretch as pb_time_stretch
+            audio = pb_time_stretch(audio, sr, stretch_factor=spec["tempo_scale"], high_quality=True)
+
         # Envelope after effects so release shapes tails too.
         frames = audio.shape[1]
         attack = min(frames, int(sr * spec["attack_ms"] / 1000.0))

@@ -1,17 +1,46 @@
 {
-  "asset_id": "ASSET-VOICE-010-f43a016d51b4",
+  "asset_id": "ASSET-VOICE-010-25130ab7e4cd",
   "line_id": "VOICE-010",
   "status": "READY",
   "source_text_sha256": "868d43a72eca24027042743c852077d2ea06971131a63641c24fd32beaee5583",
+  "spoken_text": "صَدا دَر حَلق می‌شِکَنَد، وازَه اَلکَن بَیان می‌شَوَد. کَلِماتِ بَیان را پَس می‌زَنَنَد.",
+  "spoken_text_sha256": "09649ef137ed2ed3be2f2e3529884115eb889c7af5b6f3d65dacb06cddb69be3",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-010-f43a016d51b4.wav",
-  "wav_sha256": "ec2251ebfb049fb127af41869228a76ad0d110253ef6195d6b5a1c715b8c022e",
-  "duration_ms": 5480,
-  "rendered_at": "2026-09-20T18:30:03.863947+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "6a23f2a5d5ca3a79190c03fcf57e913ec82f4303b5e6448b283b19eeb7a6d0fb",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "a682bb1420e968ba6deb2be513a117657b747d21c34f63a4b6993e6e03d237b7",
+      "pause_after_ms": 420
+    },
+    {
+      "text_sha256": "21f105a763051be1aac149d9357a8326fd4cf09558f9b77dce9cc4fd5ff368dc",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-010-25130ab7e4cd.wav",
+  "wav_sha256": "af21c93491180b42e1c372882e5f3a73bce6318fd85bd0c0a171bcddb5826120",
+  "duration_ms": 6357,
+  "rendered_at": "2026-09-21T09:30:13.803866+00:00",
   "fixture": false
 }

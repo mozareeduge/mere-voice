@@ -1,17 +1,38 @@
 {
-  "asset_id": "ASSET-VOICE-015-f003e6307a37",
+  "asset_id": "ASSET-VOICE-015-14f81b89664a",
   "line_id": "VOICE-015",
   "status": "READY",
   "source_text_sha256": "6098d2cc1429edc48cb6d2e9c52cbb4ca9813aba78330c5c783a160c022e31c6",
+  "spoken_text": "خواستَن میل را پَس می‌زَنَد.",
+  "spoken_text_sha256": "29005abf7f69a9837e6e778d9dee00826f5d11a3db23a1ceb6f4d66d03521d57",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-015-f003e6307a37.wav",
-  "wav_sha256": "9ee90d83774cda61f017c4871fde3700e0b8d9873adbb47a042cdb252e44faed",
-  "duration_ms": 1695,
-  "rendered_at": "2026-09-20T18:30:04.617752+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "29005abf7f69a9837e6e778d9dee00826f5d11a3db23a1ceb6f4d66d03521d57",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-015-14f81b89664a.wav",
+  "wav_sha256": "cc85ec39cb460d1094e5c4ccc7afc07de1994cae2da025b5949d5e239151d96e",
+  "duration_ms": 1846,
+  "rendered_at": "2026-09-21T09:30:30.924308+00:00",
   "fixture": false
 }

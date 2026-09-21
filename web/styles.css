@@ -15,3 +15,13 @@
 .research{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:auto auto auto minmax(220px,1fr) auto auto auto;align-items:center;gap:8px;padding:10px 18px;border-top:1px solid var(--line);background:rgba(14,19,17,.96);box-shadow:0 -8px 30px rgba(0,0,0,.2)}.research-meta{display:grid;min-width:145px}.research-meta strong{font-size:.75rem}.dirty{font:10px var(--mono);color:var(--amber)}.dirty.saved{color:var(--green)}.research input{height:38px}.research select{height:38px}.export-result{font-size:.7rem;color:var(--green);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 :focus-visible{outline:2px solid var(--green);outline-offset:2px}@media(max-width:1279px){.workspace{grid-template-columns:245px 1fr}.inspector{grid-column:1/-1;display:block;max-height:none;border-top:1px solid var(--line);border-left:0}.inspector #inspectorForm{display:grid;grid-template-columns:1.2fr repeat(4,1fr);align-items:start}.inspector .source-quote{grid-row:span 2}.inspector fieldset{border-left:1px solid var(--line);border-top:0}.button-grid,.event-state,.toggle-row{align-self:center}.research{position:relative;bottom:auto;grid-template-columns:auto auto auto 1fr auto auto}.transport{grid-template-columns:auto 1fr auto}.transport-actions{grid-column:1/-1;justify-content:flex-start}.workspace{min-height:auto}.timeline-scroll{height:500px}.line-list{max-height:580px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Settings guide (v0.6.1) */
+.guide-btn{margin-right:10px}
+.settings-guide{padding:14px 17px 20px;font-size:.8rem;line-height:1.55;color:var(--muted);border-bottom:1px solid var(--line)}
+.settings-guide h3{margin:2px 0 6px;font-size:.72rem;letter-spacing:.08em;color:var(--quiet);text-transform:uppercase}
+.settings-guide dl{margin:0}
+.settings-guide dt{margin-top:10px;font-weight:600;color:var(--text);font-size:.8rem}
+.settings-guide dd{margin:2px 0 0}
+.settings-guide .close-guide{float:right;background:none;border:0;color:var(--quiet);font-size:.95rem;padding:2px 6px}
+.settings-guide .close-guide:hover{color:var(--text)}

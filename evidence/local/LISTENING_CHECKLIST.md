@@ -22,3 +22,11 @@ Mark each: OK / mispronounced word (write it) / rhythm wrong (write where).
 
 ## 4. Decision
 - [ ] Anything above that failed: write the line ID and what you heard. An engineering repair is made only for a reproducible fault; wording or style choices are artistic decisions for you and Niravana, not fixes.
+
+
+## v0.6.1 additions (2026-09-21) — listen for these too
+1. **اعراب vocalization:** pronunciation of short vowels is now guided by added diacritics. Listen for words that still sound wrong (homographs like گذر/گذَر, صلح, اعلان-class ambiguities) and note the line ID.
+2. **Pauses:** every «.» gets a ~0.4 s breath, every «،» ~0.2 s. Confirm the read feels spoken, not rushed (VOICE-004 and VOICE-005 are the dense ones).
+3. **Tempo:** select an event → VOICE READ → Tempo. Try 0.8 (slower) and 1.2 (faster), PREPARE SCORE, audition. Pitch must not change — only speed.
+4. **Guide:** press «? GUIDE» in the right panel — every control is explained. Flag anything still unclear.
+5. Verdicts: record as research notes in the product (disposition KEEP/RETRY) — Persian ear is the final gate (DEC-016).

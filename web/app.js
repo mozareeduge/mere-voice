@@ -172,7 +172,7 @@ function nextEventId(){
 }
 function addEvent(lineId){
   const line=lineById(lineId);
-  const event={event_id:nextEventId(),line_id:lineId,start_ms:0,enabled:true,route_id:'STEREO_MAIN',processing:{gain_db:0,pan:0,pitch_semitones:0,reverb_mix:0,delay_ms:0,delay_feedback:0,attack_ms:0,release_ms:0},line_text_fa:line?.text_fa||'',asset:line?.asset||{status:'MISSING'}};
+  const event={event_id:nextEventId(),line_id:lineId,start_ms:0,enabled:true,route_id:'STEREO_MAIN',processing:{gain_db:0,pan:0,tempo_scale:1,pitch_semitones:0,reverb_mix:0,delay_ms:0,delay_feedback:0,attack_ms:0,release_ms:0},line_text_fa:line?.text_fa||'',asset:line?.asset||{status:'MISSING'}};
   state.score.events.push(event); selectedEventId=event.event_id; markLocalProcessedStale('New event needs a prepared variant.'); queueScorePersist('Event added'); renderAll();
 }
 async function play(fromSelection=false){
@@ -231,6 +231,8 @@ $('#deleteBtn').addEventListener('click',()=>{
   queueScorePersist('Event deleted from current score; saved revisions remain intact.'); renderAll();
 });
 $('#saveBtn').addEventListener('click',async()=>{try{await flushScore();const r=await api('/api/save-revision',{});state=r.state;renderAll();setStatus(`Saved revision ${r.revision}.`)}catch(e){setStatus(e.message,true)}});
+$('#guideBtn').addEventListener('click',()=>{const g=$('#settingsGuide');g.hidden=!g.hidden;$('#guideBtn').textContent=g.hidden?'? GUIDE':'✕ GUIDE';});
+$('#guideCloseBtn').addEventListener('click',()=>{$('#settingsGuide').hidden=true;$('#guideBtn').textContent='? GUIDE';});
 $('#noteBtn').addEventListener('click',async()=>{try{await api('/api/note',{disposition:$('#disposition').value,note:$('#noteInput').value,mode:$('#dryBypass').checked?'dry':'processed'});$('#noteInput').value='';setStatus('Research note recorded.')}catch(e){setStatus(e.message,true)}});
 $('#exportBtn').addEventListener('click',async()=>{try{await flushScore();setStatus('Exporting audible run + provenance sidecar…');const r=await api('/api/export',{mode:$('#dryBypass').checked?'dry':'processed'});$('#exportResult').textContent=r.wav;setStatus(`Exported ${r.wav}`)}catch(e){setStatus(e.message,true)}});
 window.addEventListener('keydown',e=>{if(e.code==='Space'&&!['INPUT','TEXTAREA','SELECT','BUTTON'].includes(document.activeElement.tagName)){e.preventDefault();running?stop():play(false)}});

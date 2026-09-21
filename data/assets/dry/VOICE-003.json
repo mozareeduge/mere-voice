@@ -1,17 +1,46 @@
 {
-  "asset_id": "ASSET-VOICE-003-4d7f1526df76",
+  "asset_id": "ASSET-VOICE-003-046d824ddfaa",
   "line_id": "VOICE-003",
   "status": "READY",
   "source_text_sha256": "f2ef4abe328d49dc9057ad53d8d92b6a47ff5ad6d32aba45f6e5bcc3e3eabbb1",
+  "spoken_text": "بَرای دَرمانِ کوتاه مَدَتِ اِضطِراب، حَملاتِ پانیک، بی‌خَوابیِ مُرتَبَط با اِستِرِس و اِختیلالِ اِستِرِس پِس از سانِحِه تَجویز می‌شَوَد.",
+  "spoken_text_sha256": "4f7f5ef827be1781633f1563b25d73c7e4a884f13684576dae50178627df79ed",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-003-4d7f1526df76.wav",
-  "wav_sha256": "79c83db8b282a935c5664cf6b64ff60c207a910314b7ec22d3401af192863e3d",
-  "duration_ms": 8324,
-  "rendered_at": "2026-09-20T18:30:01.672568+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "878cea5e62a634689c0d701fac0d1cfbd756259e33b1676f0dcf33919f749566",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "35a72087554f08f1b83011aa2788de3ab15033bf16d83ef2d3a93106e8b4e988",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "b745d58c1759c1c8a540d9df0fbe492ca1a5df5d07896b844b92bf828b3eb12d",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-003-046d824ddfaa.wav",
+  "wav_sha256": "5f9789ce489e91e5832bde99400158c18ede7eb3f733b1c00a9e4b953e0bd385",
+  "duration_ms": 9505,
+  "rendered_at": "2026-09-21T09:29:42.733379+00:00",
   "fixture": false
 }

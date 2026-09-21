@@ -1,17 +1,42 @@
 {
-  "asset_id": "ASSET-VOICE-013-16d53333d8e1",
+  "asset_id": "ASSET-VOICE-013-c0542eff4151",
   "line_id": "VOICE-013",
   "status": "READY",
   "source_text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
+  "spoken_text": "رویا بَینِ مَفاصِل و رَگ و پی تَجَسُّد نَمی‌یابَد. جَسم رویا را پَس می‌زَنَد.",
+  "spoken_text_sha256": "70a8e9a76435a958a88e1c6fd48790ab8504f6da6f62f2e5d84fcc9e4daa97ec",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-013-16d53333d8e1.wav",
-  "wav_sha256": "a28927ac3f3e276fa0b4712df9b7fa7b2d7c3a02e35eeea3a0137d5d742c30f0",
-  "duration_ms": 5027,
-  "rendered_at": "2026-09-20T18:30:04.461620+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "b43c872aef1408bf189aaa4cf7796b340047b884ac6dcd17d701a38a2b07fb4e",
+      "pause_after_ms": 420
+    },
+    {
+      "text_sha256": "ab37e45b0cba5aadc026cf918556cc0e788d2e1f72ef7d64953470e3d2a69a38",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-013-c0542eff4151.wav",
+  "wav_sha256": "d85f8122f31f3089ddfc344c40d32a482a8188c90aeb5155a14d1716b1dc0c1a",
+  "duration_ms": 6364,
+  "rendered_at": "2026-09-21T09:30:27.636331+00:00",
   "fixture": false
 }

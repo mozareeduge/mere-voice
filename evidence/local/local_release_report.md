@@ -1,6 +1,6 @@
-# Local Release Report — v0.6
+# Local Release Report — v0.6.1
 
-Generated: `2026-09-20T18:30:46.191133+00:00`
+Generated: `2026-09-21T09:35:26.021835+00:00`
 Candidate baseline: **PASS**
 Real Mana/Piper engineering state: **PASS**
 

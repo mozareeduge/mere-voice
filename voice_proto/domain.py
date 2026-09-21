@@ -8,6 +8,7 @@ from typing import Any
 PROCESSING_DEFAULTS = {
     "gain_db": 0.0,
     "pan": 0.0,
+    "tempo_scale": 1.0,
     "pitch_semitones": 0.0,
     "reverb_mix": 0.0,
     "delay_ms": 0,
@@ -19,6 +20,7 @@ PROCESSING_DEFAULTS = {
 PROCESSING_RANGES = {
     "gain_db": (-60.0, 12.0),
     "pan": (-1.0, 1.0),
+    "tempo_scale": (0.5, 2.0),
     "pitch_semitones": (-12.0, 12.0),
     "reverb_mix": (0.0, 1.0),
     "delay_ms": (0.0, 2000.0),
@@ -55,6 +57,8 @@ def validate_processing(spec: dict[str, Any] | None) -> dict[str, float | int]:
             raise ValidationError(f"{key} must be numeric")
         if not lo <= value <= hi:
             raise ValidationError(f"{key} out of range [{lo}, {hi}]: {value}")
+        if key == "tempo_scale":
+            value = round(value, 3)
         out[key] = int(value) if key in {"delay_ms", "attack_ms", "release_ms"} else value
     unknown = set(spec) - set(PROCESSING_RANGES)
     if unknown:

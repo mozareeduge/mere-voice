@@ -1,17 +1,42 @@
 {
-  "asset_id": "ASSET-VOICE-012-2f31b40ca99b",
+  "asset_id": "ASSET-VOICE-012-20741a0750b7",
   "line_id": "VOICE-012",
   "status": "READY",
   "source_text_sha256": "79956e934d66e84c7a73a6fa8c0047410143204068a685be03d56018866564a5",
+  "spoken_text": "زِه‌ن دَر تاریخ جا نَمی‌شَوَد، پَس تاریخ زِه‌ن را پَس می‌زَنَد.",
+  "spoken_text_sha256": "c9ea8cf528165c29a82b2ae348d5d07d22b2070ae5cdf0042b85d01a2b7af53a",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-012-2f31b40ca99b.wav",
-  "wav_sha256": "c0b5944a29c1de5cfb28545da750c9cf5028eaf0b515824607b82513690b0d56",
-  "duration_ms": 4307,
-  "rendered_at": "2026-09-20T18:30:04.258068+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "67761fd5af5ce79755a5504547c3503fc0400d19b621d344bf2438b41046e8cf",
+      "pause_after_ms": 190
+    },
+    {
+      "text_sha256": "8a8749a81413d82198db057cb94b3e6d07dbda2b6044940497916ebf2f92e42a",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-012-20741a0750b7.wav",
+  "wav_sha256": "43de27bd8d6f3eb68a5b68259892c202b219074936da9c042c963942bac507a0",
+  "duration_ms": 4904,
+  "rendered_at": "2026-09-21T09:30:23.338466+00:00",
   "fixture": false
 }

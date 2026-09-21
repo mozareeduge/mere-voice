@@ -1,4 +1,4 @@
-APP_VERSION = "0.6.0"
-DISPLAY_VERSION = "0.6"
-CANDIDATE_ID = "NIRAVANA-VOICE-NEARFINAL-0.6"
-PACKAGE_NAME = "niravana_voice_prototype_nearfinal_v0.6"
+APP_VERSION = "0.6.1"
+DISPLAY_VERSION = "0.6.1"
+CANDIDATE_ID = "NIRAVANA-VOICE-NEARFINAL-0.6.1"
+PACKAGE_NAME = "niravana_voice_prototype_nearfinal_v0.6.1"

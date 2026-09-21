@@ -1,17 +1,42 @@
 {
-  "asset_id": "ASSET-VOICE-005-c6bfc800f1c2",
+  "asset_id": "ASSET-VOICE-005-13dbc27fc41a",
   "line_id": "VOICE-005",
   "status": "READY",
   "source_text_sha256": "1c3dbdca0d2d72e10f750605af069748438ca23235b0de9df8e4aa05866c8bad",
+  "spoken_text": "دارایِ تَمامِی عَلایِمِ حَیاتِی ثابَت. تَمامِی عَلایِمِ حَیاتِی دارَن اَز بَین می‌رَوَنَد.",
+  "spoken_text_sha256": "4b5fb2f2f7682fb1090cef9f9d6d1b26736ec271c798e4d2b284717744d1c71d",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-005-c6bfc800f1c2.wav",
-  "wav_sha256": "99df630b094f41c46874fe2573006ce4d29ee4d6d38efa7a88e0b1d4dfc2f295",
-  "duration_ms": 5526,
-  "rendered_at": "2026-09-20T18:30:02.782594+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "1acff4e1f7dde8d293b0ea1b59670ec8c7e2a26e8c3d611d32a29ed17a69bd50",
+      "pause_after_ms": 420
+    },
+    {
+      "text_sha256": "37b1ccfd78fd3e65f19882b37527fc2c27cfd4f47d4098ad1a3bc4d78001e7a8",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-005-13dbc27fc41a.wav",
+  "wav_sha256": "76f0115966f8fc333493b14a552267715fdc55370d985930ba82be84c65378f6",
+  "duration_ms": 6713,
+  "rendered_at": "2026-09-21T09:29:56.808199+00:00",
   "fixture": false
 }

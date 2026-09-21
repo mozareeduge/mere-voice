@@ -1,17 +1,38 @@
 {
-  "asset_id": "ASSET-VOICE-017-ea6c1249fc09",
+  "asset_id": "ASSET-VOICE-017-ce2df61423f7",
   "line_id": "VOICE-017",
   "status": "READY",
   "source_text_sha256": "8a7f7baf887e266e62bf4291c042ce98681ef77bd3d08ec2c056eb936f00be24",
+  "spoken_text": "لَختِه خون را پَس می‌زَنَد.",
+  "spoken_text_sha256": "4cf1e773cff3f3568a0385d18efdfb5bdc1736c2e58f210053edb62bc91aac1b",
+  "spoken_text_vocalized": true,
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
   "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "wav_path": "data/assets/dry/ASSET-VOICE-017-ea6c1249fc09.wav",
-  "wav_sha256": "40821915de47b1fb1d6990d33ea0bed358231e020a13285c7890da0dbe0abfcf",
-  "duration_ms": 1916,
-  "rendered_at": "2026-09-20T18:30:04.794794+00:00",
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
+    "pause_ms_sentence": 420,
+    "pause_ms_clause": 190,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "pause_chunks": [
+    {
+      "text_sha256": "4cf1e773cff3f3568a0385d18efdfb5bdc1736c2e58f210053edb62bc91aac1b",
+      "pause_after_ms": 0
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-017-ce2df61423f7.wav",
+  "wav_sha256": "0cd77facad9c42cc4d3e4701a8ae86c3db2a9dfd0fa213707913fbdb44948f3e",
+  "duration_ms": 1823,
+  "rendered_at": "2026-09-21T09:30:33.661426+00:00",
   "fixture": false
 }

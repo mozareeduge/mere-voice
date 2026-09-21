@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T18:30:46.191133+00:00",
-  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6",
+  "generated_at": "2026-09-21T09:35:26.021835+00:00",
+  "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6.1",
   "platform": {
     "python": "3.11.9",
     "python_supported": true,
@@ -9,7 +9,7 @@
     "numpy": "2.4.6",
     "pytest": "9.1.1",
     "playwright": null,
-    "node": "C:\\Program Files\\nodejs\\node.EXE",
+    "node": "C:\\Users\\Zarinpal\\AppData\\Local\\hermes\\node\\node.EXE",
     "os": "Windows-10-10.0.19044-SP0"
   },
   "source": {
@@ -21,13 +21,20 @@
     "primary_witness_sha256_inherited_from_dossier_ledger": "898064d027e370e83a1df813b3ae79a8c1587084c5b44022048caed5cf7c91c1",
     "extraction_witness_sha256_inherited_from_dossier_ledger": "c7c9d7c3219ed1f8f99a1a1d731eaa7773bead1ec65408bd79bc2d965c439736",
     "source_fidelity": "PRIMARY_WITNESS_TEXT_WITH_DECLARED_EXTRACTION_NORMALIZATION",
-    "ui_notice": "PRIMARY WITNESS SOURCE · 17 Voice units · extraction-normalized; visual PDF punctuation/typography check pending.",
-    "source_sha256": "35f445bb3ffea16e6fa7ce6dcde55896e0d985222f7b2de6cf87f07f80e0766a"
+    "ui_notice": "PRIMARY WITNESS SOURCE · 17 Voice units · extraction-normalized · اعراب vocalization v1 applied (human listening gate pending).",
+    "vocalization": {
+      "method": "agent_vocalization_v1",
+      "field_added": "text_fa_vocalized (synthesis reads this when present; text_fa untouched)",
+      "vocalized_by": "Hermes agent (GLM), per Mohammad Zare instruction 2026-09-21",
+      "human_review": "PENDING — Persian pronunciation/prosody listening gate (Mohammad / Niravana)",
+      "policy": "Vocalization never upgrades source authority; primary witness remains text_fa."
+    },
+    "source_sha256": "bbb210e977a2323fd82e6177d2b433e30a542bb08518a1b337f824fbcca853ee"
   },
   "score": {
     "score_id": "SCORE-PRIMARY-WITNESS-LAB-01",
     "revision": 2,
-    "events": 17
+    "events": 18
   },
   "readiness": {
     "dry_ready": true,
