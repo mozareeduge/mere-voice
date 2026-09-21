@@ -1,11 +1,12 @@
 {
-  "asset_id": "ASSET-VOICE-011-620b6ec312b7",
+  "asset_id": "ASSET-VOICE-011-15a13b56e58c",
   "line_id": "VOICE-011",
   "status": "READY",
   "source_text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
-  "spoken_text": "تَن دَر تَن جا نَمی‌شَوَد، اَز خَطوط بِیروُن می‌زَنَد، مَکان، بَدَن را پَس می‌زَنَد.",
-  "spoken_text_sha256": "1594e3323feca22ba36331bc95433c85be6908844572d01c4554b5499f457460",
-  "spoken_text_vocalized": true,
+  "spoken_text": "تن در تن جا نمی‌شود، از خطوط بیرون می‌زند، مکان، بدن را پس می‌زند.",
+  "spoken_text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
+  "spoken_text_is_canonical": true,
+  "pronunciation_overrides": [],
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
@@ -13,9 +14,9 @@
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
   "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
-    "pause_ms_sentence": 420,
-    "pause_ms_clause": 190,
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
     "render_parameters": {
       "volume": 1.0,
       "length_scale": 1.0,
@@ -24,27 +25,15 @@
       "normalize_audio": false
     }
   },
-  "pause_chunks": [
+  "synthesis_spans": [
     {
-      "text_sha256": "728c94551a5bb36b89c7cd040989a04f7965dc4c13f635e12d75e1d83449a21c",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "0c1279a5bbe91eb189818c5cb6f79ccfe76852f0b3ada159076dbc5ef9674dd2",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "0ae537c4e307b4d074f80ec9bb8d2c77df2a97d4eb9a7da364723a979759e4ae",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "9ea87750eb6af2a67046e3b8e4f94341fe52d40b46769dda83691e9b680cbdf7",
+      "text_sha256": "e13f8854f97b0c1b630e591c561d8e497d60a2fb3ff12aa8a7da1ec9db6c0b37",
       "pause_after_ms": 0
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-011-620b6ec312b7.wav",
-  "wav_sha256": "6700c83a78c8660c2f2c612c41b0d8344f5dffa4b9f7f5b3855f441cefba2b10",
-  "duration_ms": 6456,
-  "rendered_at": "2026-09-21T09:30:20.641560+00:00",
+  "wav_path": "data/assets/dry/ASSET-VOICE-011-15a13b56e58c.wav",
+  "wav_sha256": "cae0f9b8254d5e6d2c22303ae8954ed6ed1077706e72243660e818ac44ea4192",
+  "duration_ms": 4737,
+  "rendered_at": "2026-09-21T18:51:40.891470+00:00",
   "fixture": false
 }

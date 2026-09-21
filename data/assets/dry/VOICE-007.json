@@ -1,11 +1,12 @@
 {
-  "asset_id": "ASSET-VOICE-007-2db1e959c7b4",
+  "asset_id": "ASSET-VOICE-007-761a2ec69679",
   "line_id": "VOICE-007",
   "status": "READY",
   "source_text_sha256": "a83b1ecdc2e258982261d7273a5dd11604e487422fda9fbc530315c7381adf3c",
-  "spoken_text": "بِه دَست‌ها دَستور داده شُدِه بِه زِندِگی چَنگ بِزَنَن، دَست‌ها اَمّا خِشَک فَرو می‌اُفتَنَد، دَر روز‌ها و سال‌ها، دَر لَحظِه می‌اُفتَنَد.",
-  "spoken_text_sha256": "68d26023f0ed0a9cd45b664ca85e03e842d907f6b875016b8203b0bd3ed92cb1",
-  "spoken_text_vocalized": true,
+  "spoken_text": "به دست‌ها دستور داده شده به زندگی چنگ بزنن، دست‌ها اما خشک فرو می‌افتند، در روزها و سال‌ها، در لحظه می‌افتند.",
+  "spoken_text_sha256": "a83b1ecdc2e258982261d7273a5dd11604e487422fda9fbc530315c7381adf3c",
+  "spoken_text_is_canonical": true,
+  "pronunciation_overrides": [],
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
@@ -13,9 +14,9 @@
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
   "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
-    "pause_ms_sentence": 420,
-    "pause_ms_clause": 190,
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
     "render_parameters": {
       "volume": 1.0,
       "length_scale": 1.0,
@@ -24,27 +25,15 @@
       "normalize_audio": false
     }
   },
-  "pause_chunks": [
+  "synthesis_spans": [
     {
-      "text_sha256": "b7851009d4448d263616bf47186beb6ed24efb6c6a24e544243c8e9183f044e2",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "699dee976efc0c55567006e70f7320471784bddd06441e116227960b8d069c33",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "750bc560aaa1a4873954c33947889ecbd7be8aca1ad089d089294ded0ce75201",
-      "pause_after_ms": 190
-    },
-    {
-      "text_sha256": "6479b017bd7cea4818590561db8784b81647e76bfb10a2e1b4565d412b711eee",
+      "text_sha256": "a83b1ecdc2e258982261d7273a5dd11604e487422fda9fbc530315c7381adf3c",
       "pause_after_ms": 0
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-007-2db1e959c7b4.wav",
-  "wav_sha256": "87a115f3e7e3a241cd9e4b99dba970440d63065f2d625f2a5ddada6485f6b581",
-  "duration_ms": 10276,
-  "rendered_at": "2026-09-21T09:30:03.784674+00:00",
+  "wav_path": "data/assets/dry/ASSET-VOICE-007-761a2ec69679.wav",
+  "wav_sha256": "868370d3a19bdb18129dbc2eb37c83e85b7baacdfe3a66c84f54f4bf707e8cd1",
+  "duration_ms": 8173,
+  "rendered_at": "2026-09-21T18:51:40.124920+00:00",
   "fixture": false
 }

@@ -1,0 +1,19 @@
+{
+  "asset_id": "ASSET-VOICE-004-1e25d9c24f90",
+  "wav_sha256": "9c6e5cd8e194dda693ce23f3bd1ff55c65156aa39166878cacbeeea6c2caab97",
+  "duration_ms": 23441,
+  "synthesis_pipeline": {
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
+    "render_parameters": {
+      "volume": 1.0,
+      "length_scale": 1.0,
+      "noise_scale": 0.667,
+      "noise_w_scale": 0.8,
+      "normalize_audio": false
+    }
+  },
+  "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
+  "engine_version": "1.8.0"
+}

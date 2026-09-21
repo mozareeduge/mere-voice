@@ -1,0 +1,31 @@
+{
+  "variant_id": "VAR-11ffa1a99147342b369e3d29",
+  "variant_key": "11ffa1a99147342b369e3d29",
+  "line_id": "VOICE-009",
+  "asset_id": "ASSET-VOICE-009-a2fed1d77448",
+  "dry_wav_sha256": "8c7d22e46b69abde6f22440f98b553c6805fb527b888b440bf948375160e7f35",
+  "processing": {
+    "gain_db": -3.0,
+    "pan": 0.0,
+    "tempo_scale": 1.0,
+    "pitch_semitones": -2.0,
+    "reverb_mix": 0.26,
+    "delay_ms": 0,
+    "delay_feedback": 0.0,
+    "attack_ms": 20,
+    "release_ms": 500
+  },
+  "processing_hash": "ffed9fd08f215d9c8f4720f1637432e950b81299a68fc88185db8a294219f8a6",
+  "processor": {
+    "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+    "mode": "pedalboard-offline",
+    "pedalboard_version": "0.9.25",
+    "numpy_version": "2.4.6"
+  },
+  "status": "READY",
+  "wav_path": "data/assets/processed/11ffa1a99147342b369e3d29.wav",
+  "wav_sha256": "41ac3b1810794cd210929d8c7a2acf07681387ded9fd6c259e317305aee6857b",
+  "duration_ms": 7571,
+  "prepared_at": "2026-09-21T18:51:43.720733+00:00",
+  "fixture": false
+}

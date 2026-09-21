@@ -1,11 +1,12 @@
 {
-  "asset_id": "ASSET-VOICE-014-f29f5986b811",
+  "asset_id": "ASSET-VOICE-014-9625210d46d9",
   "line_id": "VOICE-014",
   "status": "READY",
   "source_text_sha256": "56df3d81872bf5167f1f540ab00e463c5b66787e98cb680b0274c6bf233078f7",
-  "spoken_text": "لامَسِه دَست را پَس می‌زَنَد.",
-  "spoken_text_sha256": "7d314f567abf0ea5712063929c509dc46313a2fd61f1db4ccbb18f0814530a0f",
-  "spoken_text_vocalized": true,
+  "spoken_text": "لامسه دست را پس می‌زند.",
+  "spoken_text_sha256": "56df3d81872bf5167f1f540ab00e463c5b66787e98cb680b0274c6bf233078f7",
+  "spoken_text_is_canonical": true,
+  "pronunciation_overrides": [],
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
@@ -13,9 +14,9 @@
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
   "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
-    "pause_ms_sentence": 420,
-    "pause_ms_clause": 190,
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
     "render_parameters": {
       "volume": 1.0,
       "length_scale": 1.0,
@@ -24,15 +25,15 @@
       "normalize_audio": false
     }
   },
-  "pause_chunks": [
+  "synthesis_spans": [
     {
-      "text_sha256": "7d314f567abf0ea5712063929c509dc46313a2fd61f1db4ccbb18f0814530a0f",
+      "text_sha256": "56df3d81872bf5167f1f540ab00e463c5b66787e98cb680b0274c6bf233078f7",
       "pause_after_ms": 0
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-014-f29f5986b811.wav",
-  "wav_sha256": "47c3ef6884e890e2ca897ce5648f30e1dd2b246763a6c3f64a5073be7624b63a",
-  "duration_ms": 1916,
-  "rendered_at": "2026-09-21T09:30:29.151981+00:00",
+  "wav_path": "data/assets/dry/ASSET-VOICE-014-9625210d46d9.wav",
+  "wav_sha256": "a842405e5c9427013034578535ad5042c63a6f90628d7aa3e385e98817451692",
+  "duration_ms": 1985,
+  "rendered_at": "2026-09-21T18:51:41.424382+00:00",
   "fixture": false
 }

@@ -329,5 +329,5 @@
     }
   ],
   "notes_summary": "Lines 1–13 are spaced for inspection using prebuilt fixture durations. VOICE-014/015/016 are deliberately staggered by 550 ms to test the slashed late polyphony as separate events; VOICE-017 follows. All onset values are prototype lab choices, not authored performance cue times.",
-  "updated_at": "2026-09-21T16:54:18.682830+00:00"
+  "updated_at": "2026-09-21T18:21:09.710766+00:00"
 }

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mere Voice Source-Body Bench</title>
+<style>
+  :root { --bg:#14161a; --panel:#1d2026; --line:#333944; --text:#e8eaee; --dim:#9aa3b2; --accent:#7cc4a0; --warn:#e6b450; --bad:#e07a7a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui, "Segoe UI", sans-serif; }
+  main { max-width:1180px; margin:0 auto; padding:24px 20px 80px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  h2 { font-size:18px; margin:0; }
+  p.sub { color:var(--dim); margin:0 0 16px; }
+  .bar { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line); padding:10px 0; display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+  .bar label { display:flex; gap:6px; align-items:center; }
+  .bar input[type=text] { background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:4px; padding:5px 8px; width:260px; }
+  button { background:#2a2f38; color:var(--text); border:1px solid var(--line); border-radius:5px; padding:6px 12px; cursor:pointer; font:inherit; }
+  button:hover { border-color:var(--accent); }
+  button.primary { background:#25453a; border-color:var(--accent); }
+  button.rec { background:#4a2626; border-color:var(--bad); }
+  section.line { background:var(--panel); border:1px solid var(--line); border-radius:8px; margin:22px 0; padding:16px; }
+  .fa { direction:rtl; text-align:right; font-size:20px; line-height:1.9; margin:10px 0 14px; padding:10px 14px; background:#171a1f; border-radius:6px; font-family:"Vazirmatn","Segoe UI",Tahoma,sans-serif; }
+  .why { color:var(--dim); font-size:13px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(330px, 1fr)); gap:12px; }
+  .sample { border:1px solid var(--line); border-radius:6px; padding:12px; background:#181b20; }
+  .sample.missing { opacity:.85; border-style:dashed; }
+  .sample h3 { margin:0 0 6px; font-size:15px; display:flex; justify-content:space-between; }
+  .meta { font-size:12px; color:var(--dim); margin:4px 0 8px; min-height:16px; }
+  .row { display:grid; grid-template-columns:130px 1fr; gap:6px 8px; align-items:center; margin:6px 0; font-size:13px; }
+  .row label { color:var(--dim); }
+  select, input[type=text].f, textarea { width:100%; background:#101215; color:var(--text); border:1px solid var(--line); border-radius:4px; padding:4px 6px; font:inherit; }
+  textarea { min-height:44px; resize:vertical; }
+  .verdicts { display:flex; gap:6px; margin-top:8px; }
+  .verdicts button { flex:1; padding:5px 0; font-size:12px; }
+  .verdicts button.on { background:var(--accent); color:#0c1a13; border-color:var(--accent); font-weight:600; }
+  .status { position:fixed; right:16px; bottom:16px; background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:8px 12px; max-width:420px; display:none; }
+  .status.show { display:block; }
+  .note { color:var(--warn); font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mere Voice — source-body bench</h1>
+  <p class="sub">Dry sources only. No event processing, no reverb, no tempo. Compare the synthetic Voice (Mana/Piper) against a human reading of the same lines. This page never chooses a winner — you do.</p>
+
+  <div class="bar">
+    <label><input type="checkbox" id="blind" checked> Blind labels (Sample A, B, C…)</label>
+    <label><input type="checkbox" id="norm" checked> Match loudness for listening (originals untouched)</label>
+    <label>Listening setup <input type="text" id="setup" placeholder="e.g. headphones / studio monitors / room"></label>
+    <button id="save" class="primary">Save results</button>
+    <button id="stop">Stop audio</button>
+  </div>
+
+  <div id="lines"></div>
+</main>
+<div class="status" id="status"></div>
+
+<script>
+const VERDICTS = ["KEEP", "RETRY", "DROP", "HOLD"];
+const DISTANCES = ["", "intimate / very close", "close", "conversational", "distant", "unplaceable"];
+const LABEL_NAMES = {
+  "mana-canonical": "Mana canonical (v2 control)",
+  "human-recorded": "Human recorded (dry)",
+  "mana-pre-v061": "Mana pre-v0.6.1 (commit 920a479)",
+  "mana-v061-vocalized": "Mana v0.6.1 vocalized (reference only)"
+};
+const LS = "mere-voice-bench-v1";
+const ctx = new (window.AudioContext || window.webkitAudioContext)();
+let manifest = null;
+let state = load();
+let playing = null;
+const bufferCache = new Map();
+
+function load() {
+  try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch { return {}; }
+}
+function persist() {
+  try { localStorage.setItem(LS, JSON.stringify(state)); } catch {}
+}
+state.ratings = state.ratings || {};
+state.order = state.order || {};
+state.setup = state.setup || "";
+state.blind = state.blind !== false;
+state.norm = state.norm !== false;
+
+function say(msg, ms = 4000) {
+  const el = document.getElementById("status");
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(say.t); say.t = setTimeout(() => el.classList.remove("show"), ms);
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+function orderFor(line) {
+  const present = manifest.conditions.filter(c => line.files[c]);
+  const stored = state.order[line.line_id] || [];
+  // keep a stable per-line order for the whole session; re-shuffle only when the set of samples changes
+  if (stored.length === manifest.conditions.length) return stored;
+  const o = shuffle(manifest.conditions);
+  state.order[line.line_id] = o; persist();
+  return o;
+}
+
+async function getBuffer(url) {
+  if (bufferCache.has(url)) return bufferCache.get(url);
+  const res = await fetch(url + "?t=" + Date.now());
+  const ab = await res.arrayBuffer();
+  const buf = await ctx.decodeAudioData(ab);
+  const stats = analyse(buf);
+  const out = { buf, stats };
+  bufferCache.set(url, out);
+  return out;
+}
+
+// gated RMS (dBFS) over 100 ms frames above -50 dBFS, and peak
+function analyse(buf) {
+  const ch = buf.getChannelData(0), n = ch.length, frame = Math.round(buf.sampleRate * 0.1);
+  let peak = 0, sumPow = 0, cnt = 0;
+  for (let i = 0; i < n; i += frame) {
+    let s = 0, m = Math.min(frame, n - i);
+    for (let k = 0; k < m; k++) { const v = ch[i + k]; s += v * v; const a = Math.abs(v); if (a > peak) peak = a; }
+    const p = s / m;
+    if (10 * Math.log10(p + 1e-12) > -50) { sumPow += p; cnt++; }
+  }
+  const rms = 10 * Math.log10((cnt ? sumPow / cnt : 1e-12) + 1e-12);
+  return { rmsDb: rms, peak, durationS: buf.duration };
+}
+
+const TARGET_DB = -23;
+function gainFor(stats) {
+  if (!state.norm) return 1;
+  const g = Math.pow(10, (TARGET_DB - stats.rmsDb) / 20);
+  return Math.min(g, 0.98 / Math.max(stats.peak, 1e-6));
+}
+
+async function play(url, btn, metaEl) {
+  stopAudio();
+  await ctx.resume();
+  const { buf, stats } = await getBuffer(url);
+  const g = gainFor(stats);
+  const src = ctx.createBufferSource(); src.buffer = buf;
+  const gn = ctx.createGain(); gn.gain.value = g;
+  src.connect(gn).connect(ctx.destination);
+  src.onended = () => { if (playing && playing.src === src) { btn.textContent = "▶ Play"; playing = null; } };
+  src.start();
+  playing = { src, btn };
+  btn.textContent = "■ Stop";
+  metaEl.textContent = `${stats.durationS.toFixed(1)} s · level ${stats.rmsDb.toFixed(1)} dBFS · playback gain ${(20 * Math.log10(g)).toFixed(1)} dB${state.norm ? " (matched)" : " (original)"}`;
+}
+function stopAudio() {
+  if (playing) { try { playing.src.stop(); } catch {} playing.btn.textContent = "▶ Play"; playing = null; }
+}
+
+function ratingFor(lineId, cond) {
+  const k = lineId + "|" + cond;
+  return (state.ratings[k] = state.ratings[k] || { intelligibility: "", bodily_presence: "", distance: "", unwanted_connotation: "", latency_setup: "", man_voice_reach: "", verdict: "" });
+}
+
+function field(label, control) {
+  const row = document.createElement("div"); row.className = "row";
+  const l = document.createElement("label"); l.textContent = label;
+  row.append(l, control); return row;
+}
+function scale(r, key) {
+  const s = document.createElement("select");
+  ["", "1", "2", "3", "4", "5"].forEach(v => { const o = document.createElement("option"); o.value = v; o.textContent = v || "—"; s.append(o); });
+  s.value = r[key]; s.onchange = () => { r[key] = s.value; persist(); }; return s;
+}
+function text(r, key, area) {
+  const t = document.createElement(area ? "textarea" : "input");
+  if (!area) { t.type = "text"; t.className = "f"; }
+  t.value = r[key]; t.oninput = () => { r[key] = t.value; persist(); }; return t;
+}
+
+async function upload(lineId, blob, ext) {
+  const res = await fetch(`/upload?line=${lineId}&ext=${ext}`, { method: "POST", body: blob });
+  if (!res.ok) throw new Error("upload failed");
+}
+
+function humanControls(line, card) {
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;gap:8px;flex-wrap:wrap;margin:6px 0";
+  const pick = document.createElement("input"); pick.type = "file"; pick.accept = "audio/*"; pick.style.maxWidth = "210px";
+  pick.onchange = async () => {
+    const f = pick.files[0]; if (!f) return;
+    const ext = (f.name.split(".").pop() || "wav").toLowerCase();
+    try { await upload(line.line_id, f, ext); say("Saved as the human take for " + line.line_id); await render(); } catch (e) { say("Upload failed: " + e.message); }
+  };
+  const rec = document.createElement("button"); rec.textContent = "● Record now";
+  let mr = null, chunks = [];
+  rec.onclick = async () => {
+    if (mr) { mr.stop(); return; }
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      mr = new MediaRecorder(stream); chunks = [];
+      mr.ondataavailable = e => chunks.push(e.data);
+      mr.onstop = async () => {
+        stream.getTracks().forEach(t => t.stop());
+        const blob = new Blob(chunks, { type: mr.mimeType }); mr = null; rec.textContent = "● Record now"; rec.classList.remove("rec");
+        try { await upload(line.line_id, blob, "webm"); say("Recording saved for " + line.line_id); await render(); } catch (e) { say("Save failed: " + e.message); }
+      };
+      mr.start(); rec.textContent = "■ Stop recording"; rec.classList.add("rec");
+    } catch (e) { say("Microphone unavailable: " + e.message); }
+  };
+  wrap.append(pick, rec); card.append(wrap);
+}
+
+async function render() {
+  manifest = await (await fetch("/api/bench")).json();
+  const root = document.getElementById("lines"); root.textContent = "";
+  document.getElementById("blind").checked = state.blind;
+  document.getElementById("norm").checked = state.norm;
+  document.getElementById("setup").value = state.setup;
+  for (const line of manifest.lines) {
+    const sec = document.createElement("section"); sec.className = "line";
+    const h2 = document.createElement("h2"); h2.textContent = line.line_id;
+    const why = document.createElement("div"); why.className = "why"; why.textContent = line.why;
+    sec.append(h2, why);
+    const fa = document.createElement("div"); fa.className = "fa"; fa.textContent = line.text_fa; sec.append(fa);
+    const grid = document.createElement("div"); grid.className = "grid"; sec.append(grid);
+    const order = orderFor(line);
+    let letter = 0;
+    for (const cond of order) {
+      const url = line.files[cond];
+      const card = document.createElement("div"); card.className = "sample" + (url ? "" : " missing");
+      const r = ratingFor(line.line_id, cond);
+      const shown = url && state.blind ? `Sample ${String.fromCharCode(65 + letter)}` : LABEL_NAMES[cond];
+      if (url) letter++;
+      const h = document.createElement("h3"); const hs = document.createElement("span"); hs.textContent = !url && state.blind ? LABEL_NAMES[cond] : shown; h.append(hs); card.append(h);
+      const meta = document.createElement("div"); meta.className = "meta"; card.append(meta);
+      if (url) {
+        const b = document.createElement("button"); b.textContent = "▶ Play"; b.className = "primary";
+        b.onclick = () => (playing && playing.btn === b) ? stopAudio() : play(url, b, meta);
+        card.append(b);
+      } else if (cond === "human-recorded") {
+        meta.textContent = "No human take yet. Record or upload one dry (no effects) reading of this line."; meta.classList.add("note");
+      } else meta.textContent = "not available";
+      if (cond === "human-recorded") humanControls(line, card);
+      if (url) {
+        card.append(field("Intelligibility 1–5", scale(r, "intelligibility")));
+        card.append(field("Bodily presence 1–5", scale(r, "bodily_presence")));
+        const d = document.createElement("select");
+        DISTANCES.forEach(v => { const o = document.createElement("option"); o.value = v; o.textContent = v || "—"; d.append(o); });
+        d.value = r.distance; d.onchange = () => { r.distance = d.value; persist(); };
+        card.append(field("Perceived distance", d));
+        card.append(field("Unwanted connotation", text(r, "unwanted_connotation", true)));
+        card.append(field("Latency / setup burden", text(r, "latency_setup", false)));
+        card.append(field("Man–Voice reach", text(r, "man_voice_reach", true)));
+        const vs = document.createElement("div"); vs.className = "verdicts";
+        VERDICTS.forEach(v => {
+          const vb = document.createElement("button"); vb.textContent = v; if (r.verdict === v) vb.className = "on";
+          vb.onclick = () => { r.verdict = r.verdict === v ? "" : v; persist(); vs.querySelectorAll("button").forEach(x => x.className = x.textContent === r.verdict ? "on" : ""); };
+          vs.append(vb);
+        });
+        card.append(vs);
+      }
+      grid.append(card);
+    }
+    root.append(sec);
+  }
+}
+
+document.getElementById("blind").onchange = e => { state.blind = e.target.checked; persist(); render(); };
+document.getElementById("norm").onchange = e => { state.norm = e.target.checked; persist(); stopAudio(); };
+document.getElementById("setup").oninput = e => { state.setup = e.target.value; persist(); };
+document.getElementById("stop").onclick = stopAudio;
+document.getElementById("save").onclick = async () => {
+  const out = {
+    schema_version: 1,
+    purpose: "R-VOICE-01 source-body control (dry sources)",
+    conditions: { blind_labels: state.blind, loudness_matched_for_listening: state.norm, target_rms_dbfs: TARGET_DB, listening_setup: state.setup },
+    presentation_order: state.order,
+    ratings: state.ratings,
+    software_verdict: null
+  };
+  try {
+    const res = await fetch("/save", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(out) });
+    const j = await res.json(); say("Saved: " + j.saved, 6000);
+  } catch (e) { say("Save failed: " + e.message); }
+};
+
+render().catch(e => say("Failed to load bench: " + e.message, 10000));
+</script>
+</body>
+</html>

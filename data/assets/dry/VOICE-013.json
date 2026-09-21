@@ -1,11 +1,12 @@
 {
-  "asset_id": "ASSET-VOICE-013-c0542eff4151",
+  "asset_id": "ASSET-VOICE-013-122823101467",
   "line_id": "VOICE-013",
   "status": "READY",
   "source_text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
-  "spoken_text": "رویا بَینِ مَفاصِل و رَگ و پی تَجَسُّد نَمی‌یابَد. جَسم رویا را پَس می‌زَنَد.",
-  "spoken_text_sha256": "70a8e9a76435a958a88e1c6fd48790ab8504f6da6f62f2e5d84fcc9e4daa97ec",
-  "spoken_text_vocalized": true,
+  "spoken_text": "رویا بین مفاصل و رگ و پی تجسد نمی‌یابد. جسم رویا را پس می‌زند.",
+  "spoken_text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
+  "spoken_text_is_canonical": true,
+  "pronunciation_overrides": [],
   "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
   "engine": "piper-tts",
   "engine_version": "1.8.0",
@@ -13,9 +14,9 @@
   "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
   "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
   "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CHUNKED-PAUSES-V1",
-    "pause_ms_sentence": 420,
-    "pause_ms_clause": 190,
+    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
+    "input_authority": "text_fa",
+    "sentence_gap_ms": 0,
     "render_parameters": {
       "volume": 1.0,
       "length_scale": 1.0,
@@ -24,19 +25,15 @@
       "normalize_audio": false
     }
   },
-  "pause_chunks": [
+  "synthesis_spans": [
     {
-      "text_sha256": "b43c872aef1408bf189aaa4cf7796b340047b884ac6dcd17d701a38a2b07fb4e",
-      "pause_after_ms": 420
-    },
-    {
-      "text_sha256": "ab37e45b0cba5aadc026cf918556cc0e788d2e1f72ef7d64953470e3d2a69a38",
+      "text_sha256": "7609e35510845000ce22cacc1592d9ad5fd0ba15311609642e5006b91621d08b",
       "pause_after_ms": 0
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-013-c0542eff4151.wav",
-  "wav_sha256": "d85f8122f31f3089ddfc344c40d32a482a8188c90aeb5155a14d1716b1dc0c1a",
-  "duration_ms": 6364,
-  "rendered_at": "2026-09-21T09:30:27.636331+00:00",
+  "wav_path": "data/assets/dry/ASSET-VOICE-013-122823101467.wav",
+  "wav_sha256": "df9e44f96ed54fa1662847855c326c616f5876bf73ca382071a1bbfba63f4632",
+  "duration_ms": 5317,
+  "rendered_at": "2026-09-21T18:51:41.316030+00:00",
   "fixture": false
 }

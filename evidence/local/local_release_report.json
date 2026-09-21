@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T09:35:26.021835+00:00",
+  "generated_at": "2026-09-21T18:51:45.187213+00:00",
   "candidate": "NIRAVANA-VOICE-NEARFINAL-0.6.1",
   "platform": {
     "python": "3.11.9",
@@ -9,7 +9,7 @@
     "numpy": "2.4.6",
     "pytest": "9.1.1",
     "playwright": null,
-    "node": "C:\\Users\\Zarinpal\\AppData\\Local\\hermes\\node\\node.EXE",
+    "node": "C:\\Program Files\\nodejs\\node.EXE",
     "os": "Windows-10-10.0.19044-SP0"
   },
   "source": {
@@ -68,7 +68,10 @@
     },
     "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997"
   },
-  "preparation": null,
+  "preparation": {
+    "dry_assets": 17,
+    "processed_variants": 18
+  },
   "preparation_error": null,
   "base_candidate_pass": true,
   "real_voice_engineering_pass": true,
