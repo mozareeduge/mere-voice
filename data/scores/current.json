@@ -67,7 +67,7 @@
         "gain_db": -3.0,
         "pan": 0.0,
         "tempo_scale": 0.75,
-        "pitch_semitones": 9.0,
+        "pitch_semitones": 8.0,
         "reverb_mix": 0.0,
         "delay_ms": 10,
         "delay_feedback": 0.0,
@@ -264,10 +264,10 @@
       "processing": {
         "gain_db": -5.0,
         "pan": -0.7,
-        "tempo_scale": 1.0,
+        "tempo_scale": 0.8,
         "pitch_semitones": 9.5,
-        "reverb_mix": 0.9,
-        "delay_ms": 210,
+        "reverb_mix": 0.1,
+        "delay_ms": 50,
         "delay_feedback": 0.0,
         "attack_ms": 40,
         "release_ms": 550
@@ -329,5 +329,5 @@
     }
   ],
   "notes_summary": "Lines 1–13 are spaced for inspection using prebuilt fixture durations. VOICE-014/015/016 are deliberately staggered by 550 ms to test the slashed late polyphony as separate events; VOICE-017 follows. All onset values are prototype lab choices, not authored performance cue times.",
-  "updated_at": "2026-09-21T10:39:43.557661+00:00"
+  "updated_at": "2026-09-21T16:54:18.682830+00:00"
 }
