@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-09-22T14:43:27.888313+00:00",
+  "pass": true,
+  "checks": {
+    "transformers_exact": true,
+    "g2p_nonempty": true,
+    "pocket_audio_nontrivial": true,
+    "pocket_audio_written": true
+  },
+  "runtime": {
+    "transformers_version": "5.17.0",
+    "model_revision": "e87097ed98edb8bd9c9bcabe9b575a51a466d0e4",
+    "g2p_revision": "e314087bc761e323d127ee7899cb34f7c7d697cd",
+    "pocket_tts_fork_commit": "3807c204babb5fe54be8fe18a362a58315e870d6"
+  },
+  "g2p_phonemes": "badane1 zendegi ro pas mizane qazA va havA ro pas mizane",
+  "synthesis": {
+    "duration_ms": 3745,
+    "sample_rate": 24000,
+    "chunks": 2
+  }
+}

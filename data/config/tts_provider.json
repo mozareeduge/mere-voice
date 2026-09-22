@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "active_provider": "pocket_fa_v2",
+  "fallback_provider": "piper",
+  "pocket_fa_v2": {
+    "model_id": "mehdi-hf/pocket-tts-farsi-v2",
+    "model_revision": "e87097ed98edb8bd9c9bcabe9b575a51a466d0e4",
+    "g2p_id": "mehdi-hf/Homo-GE2PE-Persian-HF",
+    "g2p_revision": "e314087bc761e323d127ee7899cb34f7c7d697cd",
+    "pocket_tts_fork": "https://github.com/mallahyari/pocket-tts",
+    "pocket_tts_fork_commit": "3807c204babb5fe54be8fe18a362a58315e870d6",
+    "reference_audio": "data/reference/pocket_voice_prompt.wav",
+    "temperature": 0.3,
+    "eos_threshold": -2.0,
+    "max_tokens": 18,
+    "min_tokens": 5,
+    "max_prompt_seconds": 5.0,
+    "budget_gap_ms": 150,
+    "clause_gap_ms": 225,
+    "sentence_gap_ms": 300,
+    "retries": 2,
+    "seed": 230922,
+    "max_chars": 2500,
+    "pinned_model_config": "data/cache/pocket_fa/model.pinned.yaml",
+    "normalizer_path": "data/cache/pocket_fa/normalize_fa.py",
+    "cap_ratio": 0.97,
+    "max_split_depth": 2,
+    "recovery_gap_ms": 50,
+    "frames_after_eos": 0,
+    "transformers_version": "5.17.0"
+  }
+}

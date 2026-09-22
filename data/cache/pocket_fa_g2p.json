@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "items": {
+    "405fc22e063de0274f8b6da715041493fbd18ffeac90f9d6fe6ee19377cd4ad3": {
+      "text": "بدن زندگی رو پس می‌زنه، غذا و هوا رو پس می‌زنه.",
+      "phonemes": "badane1 zendegi ro pas mizane qazA va havA ro pas mizane",
+      "created_at": "2026-09-22T14:40:20.624487+00:00"
+    },
+    "71bef9f59f1e169dad10edfe50e39b4d3c77d644782cbb0acf2c5dbb593b5e7c": {
+      "text": "بدن زندگی رو پس می‌زنه،",
+      "phonemes": "badane1 zendegi ro pas mizane",
+      "created_at": "2026-09-22T14:40:20.739730+00:00"
+    },
+    "d0f0093ac6a401023450de3846dc858c0d0a323815cd3c33d4346e04e2413c54": {
+      "text": "غذا و هوا رو پس می‌زنه.",
+      "phonemes": "qazA va havA ro pas mizane",
+      "created_at": "2026-09-22T14:40:20.845543+00:00"
+    },
+    "534d6d5efb9c330d8b3c37d6a3c95ebff55e4078d685d91f83271606a6b01298": {
+      "text": "خاطره در حافظه محو می‌شود،",
+      "phonemes": "xAtere dar hAfeze mahv miSavad",
+      "created_at": "2026-09-22T14:40:28.880667+00:00"
+    },
+    "a9d12059c52c8b4ee41c277295ce249a1a7af8e607cbf88469c6d37ea3609989": {
+      "text": "حافظه خاطره را پس می‌زند.",
+      "phonemes": "hAfezeye1 xAtere rA pas mizanad",
+      "created_at": "2026-09-22T14:40:29.003258+00:00"
+    },
+    "48ec030a1140151846c2e5285d52c09a2a093c27232c1c02ad5e6b02232d2b4a": {
+      "text": "غذا،",
+      "phonemes": "qazA",
+      "created_at": "2026-09-22T14:47:04.349957+00:00"
+    },
+    "6c5a74da9da048620b3371c457e0e95680df7264be3776e2b02b15743067a6a1": {
+      "text": "هوا رو پس می‌زنه.",
+      "phonemes": "havA ro pas mizane",
+      "created_at": "2026-09-22T14:47:04.430607+00:00"
+    },
+    "90861fecce18caac93218a7475a05b584bff0090122564c7aca3c2691d63a1f9": {
+      "text": "به سیاهی میوفتی چون چشم،",
+      "phonemes": "be siyAhi miofti Con CaSm",
+      "created_at": "2026-09-22T14:47:04.534962+00:00"
+    },
+    "5f753cd111f51092230eba5d07690581ffedc20ea24c379182eaec7a41e7685b": {
+      "text": "بدن رو پس می‌زنه.",
+      "phonemes": "badan ro pas mizane",
+      "created_at": "2026-09-22T14:47:04.620332+00:00"
+    },
+    "8198160643bfa414b327420f4b9930da045a5eb130a0a924ae2bb4b81bfc2276": {
+      "text": "عوارض شایع شامل خواب آلودگی،",
+      "phonemes": "?avAreze1 SAye? SAmele1 xAbAludegi",
+      "created_at": "2026-09-22T14:47:06.753162+00:00"
+    },
+    "df6d34ca4abad9ca63e2b0e36e9614ded671a0d03d4e0c083387bc1f452d9750": {
+      "text": "سرگیجه و خشکی دهان است اما خطرات جدی‌تر مانند وابستگی و اعتیاد،",
+      "phonemes": "sargije va xoSki dahAn ?ast ?amA xatarate jedditar mAnande1 vAbastegi va ?e?tiyAd",
+      "created_at": "2026-09-22T14:47:07.427825+00:00"
+    },
+    "e2f6c60802263a31274d32af3f97aa4eef2f01a52bf904954d54495e4248c28a": {
+      "text": "مشکلات حافظه،",
+      "phonemes": "moSkelAte1 hAfeze",
+      "created_at": "2026-09-22T14:47:07.566872+00:00"
+    },
+    "a1f2e3942ac3f8ec66aaf5396dab5feefd218a367ff839b5589df0070a133617": {
+      "text": "تشنج در صورت ترک ناگهانی و اختلالات تنفسی نیز وجود دارد.",
+      "phonemes": "taSannoj dar surate1 tork nAgahAni va ?extelAlAte1 tanaffosi niz vojud dArad",
+      "created_at": "2026-09-22T14:47:08.229728+00:00"
+    },
+    "3b30fd23927443e89df400bb8820bd57ddc588046e3dbbd3b6403ce870f445d7": {
+      "text": "مصرف در بارداری و شیردهی ممنوع است.",
+      "phonemes": "masraf dar bArdAri va Sirdehi mamnu? ?ast",
+      "created_at": "2026-09-22T14:47:08.589091+00:00"
+    },
+    "f92db9ee65d2f106f0767c417fa5adad0c7d84b5a930df853efe53a8ad5e847d": {
+      "text": "و با داروهای زیادی مانند الکل،",
+      "phonemes": "va bA dAruhAye1 ziyAdi mAndeye1 ?alkol",
+      "created_at": "2026-09-22T14:47:08.893031+00:00"
+    },
+    "4829588568f26ed7a45d662bcb56e997fe497ade0d305cd1b1c0bd30514de95f": {
+      "text": "اوپیوم،",
+      "phonemes": "?opeyum",
+      "created_at": "2026-09-22T14:47:08.993848+00:00"
+    },
+    "51e1ff3f8e989d85abe6dbdc82aba7304c98a9bd91a4554658186e7bcff852be": {
+      "text": "قرص‌های ضدافسردگی و آنتی بیوتیک‌ها تداخل دارد.",
+      "phonemes": "qorShAye zede ?afsordegi va ?Anti biutikhA tadAxol dArad",
+      "created_at": "2026-09-22T14:47:09.475733+00:00"
+    }
+  }
+}

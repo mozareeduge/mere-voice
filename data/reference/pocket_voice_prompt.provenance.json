@@ -1,0 +1,11 @@
+{
+  "source": "user-supplied mere-voice-voice-samples-2026-09-21.zip / 01_human_recorded/VOICE-009.wav",
+  "source_take": "final VOICE-009 take",
+  "operation": "first 4.75 seconds; 8 ms edge fades only; no denoise, normalization, pitch, EQ, or compression",
+  "sample_rate": 44100,
+  "channels": 1,
+  "duration_s": 4.75,
+  "sha256": "39e11f2137ac8178abf8b1806ebbd5962409b94498f451c2c20b56e2dea3d9bc",
+  "purpose": "default <=5 s voice-cloning prompt for Pocket-TTS Farsi v2",
+  "replaceable": true
+}

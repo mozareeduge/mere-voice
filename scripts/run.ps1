@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 Set-Location $Root
-$Py = if (Test-Path ".venv\Scripts\python.exe") { ".venv\Scripts\python.exe" } else { "python" }
+$Py = if (Test-Path ".venv-pocket\Scripts\python.exe") { ".venv-pocket\Scripts\python.exe" } elseif (Test-Path ".venv\Scripts\python.exe") { ".venv\Scripts\python.exe" } else { "python" }
 $env:VOICE_PORT = if ($env:VOICE_PORT) { $env:VOICE_PORT } else { "8765" }
 $proc = Start-Process -FilePath $Py -ArgumentList "app.py" -WorkingDirectory $Root -PassThru -NoNewWindow
 try {

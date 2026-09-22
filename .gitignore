@@ -1,6 +1,9 @@
 __pycache__/
 *.pyc
 .venv/
+.venv-pocket/
+.mere-voice-backups/
+.mere_voice_pocket_backup.json
 .DS_Store
 execution-state/
 # Keep supplied fixture audio and score revisions versioned for reproducibility.

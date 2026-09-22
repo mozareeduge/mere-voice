@@ -1,0 +1,15 @@
+{
+  "asset_id": "ASSET-VOICE-001-POCKET-cbbcfb25be27",
+  "wav_sha256": "8f45a7a679c08a43ac7375092caec952b9c27152e32a1b35b59f4f84b55151e6",
+  "duration_ms": 6525,
+  "engine": "pocket-tts-farsi-v2",
+  "provider_revision": "MERE-POCKET-FA-V2-3",
+  "model_id": "mehdi-hf/pocket-tts-farsi-v2",
+  "model_revision": "e87097ed98edb8bd9c9bcabe9b575a51a466d0e4",
+  "g2p_id": "mehdi-hf/Homo-GE2PE-Persian-HF",
+  "g2p_revision": "e314087bc761e323d127ee7899cb34f7c7d697cd",
+  "reference_sha256": "39e11f2137ac8178abf8b1806ebbd5962409b94498f451c2c20b56e2dea3d9bc",
+  "spoken_text_is_canonical": true,
+  "voice_clone_reference_is_human_own_recording": true,
+  "license": "CC BY-NC 4.0 (Pocket-TTS Farsi v2 model) -- non-commercial only"
+}

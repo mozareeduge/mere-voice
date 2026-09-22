@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-09-22T14:43:41.937250+00:00",
+  "line_id": "VOICE-009",
+  "pass": true,
+  "checks": {
+    "provider_ready": true,
+    "provider_recommended": true,
+    "dry_engine": true,
+    "canonical_text_bound": true,
+    "dry_storage_verified": true,
+    "no_terminal_runaway": true,
+    "audio_nontrivial": true,
+    "processing_path_verified": true,
+    "app_integration": true
+  },
+  "provider_status": {
+    "active_provider": "pocket_fa_v2",
+    "recommended_render_mode": "pocket_fa_v2",
+    "providers": {
+      "pocket_fa_v2": {
+        "ready": true,
+        "reasons": []
+      },
+      "piper": {
+        "ready": true
+      },
+      "fixture_espeak": {
+        "ready": true,
+        "purpose": "temporal/UI fixture only"
+      }
+    },
+    "piper_ready": true
+  },
+  "dry_asset": {
+    "asset_id": "ASSET-VOICE-009-POCKET-d6886e57d33d",
+    "line_id": "VOICE-009",
+    "status": "READY",
+    "source_text_sha256": "c58054c1b1263722100692a0221c428a4ec5d0cfcd06bfa8eb4596cd9ef5fb85",
+    "spoken_text": "خاطره در حافظه محو می‌شود، حافظه خاطره را پس می‌زند.",
+    "spoken_text_is_canonical": true,
+    "engine": "pocket-tts-farsi-v2",
+    "provider_revision": "MERE-POCKET-FA-V2-3",
+    "fixture": false,
+    "model_id": "mehdi-hf/pocket-tts-farsi-v2",
+    "model_revision": "e87097ed98edb8bd9c9bcabe9b575a51a466d0e4",
+    "g2p_id": "mehdi-hf/Homo-GE2PE-Persian-HF",
+    "g2p_revision": "e314087bc761e323d127ee7899cb34f7c7d697cd",
+    "reference_audio": "data/reference/pocket_voice_prompt.wav",
+    "reference_sha256": "39e11f2137ac8178abf8b1806ebbd5962409b94498f451c2c20b56e2dea3d9bc",
+    "phoneme_plan": [
+      {
+        "phonemes": "xAtere dar hAfeze mahv miSavad",
+        "boundary": "clause"
+      },
+      {
+        "phonemes": "hAfezeye1 xAtere rA pas mizanad",
+        "boundary": "end"
+      }
+    ],
+    "generation_evidence": [
+      {
+        "chunk": 1,
+        "tokens": 7,
+        "attempts_s": [
+          2.0
+        ],
+        "recovered": false,
+        "terminal_runaway": false
+      },
+      {
+        "chunk": 2,
+        "tokens": 7,
+        "attempts_s": [
+          2.32
+        ],
+        "recovered": false,
+        "terminal_runaway": false
+      }
+    ],
+    "wav_path": "data/assets/dry/ASSET-VOICE-009-POCKET-d6886e57d33d.wav",
+    "wav_sha256": "59223eb6546072b1a0c739cf89e9355c4bde051141f1278715780f0a535b140f",
+    "duration_ms": 4545,
+    "sample_rate": 24000,
+    "rendered_at": "2026-09-22T14:43:51.855926+00:00"
+  },
+  "neutral_processed_variant": {
+    "variant_id": "VAR-d7e87e3221af6fd8a977423b",
+    "variant_key": "d7e87e3221af6fd8a977423b",
+    "line_id": "VOICE-009",
+    "asset_id": "ASSET-VOICE-009-POCKET-d6886e57d33d",
+    "dry_wav_sha256": "59223eb6546072b1a0c739cf89e9355c4bde051141f1278715780f0a535b140f",
+    "processing": {
+      "gain_db": 0.0,
+      "pan": 0.0,
+      "tempo_scale": 1.0,
+      "pitch_semitones": 0.0,
+      "reverb_mix": 0.0,
+      "delay_ms": 0,
+      "delay_feedback": 0.0,
+      "attack_ms": 0,
+      "release_ms": 0
+    },
+    "processing_hash": "06b80dae84fb580194e0b2e54ffe6ec2ea7c9bd9783f92b5fb94cdb798ccb524",
+    "processor": {
+      "pipeline_revision": "PEDALBOARD-OFFLINE-V1",
+      "mode": "neutral-byte-copy",
+      "pedalboard_version": null,
+      "numpy_version": "2.4.6"
+    },
+    "status": "READY",
+    "wav_path": "data/assets/processed/d7e87e3221af6fd8a977423b.wav",
+    "wav_sha256": "59223eb6546072b1a0c739cf89e9355c4bde051141f1278715780f0a535b140f",
+    "duration_ms": 4545,
+    "prepared_at": "2026-09-22T14:40:30.511468+00:00",
+    "fixture": false,
+    "verified_wav_sha256": "59223eb6546072b1a0c739cf89e9355c4bde051141f1278715780f0a535b140f"
+  },
+  "app_tts_state": {
+    "active_provider": "pocket_fa_v2",
+    "recommended_render_mode": "pocket_fa_v2",
+    "providers": {
+      "pocket_fa_v2": {
+        "ready": true,
+        "reasons": []
+      },
+      "piper": {
+        "ready": true
+      },
+      "fixture_espeak": {
+        "ready": true,
+        "purpose": "temporal/UI fixture only"
+      }
+    },
+    "piper_ready": true
+  },
+  "wav_sha256": "59223eb6546072b1a0c739cf89e9355c4bde051141f1278715780f0a535b140f"
+}

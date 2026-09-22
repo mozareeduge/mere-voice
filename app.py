@@ -84,7 +84,7 @@ def current_state() -> dict:
         "fixture_mode": source.get("source_mode") == "DOSSIER_FIXTURE",
         "source_primary_witness": source.get("source_mode") == "PRIMARY_PDF_WITNESS",
         "audio_fixture_mode": bool(lines) and all((x.get("asset") or {}).get("fixture") for x in line_states if (x.get("asset") or {}).get("status") == "READY"),
-        "tts": {"piper_ready": piper_ready, "recommended_render_mode": "piper" if piper_ready else "fixture_espeak"},
+        "tts": __import__("voice_proto.tts_router", fromlist=["provider_status"]).provider_status(piper_ready=piper_ready),
     }
 
 
@@ -157,14 +157,10 @@ class Handler(BaseHTTPRequestHandler):
                 saved = save_current_score(body.get("score", body))
                 return self._json({"ok": True, "score": saved, "state": current_state()})
             if path == "/api/render-dry":
-                mode = body.get("mode", "piper")
                 line_ids = body.get("line_ids")
-                if mode == "fixture_espeak":
-                    from voice_proto.tts import render_fixture_espeak
-                    result = render_fixture_espeak(line_ids)
-                else:
-                    from voice_proto.tts import render_with_piper
-                    result = render_with_piper(line_ids)
+                from voice_proto.tts_router import render_dry, load_provider_config
+                mode = body.get("mode") or load_provider_config().get("active_provider", "piper")
+                result = render_dry(mode, line_ids)
                 return self._json({"ok": True, "assets": result, "state": current_state()})
             if path == "/api/prepare":
                 from voice_proto.processing import prepare_variant

@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "note": "Optional full-line phoneme overrides. Canonical text_fa remains authoritative. Only status=approved is applied.",
+  "lines": {}
+}

@@ -1,39 +1,65 @@
 {
-  "asset_id": "ASSET-VOICE-001-c57c529a62c9",
+  "asset_id": "ASSET-VOICE-001-POCKET-cbbcfb25be27",
   "line_id": "VOICE-001",
   "status": "READY",
   "source_text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
   "spoken_text": "بدن زندگی رو پس می‌زنه، غذا، هوا رو پس می‌زنه. به سیاهی میوفتی چون چشم، بدن رو پس می‌زنه.",
-  "spoken_text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
   "spoken_text_is_canonical": true,
-  "pronunciation_overrides": [],
-  "source_status": "PRIMARY_PDF_WITNESS_INDEXED_TEXT",
-  "engine": "piper-tts",
-  "engine_version": "1.8.0",
-  "profile_id": "PIPER-MANA-FA-IR-MEDIUM",
-  "model_sha256": "e390c0e74ba71fd97c49ba662ee0c6e1724b462ba2d4561698af4f564840f126",
-  "config_sha256": "d102276a05436613a05e1fbad8f125abcf8f56759aaf4fd36adf216653949997",
-  "synthesis_pipeline": {
-    "pipeline_revision": "PIPER-CANONICAL-SPANS-V2",
-    "input_authority": "text_fa",
-    "sentence_gap_ms": 0,
-    "render_parameters": {
-      "volume": 1.0,
-      "length_scale": 1.0,
-      "noise_scale": 0.667,
-      "noise_w_scale": 0.8,
-      "normalize_audio": false
-    }
-  },
-  "synthesis_spans": [
+  "engine": "pocket-tts-farsi-v2",
+  "provider_revision": "MERE-POCKET-FA-V2-3",
+  "fixture": false,
+  "model_id": "mehdi-hf/pocket-tts-farsi-v2",
+  "model_revision": "e87097ed98edb8bd9c9bcabe9b575a51a466d0e4",
+  "g2p_id": "mehdi-hf/Homo-GE2PE-Persian-HF",
+  "g2p_revision": "e314087bc761e323d127ee7899cb34f7c7d697cd",
+  "reference_audio": "data/reference/pocket_voice_prompt.wav",
+  "reference_sha256": "39e11f2137ac8178abf8b1806ebbd5962409b94498f451c2c20b56e2dea3d9bc",
+  "phoneme_plan": [
     {
-      "text_sha256": "becd52b180a57b83968a5aeaab335e706b23ba25740ca48f97c58ce0026c3ce4",
-      "pause_after_ms": 0
+      "phonemes": "badane1 zendegi ro pas mizane",
+      "boundary": "clause"
+    },
+    {
+      "phonemes": "qazA havA ro pas mizane",
+      "boundary": "sentence"
+    },
+    {
+      "phonemes": "be siyAhi miofti Con CaSm badan ro pas mizane",
+      "boundary": "end"
     }
   ],
-  "wav_path": "data/assets/dry/ASSET-VOICE-001-c57c529a62c9.wav",
-  "wav_sha256": "77ace22885cd47e5c2f36b8286618869a35e30b1c524ce0d28a7830fd96dd0b8",
-  "duration_ms": 6374,
-  "rendered_at": "2026-09-21T18:51:38.538862+00:00",
-  "fixture": false
+  "generation_evidence": [
+    {
+      "chunk": 1,
+      "tokens": 5,
+      "attempts_s": [
+        1.76
+      ],
+      "recovered": false,
+      "terminal_runaway": false
+    },
+    {
+      "chunk": 2,
+      "tokens": 5,
+      "attempts_s": [
+        1.76
+      ],
+      "recovered": false,
+      "terminal_runaway": false
+    },
+    {
+      "chunk": 3,
+      "tokens": 11,
+      "attempts_s": [
+        2.48
+      ],
+      "recovered": false,
+      "terminal_runaway": false
+    }
+  ],
+  "wav_path": "data/assets/dry/ASSET-VOICE-001-POCKET-cbbcfb25be27.wav",
+  "wav_sha256": "8f45a7a679c08a43ac7375092caec952b9c27152e32a1b35b59f4f84b55151e6",
+  "duration_ms": 6525,
+  "sample_rate": 24000,
+  "rendered_at": "2026-09-22T14:47:06.472712+00:00"
 }
