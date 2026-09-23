@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Casting Desk</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+<style>
+:root {
+  --bg: #f6f4ef; --panel: #ffffff; --ink: #1d1b18; --muted: #6b665d; --line: #e2ddd3; --soft: #f0ece4;
+  --accent: #7a3b2e; --accent-ink: #fff; --ok: #2f6b3a; --warn: #9a6a00; --bad: #a3261b;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161412; --panel: #1f1c19; --ink: #ece7de; --muted: #a39c90; --line: #35302a; --soft: #29251f;
+  --accent: #d08a6e; --accent-ink: #1a1512; --ok: #7cc48a; --warn: #e0b24a; --bad: #ef7c70; } }
+:root[data-theme="dark"] { --bg: #161412; --panel: #1f1c19; --ink: #ece7de; --muted: #a39c90; --line: #35302a; --soft: #29251f;
+  --accent: #d08a6e; --accent-ink: #1a1512; --ok: #7cc48a; --warn: #e0b24a; --bad: #ef7c70; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 "Segoe UI", system-ui, sans-serif; }
+header { background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+header .wrap { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 0; }
+header h1 { font-size: 1.15rem; margin: 0 12px 8px 0; }
+nav { display: flex; gap: 2px; flex-wrap: wrap; }
+nav button { border: 0; border-bottom: 3px solid transparent; background: none; padding: 8px 12px; font: inherit; color: var(--muted); cursor: pointer; }
+nav button.on { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+main { padding: 20px 0 80px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+h2 { font-size: 1.2rem; margin: 0 0 10px; } h3 { font-size: 1rem; margin: 14px 0 6px; }
+ol, ul { padding-left: 22px; margin: 6px 0; } li { margin: 4px 0; }
+.muted { color: var(--muted); } .ok { color: var(--ok); } .warn { color: var(--warn); } .bad { color: var(--bad); }
+button, .btn { font: inherit; border: 1px solid var(--line); background: var(--soft); color: var(--ink); border-radius: 8px; padding: 6px 12px; cursor: pointer; text-decoration: none; display: inline-block; }
+button:hover:not(:disabled), .btn:hover { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+input[type=text], select, textarea { font: inherit; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; width: 100%; }
+textarea { min-height: 38px; resize: vertical; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px; text-align: left; vertical-align: top; font-size: .92rem; }
+th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.scroll { overflow-x: auto; }
+.tbl-casting td { min-width: 110px; } .tbl-casting td.code { min-width: 60px; }
+.fa { direction: rtl; font-family: Vazirmatn, Tahoma, sans-serif; font-size: 1.15rem; line-height: 2; text-align: right; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-top: 10px; }
+.card { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: var(--soft); }
+.card h4 { margin: 0 0 6px; display: flex; justify-content: space-between; gap: 6px; }
+.card label { display: block; font-size: .82rem; color: var(--muted); margin: 8px 0 2px; }
+.seg { display: flex; gap: 4px; flex-wrap: wrap; }
+.seg button { padding: 3px 9px; font-size: .85rem; }
+.seg button.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.drop { border: 2px dashed var(--line); border-radius: 12px; padding: 22px; text-align: center; }
+.drop.over { border-color: var(--accent); }
+.bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.pill { font-size: .8rem; border: 1px solid var(--line); border-radius: 10px; padding: 0 8px; background: var(--panel); }
+.hidden { display: none !important; }
+.gate { display: grid; grid-template-columns: 120px 1fr; gap: 6px 14px; }
+.gate b { color: var(--accent); }
+@media (max-width: 600px) { .gate { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Voice Casting Desk <span class="muted" style="font-weight:400">· Mere Voice</span></h1>
+  <nav id="tabs">
+    <button data-tab="start" class="on">Start</button>
+    <button data-tab="casting">Casting</button>
+    <button data-tab="protocol">Protocol</button>
+    <button data-tab="listen">Listening room</button>
+    <button data-tab="after">After the choice</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<section id="tab-start">
+  <div class="panel">
+    <h2>What this kit does</h2>
+    <p>It takes you from <i>"who could be the Voice?"</i> to <i>"the chosen voice has recorded everything we need"</i>, for the fixed lines and the generative layers. Everything runs in this browser. Nothing is uploaded anywhere.</p>
+    <h3>Steps</h3>
+    <ol>
+      <li><b>Casting:</b> write down 2–3 voices and give each a code (P1, P2, P3). Choose them with the dossier §51 source matrix in mind.</li>
+      <li><b>Send each voice:</b> <a href="../1_send_to_voices/01_Audition_Recorder_FA.html">01 Audition recorder</a> (they record in the browser, or open phone recordings, then press «دریافت بسته‌ی صدا» to get one ZIP) and the <a href="../1_send_to_voices/03_Consent_Form_FA_EN.pdf">consent form</a>. For people who only have a phone, send the <a href="../1_send_to_voices/phone_only_PDF_and_Word/01_Audition_Script_FA.pdf">PDF script</a>; they record with the phone and send the files.</li>
+      <li><b>Collect</b> the ZIP packages or audio files they send. Use nothing before the signed consent is back.</li>
+      <li><b>Listening room:</b> open all packages together. Listen blind following the <b>Protocol</b>. Save your results.</li>
+      <li><b>Full session:</b> send the chosen voice <a href="../1_send_to_voices/02_Full_Session_Recorder_FA.html">02 Full session recorder</a> (or its <a href="../1_send_to_voices/phone_only_PDF_and_Word/02_Full_Session_Script_FA.pdf">PDF</a>).</li>
+      <li><b>Hand over:</b> copy every received ZIP into <code>mere-voice\recordings_inbox\</code>, double-click <code>IMPORT_RECORDINGS.bat</code>, then tell Claude <i>"the full session is in"</i>.</li>
+    </ol>
+    <p class="muted">Before sending, you may want to change the two take directions: A «طبیعی» (natural), B «دور و بالینی» (distant, clinical). Ask Claude to regenerate the recorder pages with your wording.</p>
+  </div>
+  <div class="panel">
+    <h2>Formats the recorders produce</h2>
+    <ul>
+      <li>Recorded in the page: <b>WAV, 48 kHz, 24-bit, mono</b>. Echo cancellation, noise suppression and automatic gain are switched off, so the raw voice is kept.</li>
+      <li>Opened from a phone: the original file is kept byte for byte (m4a, wav, mp3…). Nothing is re-encoded.</li>
+      <li>The package also holds <code>P#_ROOMTONE.wav</code> (10 s of the room's own noise) and <code>P#_manifest.json</code> (every take's text, source, duration, peak level, clipping, and the performer's notes).</li>
+      <li>File names follow <code>P1_VOICE-004_B.wav</code>, which the project importer and this desk both read.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="tab-casting" class="hidden">
+  <div class="panel">
+    <h2>Casting tracker</h2>
+    <p class="muted">Saved automatically in this browser. Export to keep a copy or to move it to another computer.</p>
+    <div class="scroll"><table class="tbl-casting" id="castTable"></table></div>
+    <div class="bar" style="margin-top:10px">
+      <button id="addRow">+ Add voice</button>
+      <button id="castCsv">Export CSV</button>
+      <button id="castJson">Export JSON</button>
+      <label class="btn">Import JSON<input type="file" id="castImport" accept=".json" class="hidden"></label>
+    </div>
+  </div>
+</section>
+
+<section id="tab-protocol" class="hidden">
+  <div class="panel">
+    <h2>Pass criteria, fixed before listening</h2>
+    <div class="gate">
+      <b>A · First hearing</b><span>Did I understand every word, hearing it <b>once</b>? Any word I couldn't catch fails this gate.</span>
+      <b>B · Pronunciation</b><span>Did any word sound wrong or odd (vowel, ezafe, colloquial form, drug name)? Write it down.</span>
+      <b>C · Continuity</b><span>Does VOICE-004 sound like <b>one person forming one long thought</b>? No restarts, no odd pauses, no flat recited list.</span>
+      <b>D · Body</b><span>Is this usable as <i>the Voice</i> before any effects? What does it make the Voice <b>be</b>: narrator, hidden character, inner speech, institution, author…? (dossier §51)</span>
+    </div>
+    <h3>A human take is not a synthetic engine</h3>
+    <p>One slip in A or B is usually a <b>retake</b> (coach it, record again), not a reason to drop the person. Judge the voice and its presence mostly in D.</p>
+    <h3>Procedure (20–30 minutes)</h3>
+    <ol>
+      <li>Listening room: keep <b>Blind</b> and <b>Match loudness</b> on, and turn on <b>Pass 1</b> (each sample plays once).</li>
+      <li>Pass 1: play each sample once and note A and B.</li>
+      <li>Turn Pass 1 off. Pass 2: listen freely and rate C and D, then give a verdict: KEEP / RETRY / DROP / HOLD.</li>
+      <li>Press <b>Save results</b>. Only then turn Blind off to see who was who.</li>
+      <li>If possible, repeat with a second native listener who doesn't know the candidates.</li>
+    </ol>
+    <h3>Decision rules</h3>
+    <ul>
+      <li>KEEP on at least 2 of 3 lines, and no unresolved C failure → strong candidate.</li>
+      <li>The same word wrong in both takes → coach and retake before judging.</li>
+      <li>Two voices pass → choose by D (your artistic call), or keep both, one per register or as "several apparent bodies" (dossier §50).</li>
+      <li>Nobody passes D → cast another voice. Don't process a weak voice into shape.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="tab-listen" class="hidden">
+  <div class="panel">
+    <h2>Listening room</h2>
+    <div class="drop" id="drop">
+      <p><b>Drop the received ZIP packages or audio files here</b>, or</p>
+      <label class="btn primary">Open files<input type="file" id="pick" multiple accept=".zip,audio/*,.m4a,.wav,.mp3,.aac,.ogg,.opus,.webm,.flac" class="hidden"></label>
+      <label class="btn">Open a folder<input type="file" id="pickDir" webkitdirectory multiple class="hidden"></label>
+      <p class="muted" id="loaded" style="margin:10px 0 0">Nothing loaded yet. Files stay on this computer.</p>
+    </div>
+    <div class="bar" style="margin-top:12px">
+      <label><input type="checkbox" id="blind" checked> Blind</label>
+      <label><input type="checkbox" id="norm" checked> Match loudness</label>
+      <label><input type="checkbox" id="pass1"> Pass 1 (each sample plays once)</label>
+      <span style="flex:1"></span>
+      <input type="text" id="listener" placeholder="Listener name" style="width:160px">
+      <input type="text" id="setup" placeholder="Setup, e.g. headphones" style="width:200px">
+    </div>
+    <div class="bar" style="margin-top:10px">
+      <button id="stop">■ Stop</button>
+      <button id="save" class="primary">Save results</button>
+      <button id="reshuffle">Reshuffle order</button>
+      <button id="clearRatings">Clear ratings</button>
+      <span class="muted" id="saveInfo"></span>
+    </div>
+  </div>
+  <div id="lines"></div>
+</section>
+
+<section id="tab-after" class="hidden">
+  <div class="panel">
+    <h2>After the choice</h2>
+    <ol>
+      <li>Send the chosen voice <a href="../1_send_to_voices/02_Full_Session_Recorder_FA.html">02 Full session recorder</a>. It covers all 17 lines × 2 takes, a varied reading for the voice model, free speech, and the Grave-Machine assembly pilot (about 1–1.5 hours; can be split across days).</li>
+      <li>Put every ZIP they send into <code>mere-voice\recordings_inbox\</code> and double-click <code>IMPORT_RECORDINGS.bat</code>.</li>
+      <li>Tell Claude <i>"the full session is in"</i>. Claude then:
+        <ul>
+          <li>adds a "recorded voice" source so the 17 lines play in the workbench;</li>
+          <li>assembles the 5 Grave-Machine test lines from recorded pieces;</li>
+          <li>tests voice conversion from the reading material;</li>
+          <li>sets up one blind round for the generative layer.</li>
+        </ul>
+      </li>
+    </ol>
+    <p class="muted">Privacy: the project repository on GitHub is public, and all recording folders are excluded from it.</p>
+  </div>
+</section>
+</main>
+
+<script>
+const LINES = /*__LINES__*/null;
+const $ = id => document.getElementById(id);
+const esc = x => String(x ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const LS = "mere-voice-desk-v1";
+const S = (() => { try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch { return {}; } })();
+const persist = () => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch {} };
+S.cast = S.cast || [{ code: "P1" }, { code: "P2" }, { code: "P3" }];
+S.ratings = S.ratings || {}; S.order = S.order || {}; S.played = S.played || {};
+S.blind = S.blind !== false; S.norm = S.norm !== false;
+
+// ---------- tabs ----------
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll("main > section").forEach(s => s.classList.toggle("hidden", s.id !== "tab-" + b.dataset.tab));
+  S.tab = b.dataset.tab; persist();
+});
+if (S.tab) document.querySelector(`#tabs button[data-tab="${S.tab}"]`)?.click();
+
+// ---------- casting ----------
+const SOURCE_TYPES = ["", "third performer (prerecorded)", "third performer (live offstage)", "author's own voice", "Mother actor", "Man actor", "both actors / alternating", "synthetic or processed", "other"];
+const COLS = [["code", "Code"], ["name", "Name"], ["type", "Source type (§51)"], ["contact", "Contact"], ["sent", "Audition sent"], ["consent", "Consent signed"], ["model", "Allows voice model"], ["online", "Allows online services"], ["files", "Files received"], ["verdict", "Verdict"], ["notes", "Notes"]];
+const YN = ["", "yes", "no"];
+function renderCast() {
+  const t = $("castTable");
+  t.innerHTML = "<tr>" + COLS.map(c => `<th>${c[1]}</th>`).join("") + "<th></th></tr>";
+  S.cast.forEach((r, i) => {
+    const tr = document.createElement("tr");
+    COLS.forEach(([k]) => {
+      const td = document.createElement("td"); if (k === "code") td.className = "code";
+      let el;
+      if (k === "type") { el = document.createElement("select"); SOURCE_TYPES.forEach(o => el.add(new Option(o || "—", o))); }
+      else if (["consent", "model", "online"].includes(k)) { el = document.createElement("select"); YN.forEach(o => el.add(new Option(o || "—", o))); }
+      else if (k === "verdict") { el = document.createElement("select"); ["", "KEEP", "RETRY", "DROP", "HOLD", "CHOSEN"].forEach(o => el.add(new Option(o || "—", o))); }
+      else if (k === "notes") el = document.createElement("textarea");
+      else { el = document.createElement("input"); el.type = "text"; }
+      el.value = r[k] || ""; el.oninput = el.onchange = () => { r[k] = el.value; persist(); };
+      td.append(el); tr.append(td);
+    });
+    const del = document.createElement("td"); const b = document.createElement("button"); b.textContent = "✕"; b.title = "Remove row";
+    b.onclick = () => { if (confirm("Remove this row?")) { S.cast.splice(i, 1); persist(); renderCast(); } }; del.append(b); tr.append(del);
+    t.append(tr);
+  });
+}
+$("addRow").onclick = () => { S.cast.push({ code: "P" + (S.cast.length + 1) }); persist(); renderCast(); };
+function download(name, text, type) { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 30000); }
+const csvCell = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+$("castCsv").onclick = () => download("casting_tracker.csv", "﻿" + [COLS.map(c => csvCell(c[1])).join(","), ...S.cast.map(r => COLS.map(([k]) => csvCell(r[k])).join(","))].join("\r\n"), "text/csv");
+$("castJson").onclick = () => download("casting_tracker.json", JSON.stringify(S.cast, null, 2), "application/json");
+$("castImport").onchange = async e => { try { const d = JSON.parse(await e.target.files[0].text()); if (Array.isArray(d)) { S.cast = d; persist(); renderCast(); } } catch { alert("Not a casting JSON file."); } };
+renderCast();
+
+// ---------- ZIP reading ----------
+async function inflateRaw(u8) {
+  const ds = new DecompressionStream("deflate-raw");
+  return new Uint8Array(await new Response(new Blob([u8]).stream().pipeThrough(ds)).arrayBuffer());
+}
+async function readZip(file) {
+  const u8 = new Uint8Array(await file.arrayBuffer()), v = new DataView(u8.buffer); const out = [];
+  let e = u8.length - 22; while (e >= 0 && v.getUint32(e, true) !== 0x06054b50) e--;
+  if (e < 0) throw new Error("not a zip");
+  const n = v.getUint16(e + 10, true); let p = v.getUint32(e + 16, true);
+  const dec = new TextDecoder();
+  for (let i = 0; i < n; i++) {
+    const method = v.getUint16(p + 10, true), csize = v.getUint32(p + 20, true), nlen = v.getUint16(p + 28, true), xlen = v.getUint16(p + 30, true), clen = v.getUint16(p + 32, true), lho = v.getUint32(p + 42, true);
+    const name = dec.decode(u8.subarray(p + 46, p + 46 + nlen));
+    p += 46 + nlen + xlen + clen;
+    if (name.endsWith("/")) continue;
+    const lnlen = v.getUint16(lho + 26, true), lxlen = v.getUint16(lho + 28, true), start = lho + 30 + lnlen + lxlen;
+    const raw = u8.subarray(start, start + csize);
+    let data = null;
+    try { data = method === 0 ? raw.slice() : method === 8 ? await inflateRaw(raw) : null; } catch { data = null; }
+    if (data) out.push({ name: name.split("/").pop(), data });
+  }
+  return out;
+}
+
+// ---------- samples ----------
+const AUDIO_EXT = /\.(wav|m4a|mp3|aac|ogg|opus|webm|flac)$/i;
+const PAT = /^([A-Za-z]+\d+)[ _-]+(VOICE[ _-]+\d{3}|GM[ _-]+\d{2})(?:[ _-]+([A-Za-z]))?$/i;
+const samples = {};  // id -> {id, cand, line, blob, src, quality}
+const manifests = {};
+const loadedNames = [];
+function addAudio(name, blob, src) {
+  const stem = name.replace(/\.[^.]+$/, "").trim(); const m = stem.match(PAT); if (!m) return false;
+  const code = m[1].toUpperCase(), line = m[2].toUpperCase().replace(/[ _-]+/, "-"), take = (m[3] || "A").toUpperCase();
+  const cand = `${code}·${take}`, id = `${line}|${cand}`;
+  samples[id] = { id, cand, code, take, line, blob, src, name };
+  return true;
+}
+async function ingest(files) {
+  let n = 0, skipped = [];
+  for (const f of files) {
+    if (/\.zip$/i.test(f.name)) {
+      try {
+        for (const e of await readZip(f)) {
+          if (/manifest\.json$/i.test(e.name)) { try { const m = JSON.parse(new TextDecoder().decode(e.data)); manifests[m.performer_code || e.name] = m; } catch {} continue; }
+          if (AUDIO_EXT.test(e.name)) { if (addAudio(e.name, new Blob([e.data]), f.name)) n++; else if (!/ROOMTONE|READING|FREE|GM-\d{2}[ab]\./i.test(e.name)) skipped.push(e.name); }
+        }
+        loadedNames.push(f.name);
+      } catch { skipped.push(f.name + " (could not open ZIP)"); }
+    } else if (AUDIO_EXT.test(f.name)) { if (addAudio(f.name, f, f.name)) { n++; loadedNames.push(f.name); } else skipped.push(f.name); }
+  }
+  const cands = new Set(Object.values(samples).map(s => s.cand));
+  $("loaded").innerHTML = `${Object.keys(samples).length} samples from ${cands.size} voice/take combinations loaded` +
+    (skipped.length ? `<br><span class="warn">Not recognised (name them like P1_VOICE-004_B.m4a): ${skipped.map(esc).join(", ")}</span>` : "");
+  renderLines();
+}
+$("pick").onchange = e => ingest([...e.target.files]);
+$("pickDir").onchange = e => ingest([...e.target.files]);
+const drop = $("drop");
+drop.ondragover = e => { e.preventDefault(); drop.classList.add("over"); };
+drop.ondragleave = () => drop.classList.remove("over");
+drop.ondrop = e => { e.preventDefault(); drop.classList.remove("over"); ingest([...e.dataTransfer.files]); };
+
+// ---------- playback with loudness matching ----------
+const ctx = new (window.AudioContext || window.webkitAudioContext)();
+const cache = new Map(); let playing = null;
+async function decode(s) {
+  if (cache.has(s.id)) return cache.get(s.id);
+  const buf = await ctx.decodeAudioData(await s.blob.arrayBuffer());
+  const ch = buf.getChannelData(0), fr = Math.round(buf.sampleRate * 0.02); let sum = 0, cnt = 0, pk = 0;
+  for (let i = 0; i < ch.length; i += fr) { let q = 0; const m = Math.min(fr, ch.length - i); for (let k = 0; k < m; k++) { const x = ch[i + k]; q += x * x; if (Math.abs(x) > pk) pk = Math.abs(x); } const pw = q / m; if (10 * Math.log10(pw + 1e-12) > -50) { sum += pw; cnt++; } }
+  const out = { buf, rms: 10 * Math.log10((cnt ? sum / cnt : 1e-12) + 1e-12), peak: pk };
+  cache.set(s.id, out); return out;
+}
+function stop() { if (playing) { try { playing.src.stop(); } catch {} playing.btn.textContent = "▶ Play"; playing = null; } }
+async function play(s, btn, meta) {
+  stop(); await ctx.resume();
+  if (S.pass1 && S.played[s.id]) return;
+  try {
+    const d = await decode(s);
+    const g = S.norm ? Math.min(Math.pow(10, (-23 - d.rms) / 20), 0.98 / Math.max(d.peak, 1e-6)) : 1;
+    const src = ctx.createBufferSource(); src.buffer = d.buf; const gn = ctx.createGain(); gn.gain.value = g;
+    src.connect(gn).connect(ctx.destination); src.start();
+    playing = { src, btn }; btn.textContent = "■ Stop";
+    src.onended = () => { if (playing && playing.src === src) { btn.textContent = "▶ Play"; playing = null; } };
+    meta.textContent = `${d.buf.duration.toFixed(1)} s · level ${d.rms.toFixed(1)} dBFS${S.norm ? " (matched)" : ""}`;
+    if (S.pass1) { S.played[s.id] = true; persist(); btn.disabled = true; btn.title = "Pass 1: played once"; }
+  } catch { meta.innerHTML = '<span class="bad">This browser could not decode this file.</span>'; }
+}
+$("stop").onclick = stop;
+
+// ---------- blind cards ----------
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function orderFor(line, ids) {
+  const key = ids.slice().sort().join(",");
+  if (!S.order[line] || S.order[line].key !== key) { S.order[line] = { key, ids: shuffle(ids) }; persist(); }
+  return S.order[line].ids;
+}
+function seg(r, field, options) {
+  const d = document.createElement("div"); d.className = "seg";
+  options.forEach(o => { const b = document.createElement("button"); b.textContent = o; if (r[field] === o) b.className = "on";
+    b.onclick = () => { r[field] = r[field] === o ? "" : o; persist(); d.querySelectorAll("button").forEach(x => x.className = x.textContent === r[field] ? "on" : ""); }; d.append(b); });
+  return d;
+}
+function txt(r, field, ph) { const t = document.createElement("textarea"); t.placeholder = ph || ""; t.value = r[field] || ""; t.oninput = () => { r[field] = t.value; persist(); }; return t; }
+function lab(text, el) { const w = document.createElement("div"); const l = document.createElement("label"); l.textContent = text; w.append(l, el); return w; }
+function renderLines() {
+  const root = $("lines"); root.innerHTML = "";
+  const byLine = {}; Object.values(samples).forEach(s => (byLine[s.line] = byLine[s.line] || []).push(s.id));
+  const lineIds = Object.keys(byLine).sort((a, b) => (a.startsWith("VOICE") ? 0 : 1) - (b.startsWith("VOICE") ? 0 : 1) || a.localeCompare(b));
+  for (const line of lineIds) {
+    const sec = document.createElement("div"); sec.className = "panel";
+    sec.innerHTML = `<h2>${esc(line)}</h2><div class="fa">${esc(LINES[line] || "")}</div>`;
+    const grid = document.createElement("div"); grid.className = "grid"; sec.append(grid);
+    orderFor(line, byLine[line]).forEach((id, k) => {
+      const s = samples[id]; if (!s) return;
+      const r = S.ratings[id] = S.ratings[id] || {};
+      const card = document.createElement("div"); card.className = "card";
+      const letter = String.fromCharCode(65 + k);
+      const q = manifests[s.code]?.takes?.find(t => t.file === s.name)?.quality;
+      card.innerHTML = `<h4><span>${S.blind ? "Sample " + letter : esc(s.cand)}</span>${S.blind ? "" : `<span class="pill">${esc(s.src)}</span>`}</h4>`;
+      const b = document.createElement("button"); b.className = "primary"; b.textContent = "▶ Play";
+      const meta = document.createElement("div"); meta.className = "muted"; meta.style.fontSize = ".82rem";
+      if (S.pass1 && S.played[id]) { b.disabled = true; b.title = "Pass 1: played once"; }
+      b.onclick = () => (playing && playing.btn === b) ? stop() : play(s, b, meta);
+      card.append(b, meta);
+      if (!S.blind && q) { const m = document.createElement("div"); m.className = "muted"; m.style.fontSize = ".8rem"; m.textContent = `recorder check: peak ${q.peak_dbfs} dBFS, ${q.clipped_samples ? q.clipped_samples + " clipped samples" : "no clipping"}`; card.append(m); }
+      card.append(lab("A · understood on first hearing", seg(r, "A", ["yes", "no"])));
+      card.append(lab("B · wrong or odd words", txt(r, "B", "write the words")));
+      if (line === "VOICE-004" || (LINES[line] || "").length > 120) card.append(lab("C · one continuous thought", seg(r, "C", ["yes", "no"])));
+      card.append(lab("D · body usable as the Voice (1–5)", seg(r, "D", ["1", "2", "3", "4", "5"])));
+      card.append(lab("What does it make the Voice be?", txt(r, "be", "narrator, hidden character, inner speech…")));
+      card.append(lab("Verdict", seg(r, "verdict", ["KEEP", "RETRY", "DROP", "HOLD"])));
+      grid.append(card);
+    });
+    root.append(sec);
+  }
+}
+$("blind").checked = S.blind; $("norm").checked = S.norm; $("pass1").checked = !!S.pass1;
+$("listener").value = S.listener || ""; $("setup").value = S.setup || "";
+$("blind").onchange = e => { S.blind = e.target.checked; persist(); renderLines(); };
+$("norm").onchange = e => { S.norm = e.target.checked; persist(); };
+$("pass1").onchange = e => { S.pass1 = e.target.checked; if (S.pass1) S.played = {}; persist(); renderLines(); };
+$("listener").oninput = e => { S.listener = e.target.value; persist(); };
+$("setup").oninput = e => { S.setup = e.target.value; persist(); };
+$("reshuffle").onclick = () => { if (confirm("Shuffle the sample order again? Ratings stay attached to the right voices.")) { S.order = {}; persist(); renderLines(); } };
+$("clearRatings").onclick = () => { if (confirm("Delete all ratings in this browser? Save results first if you need them.")) { S.ratings = {}; S.played = {}; persist(); renderLines(); } };
+$("save").onclick = () => {
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  const rows = [];
+  for (const [line, o] of Object.entries(S.order)) o.ids.forEach((id, k) => { const s = samples[id], r = S.ratings[id] || {}; if (s) rows.push({ line, sample: String.fromCharCode(65 + k), candidate: s.cand, source_file: s.name, ...r }); });
+  if (!rows.length) { alert("Load recordings first."); return; }
+  const doc = { schema: "mere-voice.casting-results.v1", saved_at: new Date().toISOString(), listener: S.listener || "", setup: S.setup || "",
+    blind_at_save: S.blind, loudness_matched: S.norm, packages: loadedNames, manifests: Object.fromEntries(Object.entries(manifests).map(([k, m]) => [k, { name: m.performer_name, gear: m.gear, consent_confirmed: m.consent_confirmed, room_tone: m.room_tone, created_at: m.created_at }])), results: rows };
+  download(`casting_results_${stamp}.json`, JSON.stringify(doc, null, 2), "application/json");
+  const cols = ["line", "sample", "candidate", "source_file", "A", "B", "C", "D", "be", "verdict"];
+  download(`casting_results_${stamp}.csv`, "﻿" + [cols.join(","), ...rows.map(r => cols.map(c => csvCell(r[c])).join(","))].join("\r\n"), "text/csv");
+  $("saveInfo").textContent = "Saved two files (JSON + CSV) to your Downloads folder.";
+};
+</script>
+</body>
+</html>
