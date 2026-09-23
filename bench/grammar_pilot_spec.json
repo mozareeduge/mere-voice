@@ -1,0 +1,266 @@
+{
+ "seed": 20260924,
+ "source": "grave-machine fa v1.1.1 (index.html)",
+ "pilot": [
+  {
+   "target_id": "GM-01",
+   "route": "fa_l_agent_body",
+   "template": "{agent} {body:ezafe} {bodyTexture} را {recordVerb:fa3sg}.",
+   "target_text": "اداره پیکر بی‌نام را گم می‌کند.",
+   "units": [
+    {
+     "slot": "agent",
+     "form": "base",
+     "text": "اداره",
+     "from_donor": "GM-01a"
+    },
+    {
+     "slot": "body",
+     "form": "ezafe",
+     "text": "پیکر",
+     "from_donor": "GM-01b"
+    },
+    {
+     "slot": "bodyTexture",
+     "form": "base",
+     "text": "بی‌نام",
+     "from_donor": "GM-01a"
+    },
+    {
+     "slot": "recordVerb",
+     "form": "fa3sg",
+     "text": "گم می‌کند",
+     "from_donor": "GM-01b"
+    }
+   ],
+   "donors": [
+    {
+     "id": "GM-01a",
+     "text": "اداره جنازه‌ی بی‌نام را رد می‌کند."
+    },
+    {
+     "id": "GM-01b",
+     "text": "زونکن پیکر سرد را گم می‌کند."
+    }
+   ]
+  },
+  {
+   "target_id": "GM-02",
+   "route": "fa_l_doc_body",
+   "template": "{doc:ezafe} {docTexture} {body:ezafe} {bodyTexture} را {pairVerb:fa3sg}.",
+   "target_text": "سابقه‌ی خیس پیکر کفن‌پیچ را عوض می‌کند.",
+   "units": [
+    {
+     "slot": "doc",
+     "form": "ezafe",
+     "text": "سابقه‌ی",
+     "from_donor": "GM-02a"
+    },
+    {
+     "slot": "docTexture",
+     "form": "base",
+     "text": "خیس",
+     "from_donor": "GM-02b"
+    },
+    {
+     "slot": "body",
+     "form": "ezafe",
+     "text": "پیکر",
+     "from_donor": "GM-02a"
+    },
+    {
+     "slot": "bodyTexture",
+     "form": "base",
+     "text": "کفن‌پیچ",
+     "from_donor": "GM-02b"
+    },
+    {
+     "slot": "pairVerb",
+     "form": "fa3sg",
+     "text": "عوض می‌کند",
+     "from_donor": "GM-02a"
+    }
+   ],
+   "donors": [
+    {
+     "id": "GM-02a",
+     "text": "سابقه‌ی پاره پیکر شماره‌خورده را عوض می‌کند."
+    },
+    {
+     "id": "GM-02b",
+     "text": "پرونده‌ی خیس بدن کفن‌پیچ را پاک می‌کند."
+    }
+   ]
+  },
+  {
+   "target_id": "GM-03",
+   "route": "fa_l_agent_case",
+   "template": "{agent} {doc} را {recordVerb:fa3sg}؛ {case} {caseVerb:fa3sg}.",
+   "target_text": "کمد زونکن را بد می‌خواند؛ امضا می‌لغزد.",
+   "units": [
+    {
+     "slot": "agent",
+     "form": "base",
+     "text": "کمد",
+     "from_donor": "GM-03a"
+    },
+    {
+     "slot": "doc",
+     "form": "base",
+     "text": "زونکن",
+     "from_donor": "GM-03b"
+    },
+    {
+     "slot": "recordVerb",
+     "form": "fa3sg",
+     "text": "بد می‌خواند",
+     "from_donor": "GM-03a"
+    },
+    {
+     "slot": "case",
+     "form": "base",
+     "text": "امضا",
+     "from_donor": "GM-03b"
+    },
+    {
+     "slot": "caseVerb",
+     "form": "fa3sg",
+     "text": "می‌لغزد",
+     "from_donor": "GM-03a"
+    }
+   ],
+   "donors": [
+    {
+     "id": "GM-03a",
+     "text": "کمد سابقه را بد می‌خواند؛ شماره می‌لغزد."
+    },
+    {
+     "id": "GM-03b",
+     "text": "میز زونکن را گم می‌کند؛ امضا می‌ماند."
+    }
+   ]
+  },
+  {
+   "target_id": "GM-04",
+   "route": "fa_l_body_case",
+   "template": "{body:ezafe} {bodyTexture}؛ {case} {caseVerb:fa3sg}.",
+   "target_text": "تن سفید؛ مهر گم می‌شود.",
+   "units": [
+    {
+     "slot": "body",
+     "form": "ezafe",
+     "text": "تن",
+     "from_donor": "GM-04a"
+    },
+    {
+     "slot": "bodyTexture",
+     "form": "base",
+     "text": "سفید",
+     "from_donor": "GM-04b"
+    },
+    {
+     "slot": "case",
+     "form": "base",
+     "text": "مهر",
+     "from_donor": "GM-04a"
+    },
+    {
+     "slot": "caseVerb",
+     "form": "fa3sg",
+     "text": "گم می‌شود",
+     "from_donor": "GM-04b"
+    }
+   ],
+   "donors": [
+    {
+     "id": "GM-04a",
+     "text": "تن پیچیده؛ مهر محو می‌شود."
+    },
+    {
+     "id": "GM-04b",
+     "text": "بدن سفید؛ شماره گم می‌شود."
+    }
+   ]
+  },
+  {
+   "target_id": "GM-05",
+   "route": "fa_l_become",
+   "template": "{body:ezafe} {bodyTexture} به {doc:ezafe} {docTexture} {become:fa3sg}.",
+   "target_text": "بدن سوخته به برگ خاک‌گرفته تبدیل می‌شود.",
+   "units": [
+    {
+     "slot": "body",
+     "form": "ezafe",
+     "text": "بدن",
+     "from_donor": "GM-05a"
+    },
+    {
+     "slot": "bodyTexture",
+     "form": "base",
+     "text": "سوخته",
+     "from_donor": "GM-05b"
+    },
+    {
+     "slot": "doc",
+     "form": "ezafe",
+     "text": "برگ",
+     "from_donor": "GM-05a"
+    },
+    {
+     "slot": "docTexture",
+     "form": "base",
+     "text": "خاک‌گرفته",
+     "from_donor": "GM-05b"
+    },
+    {
+     "slot": "become",
+     "form": "fa3sg",
+     "text": "تبدیل می‌شود",
+     "from_donor": "GM-05a"
+    }
+   ],
+   "donors": [
+    {
+     "id": "GM-05a",
+     "text": "بدن کفن‌پیچ به برگ خالی تبدیل می‌شود."
+    },
+    {
+     "id": "GM-05b",
+     "text": "جنازه‌ی سوخته به فرم خاک‌گرفته بدل می‌شود."
+    }
+   ]
+  }
+ ],
+ "reading_lines": [
+  "بدن سوخته نزدیک کاغذ نازک می‌لغزد.",
+  "پیکر؛ سابقه؛ راهرو.",
+  "کارمند پرونده‌ی خیس را داخل کمد روی هم می‌گذارد.",
+  "یک بدن کفن‌پیچ، بی‌برگ.",
+  "باربر پیکر سفید را به میز می‌کشد.",
+  "پرونده جنازه‌ی کفن‌پیچ را بد می‌خواند.",
+  "جنازه‌ی ثبت‌شده به پوشه‌ی خیس بدل می‌شود.",
+  "جنازه‌ی سفید در دفتر شماره‌خورده ثبت می‌شود.",
+  "دفتر پاره جنازه‌ی سرد را پس می‌زند.",
+  "تن سوخته؛ نام می‌لغزد.",
+  "درخت افتاده روی سینی بایگانی می‌ماند.",
+  "کاغذ نمناک مقابل در تکیه می‌کند.",
+  "برگ‌ها افتاده روی سینی بایگانی می‌مانند.",
+  "برگ‌ها خشک از روی سینی بایگانی برمی‌گردند.",
+  "تیر شکسته کنار پنجره تکیه می‌کند.",
+  "باد از در می‌گذرد؛ گل‌ولای پیشخوان را پر می‌کند.",
+  "سیل به کف می‌رسد.",
+  "دود از روی جعبه‌ی خالی می‌لغزد.",
+  "دود تاریکی را می‌پوشاند.",
+  "باد از اتاق می‌رسد.",
+  "فرم‌ها منتظر می‌مانند؛ بی‌شماره.",
+  "سابقه‌ها، هنوز ثبت‌نشده.",
+  "مرد لاغر برمی‌گردد؛ مهر می‌ماند.",
+  "جعبه‌ها، دوباره سنگین‌تر.",
+  "جنازه بی‌جعبه می‌رسد.",
+  "از دست آسیب‌دیده خون می‌چکد.",
+  "آستین خون‌آلود به کف گیر می‌کند.",
+  "زخم خون‌ریزی می‌کند؛ خون آستین را می‌پوشاند.",
+  "زخم باز می‌شود؛ خون به میز می‌رسد.",
+  "چشم آسیب‌دیده بسته نمی‌شود."
+ ]
+}
