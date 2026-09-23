@@ -230,9 +230,10 @@ async function render() {
       const url = line.files[cond];
       const card = document.createElement("div"); card.className = "sample" + (url ? "" : " missing");
       const r = ratingFor(line.line_id, cond);
-      const shown = url && state.blind ? `Sample ${String.fromCharCode(65 + letter)}` : LABEL_NAMES[cond];
+      const label = LABEL_NAMES[cond] || (manifest.labels || {})[cond] || cond;
+      const shown = url && state.blind ? `Sample ${String.fromCharCode(65 + letter)}` : label;
       if (url) letter++;
-      const h = document.createElement("h3"); const hs = document.createElement("span"); hs.textContent = !url && state.blind ? LABEL_NAMES[cond] : shown; h.append(hs); card.append(h);
+      const h = document.createElement("h3"); const hs = document.createElement("span"); hs.textContent = !url && state.blind ? label : shown; h.append(hs); card.append(h);
       const meta = document.createElement("div"); meta.className = "meta"; card.append(meta);
       if (url) {
         const b = document.createElement("button"); b.textContent = "▶ Play"; b.className = "primary";

@@ -1,0 +1,11 @@
+{
+  "purpose": "Voice source audition: which voice becomes the Voice. Every folder in bench/audio/ is a candidate except the excluded ones.",
+  "auto_conditions": true,
+  "exclude": ["mana-pre-v061", "mana-v061-vocalized", "pocket-fa-v2"],
+  "labels": {},
+  "lines": [
+    {"line_id": "VOICE-004", "why": "pharmaceutical / long clinical stress case"},
+    {"line_id": "VOICE-001", "why": "colloquial rejection relation"},
+    {"line_id": "VOICE-009", "why": "memory / lyrical register"}
+  ]
+}

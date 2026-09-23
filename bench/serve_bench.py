@@ -22,11 +22,40 @@ ROOT = Path(__file__).resolve().parents[1]
 BENCH = ROOT / "bench"
 AUDIO = BENCH / "audio"
 RESULTS = ROOT / "evidence" / "bench"
-LINES = [("VOICE-004", "pharmaceutical / long clinical stress case"), ("VOICE-001", "colloquial rejection relation"), ("VOICE-009", "memory / lyrical register")]
-CONDITIONS = ["mana-canonical", "human-recorded", "mana-pre-v061", "mana-v061-vocalized", "pocket-fa-v2"]
-AUDIO_EXTS = {"wav", "mp3", "m4a", "flac", "ogg", "webm"}
+SESSION = BENCH / "bench_session.json"
+DEFAULT_LINES = [("VOICE-004", "pharmaceutical / long clinical stress case"), ("VOICE-001", "colloquial rejection relation"), ("VOICE-009", "memory / lyrical register")]
+DEFAULT_CONDITIONS = ["mana-canonical", "human-recorded", "mana-pre-v061", "mana-v061-vocalized", "pocket-fa-v2"]
+AUDIO_EXTS = {"wav", "mp3", "m4a", "flac", "ogg", "webm", "aac", "opus"}
 UPLOAD_LIMIT = 100 * 1024 * 1024
 PORT = int(os.environ.get("BENCH_PORT", "8766"))
+
+
+def session() -> dict:
+    """Optional bench/bench_session.json. Without it the bench behaves exactly as before.
+
+    {"auto_conditions": true, "exclude": [...], "labels": {cond: label},
+     "lines": [{"line_id": "...", "why": "...", "text_fa": "optional, else from the primary witness"}]}
+    With auto_conditions, every folder in bench/audio/ is a condition unless it starts with "_" or is excluded.
+    """
+    try:
+        return json.loads(SESSION.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def conditions() -> list[str]:
+    s = session()
+    if not s.get("auto_conditions"):
+        return list(DEFAULT_CONDITIONS)
+    skip = set(s.get("exclude") or [])
+    return sorted(p.name for p in AUDIO.iterdir() if p.is_dir() and not p.name.startswith("_") and p.name not in skip)
+
+
+def lines() -> list[dict]:
+    rows = session().get("lines")
+    if not rows:
+        return [{"line_id": lid, "why": why} for lid, why in DEFAULT_LINES]
+    return [{"line_id": r["line_id"], "why": r.get("why", ""), **({"text_fa": r["text_fa"]} if r.get("text_fa") else {})} for r in rows]
 
 
 def find_audio(cond: str, line: str) -> str | None:
@@ -42,9 +71,12 @@ def find_audio(cond: str, line: str) -> str | None:
 def manifest() -> dict:
     src = json.loads((ROOT / "data" / "source" / "voice_lines.primary_witness.json").read_text(encoding="utf-8"))
     text = {r["line_id"]: r["text_fa"] for r in src["lines"]}
+    conds = conditions()
     return {
-        "conditions": CONDITIONS,
-        "lines": [{"line_id": lid, "why": why, "text_fa": text[lid], "files": {c: find_audio(c, lid) for c in CONDITIONS}} for lid, why in LINES],
+        "conditions": conds,
+        "labels": session().get("labels") or {},
+        "lines": [{"line_id": l["line_id"], "why": l["why"], "text_fa": l.get("text_fa") or text.get(l["line_id"], ""),
+                   "files": {c: find_audio(c, l["line_id"]) for c in conds}} for l in lines()],
     }
 
 
@@ -71,8 +103,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(HTTPStatus.OK, (BENCH / "index.html").read_bytes(), "text/html; charset=utf-8")
         if path == "/api/bench":
             return self._json(HTTPStatus.OK, manifest())
-        m = re.fullmatch(r"/audio/([a-z0-9-]+)/(VOICE-\d{3}\.[a-z0-9]+)", path)
-        if m and m.group(1) in CONDITIONS:
+        m = re.fullmatch(r"/audio/([A-Za-z0-9_-]+)/([A-Z]+-[0-9A-Za-z]+\.[a-z0-9]+)", path)
+        if m and m.group(1) in conditions():
             f = AUDIO / m.group(1) / m.group(2)
             if f.is_file():
                 return self._send(HTTPStatus.OK, f.read_bytes(), mimetypes.guess_type(f.name)[0] or "application/octet-stream")
@@ -88,7 +120,7 @@ class Handler(BaseHTTPRequestHandler):
             q = parse_qs(url.query)
             line = (q.get("line") or [""])[0]
             ext = (q.get("ext") or [""])[0].lower().lstrip(".")
-            if line not in {l for l, _ in LINES} or ext not in AUDIO_EXTS or not body:
+            if line not in {l["line_id"] for l in lines()} or ext not in AUDIO_EXTS or not body:
                 return self._json(HTTPStatus.BAD_REQUEST, {"error": "line/ext/body invalid"})
             d = AUDIO / "human-recorded"
             d.mkdir(parents=True, exist_ok=True)

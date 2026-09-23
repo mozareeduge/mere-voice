@@ -11,3 +11,9 @@ execution-state/
 # Export runs are regenerable QA/session byproducts, not source.
 /exports/*
 !/exports/.gitkeep
+
+# Performer recordings are private (this repo is public): never commit them.
+/recordings_inbox/
+/voice_training/
+/bench/audio/rec-*/
+/bench/audio/human-recorded/
