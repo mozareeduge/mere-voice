@@ -69,6 +69,12 @@ button.recording { animation: pulse 1s infinite; }
 .hidden { display: none !important; }
 a { color: var(--accent); }
 .dir-ltr { direction: ltr; unicode-bidi: embed; }
+@media (max-width: 560px) {
+  .foot { padding: 6px 10px; gap: 6px; flex-wrap: nowrap; }
+  .foot button { padding: 6px 10px; font-size: .9rem; }
+  #zipInfo { display: none; }
+  .text { font-size: 1.15rem; }
+}
 </style>
 </head>
 <body>
