@@ -80,7 +80,8 @@ a { color: var(--accent); }
     <h2>این صفحه چیست؟</h2>
     <p>«صدا» شخصیتی دیده‌نشدنی در این نمایش است. در این صفحه می‌توانید هر سطر را مستقیم ضبط کنید، یا اگر با گوشی ضبط کرده‌اید فایلش را باز کنید. در پایان، دکمه‌ی «دریافت بسته‌ی صدا» همه‌ی ضبط‌ها را با نام و قالب درست در یک فایل ZIP به شما می‌دهد تا برای ما بفرستید.</p>
     <ul>
-      <li>بهترین کار: <b>Chrome یا Edge روی رایانه</b>، با هدفون، در اتاقی ساکت.</li>
+      <li>بهترین کار: <b>Chrome یا Edge روی رایانه</b>، با هدفون، در اتاقی ساکت. روی گوشی (Chrome اندروید یا Safari آیفون) هم کار می‌کند، به شرط آن‌که صفحه را از نشانی اینترنتی‌ای که کارگردان فرستاده باز کنید.</li>
+      <li>روی گوشی: هنگام ضبط صفحه را باز نگه دارید و به برنامه‌ی دیگری نروید؛ صفحه‌ی قفل یا رفتن به برنامه‌ی دیگر ضبط را قطع می‌کند.</li>
       <li>ضبط‌ها فقط روی همین رایانه و در همین مرورگر می‌مانند و به هیچ‌جا فرستاده نمی‌شوند، مگر خودتان بسته را بفرستید. اگر صفحه بسته شود، ضبط‌ها با باز کردن دوباره‌ی همین فایل برمی‌گردند.</li>
       <li>پیش از ضبط، رضایت‌نامه را بخوانید و امضا کنید.</li>
     </ul>
@@ -110,7 +111,7 @@ a { color: var(--accent); }
       <div style="align-self:end"><button id="micBtn" class="primary">روشن کردن میکروفن</button></div>
     </div>
     <div style="margin-top:12px"><div class="meter" id="meter"><b></b><i></i></div>
-      <div class="hint" id="meterText">میکروفن خاموش است.</div></div>
+      <div class="hint" id="meterText">میکروفن خاموش است.</div><div class="hint dir-ltr" id="micInfo" style="font-size:.8rem"></div></div>
     <div style="margin-top:14px" class="controls">
       <button id="roomBtn" disabled>ضبط ۱۰ ثانیه سکوت اتاق</button>
       <span class="status" id="roomStatus">یک‌بار، پیش از ضبط سطرها: ده ثانیه کاملاً ساکت بمانید.</span>
@@ -180,41 +181,90 @@ let ctx = null, stream = null, srcNode = null, analyser = null, tapNode = null;
 let recording = null; // {key, chunks, start, maxSec, onDone}
 const WORKLET = `class Tap extends AudioWorkletProcessor { process(i){ const c=i[0]&&i[0][0]; if(c) this.port.postMessage(c.slice(0)); return true; } } registerProcessor('tap', Tap);`;
 
+// Must run synchronously inside the click handler: Safari/iOS only unlock audio during a user gesture.
+function ensureCtx() {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!ctx) ctx = new AC();
+  if (ctx.state !== "running") ctx.resume();
+}
+function newCtx(rate) {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  try { if (ctx) ctx.close(); } catch {}
+  ctx = rate ? new AC({ sampleRate: rate }) : new AC();
+  tapNode = null; srcNode = null;
+  return ctx.resume().catch(() => {});
+}
+async function buildTap() {
+  // AudioWorklet cannot load its module on pages opened from disk (file://) in Chrome,
+  // so fall back to ScriptProcessor there and whenever the worklet fails for any reason.
+  if (ctx.audioWorklet && location.protocol !== "file:" && window.AudioWorkletNode) {
+    try {
+      const url = URL.createObjectURL(new Blob([WORKLET], { type: "application/javascript" }));
+      await ctx.audioWorklet.addModule(url);
+      const node = new AudioWorkletNode(ctx, "tap", { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 1, channelCountMode: "explicit" });
+      node.port.onmessage = e => onChunk(e.data);
+      tapKind = "worklet";
+      return node;
+    } catch (e) { console.warn("AudioWorklet unavailable, using ScriptProcessor:", e); }
+  }
+  const node = ctx.createScriptProcessor(4096, 1, 1);
+  node.onaudioprocess = e => onChunk(e.inputBuffer.getChannelData(0).slice(0));
+  tapKind = "script";
+  return node;
+}
+let tapKind = "", meterRunning = false;
 async function micOn() {
+  const btn = $("micBtn");
+  if (!window.isSecureContext || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    $("meterText").innerHTML = '<span class="bad">این مرورگر اجازه‌ی ضبط از این صفحه را نمی‌دهد. صفحه را از نشانی اینترنتی‌ای که کارگردان فرستاده (https) باز کنید، یا با گوشی ضبط کنید و فایل‌ها را با «باز کردن فایل» اضافه کنید.</span>';
+    return;
+  }
+  btn.disabled = true; btn.textContent = "در حال روشن کردن…";
+  let step = "getUserMedia";
   try {
     if (stream) stream.getTracks().forEach(t => t.stop());
     const dev = $("device").value;
-    stream = await navigator.mediaDevices.getUserMedia({ audio: {
-      deviceId: dev ? { exact: dev } : undefined, channelCount: 1,
-      echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
-    if (!ctx) {
-      try { ctx = new AudioContext({ sampleRate: 48000 }); } catch { ctx = new AudioContext(); }
+    const want = { channelCount: 1, echoCancellation: false, noiseSuppression: false, autoGainControl: false };
+    if (dev) want.deviceId = { exact: dev };
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: want }); }
+    catch (e) {
+      if (e.name === "OverconstrainedError" || e.name === "NotReadableError") stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      else throw e;
     }
-    await ctx.resume();
-    if (srcNode) srcNode.disconnect();
-    srcNode = ctx.createMediaStreamSource(stream);
+    step = "audio";
+    if (!ctx) ensureCtx();
+    await ctx.resume().catch(() => {});
+    if (srcNode) try { srcNode.disconnect(); } catch {}
+    try { srcNode = ctx.createMediaStreamSource(stream); }
+    catch (e) {
+      // Firefox (and older engines) refuse a context whose rate differs from the microphone's.
+      const rate = stream.getAudioTracks()[0]?.getSettings?.().sampleRate;
+      await newCtx(rate);
+      srcNode = ctx.createMediaStreamSource(stream);
+    }
     analyser = ctx.createAnalyser(); analyser.fftSize = 2048;
     srcNode.connect(analyser);
+    step = "recorder";
     if (!tapNode) {
-      if (ctx.audioWorklet) {
-        const url = URL.createObjectURL(new Blob([WORKLET], { type: "application/javascript" }));
-        await ctx.audioWorklet.addModule(url);
-        tapNode = new AudioWorkletNode(ctx, "tap");
-        tapNode.port.onmessage = e => onChunk(e.data);
-      } else {
-        tapNode = ctx.createScriptProcessor(4096, 1, 1);
-        tapNode.onaudioprocess = e => onChunk(e.inputBuffer.getChannelData(0).slice(0));
-      }
+      tapNode = await buildTap();
       const sink = ctx.createGain(); sink.gain.value = 0; tapNode.connect(sink); sink.connect(ctx.destination);
     }
     srcNode.connect(tapNode);
     await listDevices();
-    $("micBtn").textContent = "میکروفن روشن است ✓"; $("roomBtn").disabled = false;
+    const set = stream.getAudioTracks()[0]?.getSettings?.() || {};
+    btn.textContent = "میکروفن روشن است ✓"; $("roomBtn").disabled = false;
     document.querySelectorAll("button[data-act=rec]").forEach(b => b.disabled = false);
-    meterLoop();
+    $("micInfo").textContent = `${ctx.sampleRate} Hz · ${tapKind} · ${set.label || stream.getAudioTracks()[0]?.label || ""}`;
+    if (!meterRunning) { meterRunning = true; meterLoop(); }
   } catch (e) {
-    $("meterText").innerHTML = '<span class="bad">دسترسی به میکروفن ممکن نشد. در نوار نشانی مرورگر اجازه‌ی میکروفن را بدهید، یا با گوشی ضبط کنید و فایل‌ها را با «باز کردن فایل» اضافه کنید.</span>';
-  }
+    const denied = e && (e.name === "NotAllowedError" || e.name === "SecurityError");
+    const none = e && (e.name === "NotFoundError" || e.name === "DevicesNotFoundError");
+    const msg = denied ? "اجازه‌ی میکروفن داده نشد. روی نماد قفل یا میکروفن در نوار نشانی بزنید، اجازه را روشن کنید و صفحه را دوباره باز کنید."
+      : none ? "هیچ میکروفنی پیدا نشد. میکروفن یا هدست را وصل کنید و دوباره امتحان کنید."
+      : "روشن کردن میکروفن ممکن نشد. صفحه را یک‌بار دوباره باز کنید و دوباره امتحان کنید؛ اگر باز هم نشد، با گوشی ضبط کنید و فایل‌ها را با «باز کردن فایل» اضافه کنید.";
+    $("meterText").innerHTML = `<span class="bad">${msg}</span><br><span class="hint dir-ltr">(${esc(step)}: ${esc(e && e.name)} ${esc(e && e.message)})</span>`;
+    btn.textContent = "روشن کردن میکروفن";
+  } finally { btn.disabled = false; }
 }
 async function listDevices() {
   try {
@@ -248,6 +298,7 @@ function meterLoop() {
 const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 
 function startRec(key, maxSec, onDone) {
+  if (ctx && ctx.state !== "running") ctx.resume();
   if (!ctx || !stream) { alert("اول «روشن کردن میکروفن» را بزنید."); return false; }
   if (recording) stopRec();
   recording = { key, chunks: [], samples: 0, maxSec: maxSec || 1800, onDone };
@@ -414,6 +465,12 @@ function roomStatus() {
   $("roomStatus").innerHTML = `<span class="${cls}">${msg}</span> <span class="hint">(نویز زمینه ${FA(Math.round(f))} دسی‌بل)</span>`;
 }
 
+// phones pause audio when the page is hidden: close the take cleanly and resume audio on return
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden && recording) { stopRec(); alert("ضبط متوقف شد چون صفحه پنهان شد. اگر لازم است، این سطر را دوباره ضبط کنید."); }
+  if (!document.hidden && ctx && ctx.state !== "running") ctx.resume().catch(() => {});
+});
+
 // keyboard: space toggles recording of the active item
 document.addEventListener("keydown", e => {
   if (e.code !== "Space" || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
@@ -480,7 +537,7 @@ $("clearBtn").onclick = async () => {
 // ---------- boot ----------
 ["code", "name", "gear"].forEach(id => { const el = $(id); el.value = state[id] || ""; el.oninput = el.onchange = () => { state[id] = el.value; saveState(); if (id === "code") updateCodes(); }; });
 $("consent").checked = !!state.consent; $("consent").onchange = () => { state.consent = $("consent").checked; saveState(); };
-$("micBtn").onclick = micOn;
+$("micBtn").onclick = () => { try { ensureCtx(); } catch {} micOn(); };
 $("device").onchange = () => { if (stream) micOn(); };
 (async () => {
   await openDB();
