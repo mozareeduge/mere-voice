@@ -8,17 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
 <style>
 :root {
-  --bg: #f6f4ef; --panel: #ffffff; --ink: #1d1b18; --muted: #6b665d; --line: #e2ddd3;
-  --accent: #7a3b2e; --accent-ink: #ffffff; --ok: #2f6b3a; --warn: #9a6a00; --bad: #a3261b;
-  --soft: #f0ece4; --rec: #c0392b;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #161412; --panel: #1f1c19; --ink: #ece7de; --muted: #a39c90; --line: #35302a;
-    --accent: #d08a6e; --accent-ink: #1a1512; --ok: #7cc48a; --warn: #e0b24a; --bad: #ef7c70; --soft: #29251f; --rec: #ef6b5b;
-  }
-}
-:root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #161412; --panel: #1f1c19; --ink: #ece7de; --muted: #a39c90; --line: #35302a;
   --accent: #d08a6e; --accent-ink: #1a1512; --ok: #7cc48a; --warn: #e0b24a; --bad: #ef7c70; --soft: #29251f; --rec: #ef6b5b;
 }
@@ -89,28 +79,19 @@ a { color: var(--accent); }
       <li>بهترین کار: <b>Chrome یا Edge روی رایانه</b>، با هدفون، در اتاقی ساکت. روی گوشی (Chrome اندروید یا Safari آیفون) هم کار می‌کند، به شرط آن‌که صفحه را از نشانی اینترنتی‌ای که کارگردان فرستاده باز کنید.</li>
       <li>روی گوشی: هنگام ضبط صفحه را باز نگه دارید و به برنامه‌ی دیگری نروید؛ صفحه‌ی قفل یا رفتن به برنامه‌ی دیگر ضبط را قطع می‌کند.</li>
       <li>ضبط‌ها فقط روی همین رایانه و در همین مرورگر می‌مانند و به هیچ‌جا فرستاده نمی‌شوند، مگر خودتان بسته را بفرستید. اگر صفحه بسته شود، ضبط‌ها با باز کردن دوباره‌ی همین فایل برمی‌گردند.</li>
-      <li>پیش از ضبط، رضایت‌نامه را بخوانید و امضا کنید.</li>
     </ul>
   </section>
 
   <section class="panel">
-    <h2>۱. مشخصات</h2>
-    <div class="row">
-      <div><label for="code">کد شما (از کارگردان بگیرید، مثل P2)</label><input type="text" id="code" class="dir-ltr" placeholder="P1" autocomplete="off"></div>
-      <div><label for="name">نام</label><input type="text" id="name" autocomplete="off"></div>
-      <div><label for="gear">با چه چیزی ضبط می‌کنید؟</label>
-        <select id="gear"><option value="">انتخاب کنید</option><option>میکروفن جدا (USB یا کارت صدا)</option><option>هدست یا هدفون میکروفن‌دار</option><option>میکروفن داخلی لپ‌تاپ</option><option>گوشی (فایل‌ها را بعداً باز می‌کنم)</option></select></div>
-    </div>
-    <p class="check" style="margin-top:12px"><input type="checkbox" id="consent"><label for="consent" style="color:inherit;font-size:1rem;margin:0">رضایت‌نامه را خوانده، امضا کرده و برای کارگردان فرستاده‌ام.</label></p>
+    <h2>۱. نام شما</h2>
+    <input type="text" id="name" autocomplete="off" placeholder="نام و نام خانوادگی">
   </section>
 
   <section class="panel">
     <h2>۲. آماده‌سازی (۵ دقیقه)</h2>
     <ul>
-      <li>اتاق ساکت با وسایل نرم (پرده، تخت، کمد لباس). پنکه، کولر و یخچال خاموش؛ پنجره بسته.</li>
       <li>میکروفن حدود ۲۰ تا ۳۰ سانتی‌متر از دهان و کمی کنار آن، نه دقیقاً روبه‌رو.</li>
       <li>با صدای معمولی صحبت کنید. نشانگر پایین باید بیشتر وقت در <b>ناحیه‌ی خط‌چین</b> باشد و هرگز قرمز نشود.</li>
-      <li>تا پایان جلسه جا، فاصله و وضعیت نشستن را ثابت نگه دارید.</li>
     </ul>
     <div class="row" style="margin-top:10px">
       <div><label for="device">میکروفن</label><select id="device"><option value="">پیش‌فرض</option></select></div>
@@ -127,13 +108,6 @@ a { color: var(--accent); }
   <section class="panel" id="directions">
     <h2>۳. شیوه‌ی خواندن</h2>
     __DIRECTIONS__
-    <ul>
-      <li>هر سطر را کامل و یک‌جا بخوانید. نفس کشیدن وسط جمله اشکالی ندارد.</li>
-      <li>اگر اشتباه کردید، «ضبط دوباره» بزنید و کل سطر را از اول بخوانید.</li>
-      <li>هیچ کلمه‌ای را عوض نکنید. متن محاوره‌ای را محاوره‌ای و متن رسمی را رسمی بخوانید.</li>
-      <li>اگر تلفظ کلمه‌ای را مطمئن نیستید، همان‌طور که طبیعی می‌دانید بخوانید و در «یادداشت» بنویسید.</li>
-      <li>کلید <b class="dir-ltr">Space</b> ضبطِ سطرِ انتخاب‌شده را شروع و متوقف می‌کند، و پس از توقف سطر بعدی انتخاب می‌شود.</li>
-    </ul>
   </section>
 
   <div class="progress"><div class="bar"><i id="bar"></i></div><div class="hint" id="progressText"></div></div>
@@ -179,7 +153,6 @@ const deleteTake = key => idb("readwrite", s => s.delete(K(key)));
 function loadState() { try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch { return {}; } }
 function saveState() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch {} }
 const state = loadState();
-state.notes = state.notes || {};
 const takes = {};   // key -> {blob, ext, source, stats, at}
 
 // ---------- audio engine ----------
@@ -359,7 +332,9 @@ function describe(st) {
 
 // ---------- items ----------
 const items = SESSION.items;
-const codeOf = () => ($("code").value.trim().toUpperCase() || "P?");
+// A private code is made once per browser so file names stay short and ASCII; the name goes in the manifest.
+if (!/^V\d{4}$/.test(state.code || "")) { state.code = "V" + String(Math.floor(1000 + Math.random() * 9000)); saveState(); }
+const codeOf = () => state.code;
 const fileBase = it => `${codeOf()}_${it.file}`;
 let active = 0;
 
@@ -380,10 +355,8 @@ function renderItems() {
         <button data-act="del" disabled>حذف</button>
       </div>
       <div class="status" data-status="${i}"></div>
-      <div style="margin-top:8px"><textarea data-note="${i}" placeholder="یادداشت (اختیاری): مثلاً کلمه‌ای که تلفظش را مطمئن نبودید"></textarea></div>`;
+`;
     el.querySelector(".text").textContent = it.text;
-    el.querySelector("textarea").value = state.notes[it.key] || "";
-    el.querySelector("textarea").oninput = e => { state.notes[it.key] = e.target.value; saveState(); };
     el.onclick = () => setActive(i);
     el.querySelector("[data-act=rec]").onclick = e => { e.stopPropagation(); toggleRec(i); };
     el.querySelector("[data-act=play]").onclick = e => { e.stopPropagation(); play(it.key); };
@@ -509,17 +482,17 @@ async function makeZip(files) {
   return new Blob([...parts, ...central, e.buffer], { type: "application/zip" });
 }
 $("zipBtn").onclick = async () => {
-  const code = $("code").value.trim().toUpperCase();
-  if (!/^[A-Z]+\d+$/.test(code)) { alert("لطفاً کد خود را در بخش «مشخصات» بنویسید (مثل P2)."); $("code").focus(); return; }
+  const code = codeOf(), pname = $("name").value.trim();
+  if (!pname) { alert("لطفاً نام خود را در بالای صفحه بنویسید."); $("name").focus(); $("name").scrollIntoView({ block: "center" }); return; }
   const list = []; const manifest = { schema: "mere-voice.recording-package.v1", session: SESSION.id, session_title: SESSION.title,
-    performer_code: code, performer_name: $("name").value.trim(), gear: $("gear").value, consent_confirmed: $("consent").checked,
+    performer_code: code, performer_name: pname,
     created_at: new Date().toISOString(), user_agent: navigator.userAgent, takes: [] };
   if (takes.ROOMTONE) { list.push({ name: `${code}_ROOMTONE.${takes.ROOMTONE.ext}`, blob: takes.ROOMTONE.blob }); manifest.room_tone = takes.ROOMTONE.stats; }
   for (const it of items) {
     const t = takes[it.key]; if (!t) continue;
     const name = `${code}_${it.file}.${t.ext}`; list.push({ name, blob: t.blob });
     manifest.takes.push({ file: name, item: it.key, line_id: it.line_id || null, take: it.take || null, part: it.part, text_fa: it.text,
-      source: t.source, original_name: t.name || null, recorded_at: t.at, quality: t.stats, note: state.notes[it.key] || "" });
+      source: t.source, original_name: t.name || null, recorded_at: t.at, quality: t.stats });
   }
   if (!manifest.takes.length) { alert("هنوز چیزی ضبط نشده است."); return; }
   const missing = items.filter(it => !takes[it.key]).length;
@@ -537,12 +510,11 @@ $("zipBtn").onclick = async () => {
 $("clearBtn").onclick = async () => {
   if (!confirm("همه‌ی ضبط‌های این جلسه از این مرورگر پاک شود؟ اگر بسته را هنوز نفرستاده‌اید، اول آن را دریافت کنید.")) return;
   for (const k of Object.keys(takes)) { delete takes[k]; await deleteTake(k); }
-  state.notes = {}; saveState(); renderItems(); $("roomStatus").textContent = "";
+  renderItems(); $("roomStatus").textContent = "";
 };
 
 // ---------- boot ----------
-["code", "name", "gear"].forEach(id => { const el = $(id); el.value = state[id] || ""; el.oninput = el.onchange = () => { state[id] = el.value; saveState(); if (id === "code") updateCodes(); }; });
-$("consent").checked = !!state.consent; $("consent").onchange = () => { state.consent = $("consent").checked; saveState(); };
+$("name").value = state.name || ""; $("name").oninput = () => { state.name = $("name").value; saveState(); };
 $("micBtn").onclick = () => { try { ensureCtx(); } catch {} micOn(); };
 $("device").onchange = () => { if (stream) micOn(); };
 (async () => {

@@ -61,7 +61,7 @@ function doc(label, children) {
 const takeDirections = [
   h2("دو شیوه‌ی اجرا برای هر سطر"),
   p([run("اجرای A — «طبیعی»: ", { bold: true }), run("همان‌طور بخوانید که اگر این جمله را آرام برای کسی در همان اتاق می‌گفتید. بدون بازیگری و بدون اغراق.")]),
-  p([run("اجرای B — «دور و بالینی»: ", { bold: true }), run("یکنواخت‌تر و خنثی‌تر، کمی دور؛ مثل صدایی که گزارش می‌دهد و احساسش را نشان نمی‌دهد.")]),
+  p([run("اجرای B — «دور»: ", { bold: true }), run("یکنواخت‌تر و خنثی‌تر، کمی دور؛ مثل صدایی که گزارش می‌دهد و احساسش را نشان نمی‌دهد.")]),
   p("در هر دو اجرا صدا باید کامل و روشن باشد. آرام خواندن اشکالی ندارد، اما لطفاً پچ‌پچ یا نجوا نکنید، حتی اگر جمله شاعرانه است.", { italics: true }),
 ];
 
@@ -88,8 +88,8 @@ const readingRules = [
 
 const namingBlock = (examples) => [
   h2("نام‌گذاری و ارسال فایل‌ها"),
-  p([run("کد شما: ", { bold: true }), run("P__   (کارگردان این کد را به شما می‌دهد)")]),
-  p("بهترین روش: برای هر اجرا یک فایل جدا، با نامی به این شکل («P1» را با کد خودتان عوض کنید):"),
+  p([run("نام فایل‌ها: ", { bold: true }), run("در ابتدای نام هر فایل، نام کوچک خود را با حروف انگلیسی بنویسید؛ مثلاً Sara.")]),
+  p("بهترین روش: برای هر اجرا یک فایل جدا، با نامی به این شکل («Sara» را با نام خودتان عوض کنید):"),
   ...examples.map(e => p(e, { ltr: true, size: 22, bold: true, after: 60 })),
   p("اگر جدا کردن فایل‌ها سخت است: همه را پشت سر هم در یک فایل ضبط کنید و پیش از هر سطر، کد آن را بلند بگویید (مثلاً «وُیس صفر صفر یک، اجرای آ») و دو ثانیه مکث کنید. ما خودمان فایل را تقسیم می‌کنیم."),
   p([run("مهم: ", { bold: true }), run("فایل‌ها را به‌صورت «فایل» (Document/File) بفرستید، نه پیام صوتی. پیام‌رسان‌ها پیام صوتی را فشرده می‌کنند و کیفیت از بین می‌رود. گوگل‌درایو، یا تلگرام با گزینه‌ی «ارسال به‌صورت فایل»، مناسب است.")]),
@@ -98,19 +98,19 @@ const namingBlock = (examples) => [
 // ---------- 01 audition ----------
 const auditionIds = ["VOICE-001", "VOICE-004", "VOICE-009"];
 const auditionRows = [];
-for (const t of ["A", "B"]) for (const id of auditionIds) auditionRows.push([`P1_${id}_${t}`, t === "A" ? "طبیعی" : "دور و بالینی", byId[id]]);
+for (const t of ["A", "B"]) for (const id of auditionIds) auditionRows.push([`Sara_${id}_${t}`, t === "A" ? "طبیعی" : "دور", byId[id]]);
 const audition = doc("تست صدا — «صدا»", [
   h1("تست صدا برای نقش «صدا»"),
   p("نمایش «چرا که تو بذل عشق می‌کنی…» — نیروانا × مضارع", { size: 24, bold: true }),
   p("«صدا» شخصیتی دیده‌نشدنی در این نمایش است. در این مرحله چند صدای مختلف را امتحان می‌کنیم تا ببینیم کدام به این نقش جان می‌دهد. از شما خواهش می‌کنیم سه سطر را، هر کدام دو بار و با دو حال متفاوت، ضبط کنید. کل کار حدود ۱۵ دقیقه طول می‌کشد.", { after: 200 }),
-  p("پیش از ضبط، لطفاً رضایت‌نامه‌ی پیوست را بخوانید و امضا کنید.", { bold: true, after: 200, rule: true }),
+  p("", { after: 120, rule: true }),
   ...setupBlock, ...takeDirections, ...readingRules,
   brk(),
   h2("سطرها (به ترتیب جدول بخوانید)"),
-  p("ستون اول نام فایل است. اگر کد شما P1 نیست، در نام‌ها «P1» را با کد خودتان عوض کنید.", { size: 20, italics: true }),
+  p("ستون اول نام فایل است. «Sara» را با نام کوچک خودتان به حروف انگلیسی عوض کنید.", { size: 20, italics: true }),
   table(["نام فایل", "اجرا", "متن"], auditionRows, [2600, 1300, 5100], { bigCol: 2 }),
   p("", { after: 200 }),
-  ...namingBlock(["P1_VOICE-001_A", "P1_VOICE-004_B"]),
+  ...namingBlock(["Sara_VOICE-001_A", "Sara_VOICE-004_B"]),
   p("سپاس از وقت و صدای شما.", { bold: true, after: 0 }),
 ]);
 
@@ -156,10 +156,10 @@ const original = [
   "بعضی شب‌ها صدای قطار از دور می‌آید و بعد همه‌چیز دوباره ساکت می‌شود.",
 ];
 const fullRows = [];
-for (const l of lines17) for (const t of ["A", "B"]) fullRows.push([`P1_${l.id}_${t}`, t === "A" ? "طبیعی" : "دور و بالینی", l.fa]);
+for (const l of lines17) for (const t of ["A", "B"]) fullRows.push([`Sara_${l.id}_${t}`, t === "A" ? "طبیعی" : "دور", l.fa]);
 const numbered = (arr, start = 1) => arr.map((t, i) => p([run(`${(start + i).toLocaleString("fa-IR")}. `, { bold: true }), run(t, { size: 24 })], { after: 90 }));
-const donors = gm.pilot.flatMap(x => x.donors.map(d => [`P1_${d.id}`, d.text]));
-const targets = gm.pilot.map(x => [`P1_${x.target_id}`, x.target_text]);
+const donors = gm.pilot.flatMap(x => x.donors.map(d => [`Sara_${d.id}`, d.text]));
+const targets = gm.pilot.map(x => [`Sara_${x.target_id}`, x.target_text]);
 const full = doc("جلسه‌ی ضبط کامل — «صدا»", [
   h1("جلسه‌ی ضبط کامل برای نقش «صدا»"),
   p("نمایش «چرا که تو بذل عشق می‌کنی…» — نیروانا × مضارع", { size: 24, bold: true }),
@@ -179,8 +179,8 @@ const full = doc("جلسه‌ی ضبط کامل — «صدا»", [
   brk(),
   h1("بخش ۲ — خواندن متن‌های متنوع"),
   p("این متن‌ها ربطی به نمایش ندارند. فقط برای این است که صدای شما را در حالت‌های مختلف بشناسیم: محاوره، رسمی، پرسش، عدد و توصیف. ساده و طبیعی بخوانید، هر جمله یک‌بار. همه را در یک فایل ضبط کنید با نام:"),
-  p("P1_READING", { ltr: true, bold: true }),
-  p("اگر فایل طولانی شد، می‌توانید دو فایل بسازید: P1_READING_1 و P1_READING_2.", { size: 20, italics: true }),
+  p("Sara_READING", { ltr: true, bold: true }),
+  p("اگر فایل طولانی شد، می‌توانید دو فایل بسازید: Sara_READING_1 و Sara_READING_2.", { size: 20, italics: true }),
   h2("الف) جمله‌های روزمره و رسمی"),
   ...numbered(original),
   h2("ب) سطرهایی از شعر ماشینی «گور-ماشین»"),
@@ -189,7 +189,7 @@ const full = doc("جلسه‌ی ضبط کامل — «صدا»", [
   brk(),
   h1("بخش ۳ — صحبت آزاد"),
   p("سه تا پنج دقیقه آزاد و بی‌متن صحبت کنید؛ مثلاً درباره‌ی راه همیشگی‌تان تا خانه، یک روز معمولی، یا اتاقی که در آن بزرگ شده‌اید. لازم نیست جالب یا منظم باشد؛ فقط طبیعی. نام فایل:"),
-  p("P1_FREE", { ltr: true, bold: true }),
+  p("Sara_FREE", { ltr: true, bold: true }),
   h1("بخش ۴ — سطرهای «گور-ماشین»"),
   p("در این بخش آزمایش می‌کنیم که آیا می‌شود از تکه‌های ضبط‌شده، جمله‌های تازه ساخت. هر سطر را یک‌بار و در حالت «طبیعی» بخوانید، هر کدام در فایلی جدا با نام ستون اول. اگر جدا کردن سخت است، همه را در یک فایل با گفتن کد پیش از هر سطر ضبط کنید."),
   h2("۴-الف) سطرهای اول"),
@@ -198,40 +198,13 @@ const full = doc("جلسه‌ی ضبط کامل — «صدا»", [
   h2("۴-ب) سطرهای دوم"),
   table(["نام فایل", "متن"], targets, [2700, 6300], { bigCol: 1 }),
   p("", { after: 200 }),
-  ...namingBlock(["P1_VOICE-012_A", "P1_READING", "P1_GM-03b"]),
+  ...namingBlock(["Sara_VOICE-012_A", "Sara_READING", "Sara_GM-03b"]),
   p("سپاس از وقت و صدای شما.", { bold: true, after: 0 }),
-]);
-
-// ---------- 03 consent ----------
-const box = "☐ ";
-const bi = (fa, en) => [p(fa, { after: 40 }), p(en, { ltr: true, size: 18, color: "555555", after: 140 })];
-const consent = doc("رضایت‌نامه / Consent", [
-  h1("رضایت‌نامه‌ی استفاده از صدا"),
-  p("Voice Recording Consent", { ltr: true, size: 26, bold: true, after: 200 }),
-  ...bi("پروژه: «صدا» در نمایش «چرا که تو بذل عشق می‌کنی…» — نیروانا × مضارع (محمد زارع). اثری هنری و غیرتجاری که ممکن است به‌صورت عمومی اجرا یا نمایش داده شود.",
-    "Project: the Voice (صدا) in the play «چرا که تو بذل عشق می‌کنی…» by Niravana × Mozare (Mohammad Zare). A non-commercial artwork that may be performed or exhibited publicly."),
-  ...bi("نام صاحب صدا: ____________________     کد: P__     تاریخ: ____/____/______",
-    "Name of the voice owner: ____________________     Code: P__     Date: ____/____/______"),
-  h2("من اجازه می‌دهم (کنار هر مورد که موافقید علامت بزنید)"), p("I agree to the following (tick each item you accept)", { ltr: true, size: 20, bold: true, color: "555555" }),
-  ...bi(box + "ضبط صدای من برای تست و تمرین این پروژه.", box + "Recording my voice for tests and rehearsals of this project."),
-  ...bi(box + "استفاده از صدای ضبط‌شده‌ام در اجرا یا نمایش عمومی غیرتجاری این اثر.", box + "Use of my recorded voice in non-commercial public performances or exhibitions of this work."),
-  ...bi(box + "پردازش هنری صدای من (افکت، تغییر زیر و بمی، سرعت، پژواک، جابه‌جایی در فضا).", box + "Artistic processing of my voice (effects, pitch, tempo, reverb, spatial placement)."),
-  ...bi(box + "ساختن مدل تبدیل صدا از صدای من، که جمله‌های تازه را با صدای من بگوید، فقط برای همین پروژه.", box + "Building a voice-conversion model from my recordings so that new sentences can be spoken in my voice, for this project only."),
-  ...bi(box + "استفاده از سرویس‌های آنلاین برای این پردازش (فایل‌ها به سرور شرکت سرویس‌دهنده فرستاده می‌شوند). اگر علامت نزنید، فقط روی رایانه‌ی شخصی پردازش می‌شود.", box + "Use of online services for this processing (files are sent to the provider's servers). If unticked, processing stays on a local computer only."),
-  ...bi(box + "استفاده از صدا در مستندسازی و آرشیو اثر (ویدیو و صوت اجرا، پورتفولیو).", box + "Use in documentation and archiving of the work (performance video/audio, portfolio)."),
-  ...bi("نام من در فهرست دست‌اندرکاران:   " + box + "آورده شود   " + box + "آورده نشود", "My name in the credits:   " + box + "included   " + box + "not included"),
-  h2("تعهدهای هنرمند"), p("The artist commits to", { ltr: true, size: 20, bold: true, color: "555555" }),
-  ...bi("• صدای من یا مدل ساخته‌شده از آن فروخته نمی‌شود و در اختیار دیگران قرار نمی‌گیرد.", "• My voice and any model made from it will not be sold or given to others."),
-  ...bi("• فایل‌ها به‌صورت خصوصی نگهداری می‌شوند و در هیچ مخزن یا وب‌سایت عمومی گذاشته نمی‌شوند.", "• Files are stored privately and never placed in a public repository or website."),
-  ...bi("• صدای من فقط در همین پروژه به کار می‌رود. هر استفاده‌ی دیگر به اجازه‌ی تازه و کتبی نیاز دارد.", "• My voice is used only in this project. Any other use needs new written permission."),
-  ...bi("• هر زمان می‌توانم رضایتم را پس بگیرم. پیش از نخستین اجرای عمومی، همه‌ی فایل‌ها و مدل‌ها پاک می‌شوند. پس از آن، از اجراهای بعدی حذف می‌شوم و مدل پاک می‌شود. مستنداتِ اجراهای گذشته ممکن است باقی بمانند.", "• I can withdraw at any time. Before the first public performance, all files and models are deleted. After it, my voice is removed from future performances and the model is deleted; documentation of past performances may remain."),
-  p("", { after: 200 }),
-  ...bi("امضای صاحب صدا: ____________________          امضای هنرمند: ____________________", "Voice owner signature: ____________________          Artist signature: ____________________"),
 ]);
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  for (const [name, d] of [["01_Audition_Script_FA.docx", audition], ["02_Full_Session_Script_FA.docx", full], ["03_Consent_Form_FA_EN.docx", consent]]) {
+  for (const [name, d] of [["01_Audition_Script_FA.docx", audition], ["02_Full_Session_Script_FA.docx", full]]) {
     fs.writeFileSync(path.join(OUT, name), await Packer.toBuffer(d));
     console.log("wrote", name);
   }

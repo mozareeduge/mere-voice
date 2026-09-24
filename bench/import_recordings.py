@@ -1,7 +1,8 @@
 """Sort performer recordings from recordings_inbox/ into the bench and the voice-training store.
 
 Expected file names (case-insensitive; "_", "-" or space as separators):
-  <CODE>_<LINE>_<TAKE>.<ext>   e.g. P1_VOICE-001_A.m4a   -> bench/audio/rec-p1-a/VOICE-001.m4a
+  <CODE>_<LINE>_<TAKE>.<ext>   e.g. Sara_VOICE-001_A.m4a -> bench/audio/rec-sara-a/VOICE-001.m4a
+                               (recorder pages use an automatic code such as V4821)
   <CODE>_<LINE>.<ext>          e.g. P1_GM-02.wav         -> bench/audio/rec-p1-a/GM-02.wav (take A assumed)
   <CODE>_GM-01a.<ext>          grammar donor line        -> voice_training/p1/donors/GM-01a.<ext>
   <CODE>_READING.<ext>, <CODE>_FREE.<ext>, <CODE>_ROOMTONE -> voice_training/p1/
@@ -23,9 +24,9 @@ AUDIO = ROOT / "bench" / "audio"
 TRAINING = ROOT / "voice_training"
 EXTS = {".wav", ".mp3", ".m4a", ".flac", ".ogg", ".webm", ".aac", ".opus"}
 SEP = r"[ _-]+"
-PAT_LINE = re.compile(rf"^(?P<code>[A-Za-z]+\d+){SEP}(?P<line>VOICE{SEP}\d{{3}}|GM{SEP}\d{{2}})(?:{SEP}(?P<take>[A-Za-z]))?$", re.I)
-PAT_DONOR = re.compile(rf"^(?P<code>[A-Za-z]+\d+){SEP}GM{SEP}(?P<n>\d{{2}})(?P<d>[ab])$", re.I)
-PAT_TRAIN = re.compile(rf"^(?P<code>[A-Za-z]+\d+){SEP}(?P<kind>READING|FREE|ROOMTONE)(?:{SEP}(?P<part>\d+))?$", re.I)
+PAT_LINE = re.compile(rf"^(?P<code>[A-Za-z][A-Za-z0-9]*){SEP}(?P<line>VOICE{SEP}\d{{3}}|GM{SEP}\d{{2}})(?:{SEP}(?P<take>[A-Za-z]))?$", re.I)
+PAT_DONOR = re.compile(rf"^(?P<code>[A-Za-z][A-Za-z0-9]*){SEP}GM{SEP}(?P<n>\d{{2}})(?P<d>[ab])$", re.I)
+PAT_TRAIN = re.compile(rf"^(?P<code>[A-Za-z][A-Za-z0-9]*){SEP}(?P<kind>READING|FREE|ROOMTONE)(?:{SEP}(?P<part>\d+))?$", re.I)
 
 
 def norm_line(raw: str) -> str:
@@ -55,7 +56,7 @@ def route(stem: str, ext: str) -> Path | None:
     if m := PAT_TRAIN.match(stem):
         part = f"_{m['part']}" if m["part"] else ""
         return TRAINING / m["code"].lower() / f"{m['kind'].upper()}{part}{ext}"
-    if m := re.match(r"^(?P<code>[A-Za-z]+\d+)[ _-]+manifest$", stem, re.I):
+    if m := re.match(r"^(?P<code>[A-Za-z][A-Za-z0-9]*)[ _-]+manifest$", stem, re.I):
         return TRAINING / m["code"].lower() / f"manifest{ext}"
     return None
 
@@ -98,7 +99,7 @@ def main() -> int:
     print("Imported:" if done else "Nothing new to import.")
     print("\n".join(done))
     if unknown:
-        print("\nNot recognised (rename like P1_VOICE-001_A.m4a, or ask Claude to sort them):")
+        print("\nNot recognised (rename like Sara_VOICE-001_A.m4a, or ask Claude to sort them):")
         print("\n".join(unknown))
     return 0
 

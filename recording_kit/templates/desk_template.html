@@ -78,15 +78,15 @@ th { color: var(--muted); font-weight: 600; white-space: nowrap; }
     <p>It takes you from <i>"who could be the Voice?"</i> to <i>"the chosen voice has recorded everything we need"</i>, for the fixed lines and the generative layers. Everything runs in this browser. Nothing is uploaded anywhere.</p>
     <h3>Steps</h3>
     <ol>
-      <li><b>Casting:</b> write down 2–3 voices and give each a code (P1, P2, P3). Choose them with the dossier §51 source matrix in mind.</li>
-      <li><b>Send each voice:</b> <a href="../1_send_to_voices/01_Audition_Recorder_FA.html">01 Audition recorder</a> (they record in the browser, or open phone recordings, then press «دریافت بسته‌ی صدا» to get one ZIP) and the <a href="../1_send_to_voices/03_Consent_Form_FA_EN.pdf">consent form</a>. For people who only have a phone, send the <a href="../1_send_to_voices/phone_only_PDF_and_Word/01_Audition_Script_FA.pdf">PDF script</a>; they record with the phone and send the files.</li>
+      <li><b>Casting:</b> write down 2–3 voices. Choose them with the dossier §51 source matrix in mind.</li>
+      <li><b>Send each voice:</b> <a href="../1_send_to_voices/01_Audition_Recorder_FA.html">01 Audition recorder</a> (they record in the browser, or open phone recordings, then press «دریافت بسته‌ی صدا» to get one ZIP). For people who only have a phone, send the <a href="../1_send_to_voices/phone_only_PDF_and_Word/01_Audition_Script_FA.pdf">PDF script</a>; they record with the phone and send the files.</li>
       <li><b>Phones:</b> you can also send this web address. It works in Chrome on Android and Safari on iPhone: <a href="https://mozareeduge.github.io/mere-voice-recorder/">mozareeduge.github.io/mere-voice-recorder</a>. The HTML files work on computers too, opened from disk.</li>
-      <li><b>Collect</b> the ZIP packages or audio files they send. Use nothing before the signed consent is back.</li>
+      <li><b>Collect</b> the ZIP packages or audio files they send.</li>
       <li><b>Listening room:</b> open all packages together. Listen blind following the <b>Protocol</b>. Save your results.</li>
       <li><b>Full session:</b> send the chosen voice <a href="../1_send_to_voices/02_Full_Session_Recorder_FA.html">02 Full session recorder</a> (or its <a href="../1_send_to_voices/phone_only_PDF_and_Word/02_Full_Session_Script_FA.pdf">PDF</a>).</li>
       <li><b>Hand over:</b> copy every received ZIP into <code>mere-voice\recordings_inbox\</code>, double-click <code>IMPORT_RECORDINGS.bat</code>, then tell Claude <i>"the full session is in"</i>.</li>
     </ol>
-    <p class="muted">Before sending, you may want to change the two take directions: A «طبیعی» (natural), B «دور و بالینی» (distant, clinical). Ask Claude to regenerate the recorder pages with your wording.</p>
+    <p class="muted">Before sending, you may want to change the two take directions: A «طبیعی» (natural), B «دور» (distant). Ask Claude to regenerate the recorder pages with your wording.</p>
   </div>
   <div class="panel">
     <h2>Formats the recorders produce</h2>
@@ -94,7 +94,7 @@ th { color: var(--muted); font-weight: 600; white-space: nowrap; }
       <li>Recorded in the page: <b>WAV, 48 kHz, 24-bit, mono</b>. Echo cancellation, noise suppression and automatic gain are switched off, so the raw voice is kept.</li>
       <li>Opened from a phone: the original file is kept byte for byte (m4a, wav, mp3…). Nothing is re-encoded.</li>
       <li>The package also holds <code>P#_ROOMTONE.wav</code> (10 s of the room's own noise) and <code>P#_manifest.json</code> (every take's text, source, duration, peak level, clipping, and the performer's notes).</li>
-      <li>File names follow <code>P1_VOICE-004_B.wav</code>, which the project importer and this desk both read.</li>
+      <li>File names follow <code>V4821_VOICE-004_B.wav</code> (an automatic code; the performer's name is in the manifest) or <code>Sara_VOICE-004_B.m4a</code> for phone files, which the project importer and this desk both read.</li>
     </ul>
   </div>
 </section>
@@ -197,7 +197,7 @@ const esc = x => String(x ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 const LS = "mere-voice-desk-v1";
 const S = (() => { try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch { return {}; } })();
 const persist = () => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch {} };
-S.cast = S.cast || [{ code: "P1" }, { code: "P2" }, { code: "P3" }];
+S.cast = S.cast || [{}, {}, {}];
 S.ratings = S.ratings || {}; S.order = S.order || {}; S.played = S.played || {};
 S.blind = S.blind !== false; S.norm = S.norm !== false;
 
@@ -211,7 +211,7 @@ if (S.tab) document.querySelector(`#tabs button[data-tab="${S.tab}"]`)?.click();
 
 // ---------- casting ----------
 const SOURCE_TYPES = ["", "third performer (prerecorded)", "third performer (live offstage)", "author's own voice", "Mother actor", "Man actor", "both actors / alternating", "synthetic or processed", "other"];
-const COLS = [["code", "Code"], ["name", "Name"], ["type", "Source type (§51)"], ["contact", "Contact"], ["sent", "Audition sent"], ["consent", "Consent signed"], ["model", "Allows voice model"], ["online", "Allows online services"], ["files", "Files received"], ["verdict", "Verdict"], ["notes", "Notes"]];
+const COLS = [["name", "Name"], ["type", "Source type (§51)"], ["contact", "Contact"], ["sent", "Audition sent"], ["files", "Files received"], ["verdict", "Verdict"], ["notes", "Notes"]];
 const YN = ["", "yes", "no"];
 function renderCast() {
   const t = $("castTable");
@@ -222,7 +222,6 @@ function renderCast() {
       const td = document.createElement("td"); if (k === "code") td.className = "code";
       let el;
       if (k === "type") { el = document.createElement("select"); SOURCE_TYPES.forEach(o => el.add(new Option(o || "—", o))); }
-      else if (["consent", "model", "online"].includes(k)) { el = document.createElement("select"); YN.forEach(o => el.add(new Option(o || "—", o))); }
       else if (k === "verdict") { el = document.createElement("select"); ["", "KEEP", "RETRY", "DROP", "HOLD", "CHOSEN"].forEach(o => el.add(new Option(o || "—", o))); }
       else if (k === "notes") el = document.createElement("textarea");
       else { el = document.createElement("input"); el.type = "text"; }
@@ -234,7 +233,7 @@ function renderCast() {
     t.append(tr);
   });
 }
-$("addRow").onclick = () => { S.cast.push({ code: "P" + (S.cast.length + 1) }); persist(); renderCast(); };
+$("addRow").onclick = () => { S.cast.push({}); persist(); renderCast(); };
 function download(name, text, type) { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 30000); }
 const csvCell = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
 $("castCsv").onclick = () => download("casting_tracker.csv", "﻿" + [COLS.map(c => csvCell(c[1])).join(","), ...S.cast.map(r => COLS.map(([k]) => csvCell(r[k])).join(","))].join("\r\n"), "text/csv");
@@ -269,7 +268,7 @@ async function readZip(file) {
 
 // ---------- samples ----------
 const AUDIO_EXT = /\.(wav|m4a|mp3|aac|ogg|opus|webm|flac)$/i;
-const PAT = /^([A-Za-z]+\d+)[ _-]+(VOICE[ _-]+\d{3}|GM[ _-]+\d{2})(?:[ _-]+([A-Za-z]))?$/i;
+const PAT = /^([A-Za-z][A-Za-z0-9]*)[ _-]+(VOICE[ _-]+\d{3}|GM[ _-]+\d{2})(?:[ _-]+([A-Za-z]))?$/i;
 const samples = {};  // id -> {id, cand, line, blob, src, quality}
 const manifests = {};
 const loadedNames = [];
@@ -295,7 +294,7 @@ async function ingest(files) {
   }
   const cands = new Set(Object.values(samples).map(s => s.cand));
   $("loaded").innerHTML = `${Object.keys(samples).length} samples from ${cands.size} voice/take combinations loaded` +
-    (skipped.length ? `<br><span class="warn">Not recognised (name them like P1_VOICE-004_B.m4a): ${skipped.map(esc).join(", ")}</span>` : "");
+    (skipped.length ? `<br><span class="warn">Not recognised (name them like Sara_VOICE-004_B.m4a): ${skipped.map(esc).join(", ")}</span>` : "");
   renderLines();
 }
 $("pick").onchange = e => ingest([...e.target.files]);
@@ -362,7 +361,8 @@ function renderLines() {
       const card = document.createElement("div"); card.className = "card";
       const letter = String.fromCharCode(65 + k);
       const q = manifests[s.code]?.takes?.find(t => t.file === s.name)?.quality;
-      card.innerHTML = `<h4><span>${S.blind ? "Sample " + letter : esc(s.cand)}</span>${S.blind ? "" : `<span class="pill">${esc(s.src)}</span>`}</h4>`;
+      const who = manifests[s.code]?.performer_name;
+      card.innerHTML = `<h4><span>${S.blind ? "Sample " + letter : esc(s.cand) + (who ? " · " + esc(who) : "")}</span>${S.blind ? "" : `<span class="pill">${esc(s.src)}</span>`}</h4>`;
       const b = document.createElement("button"); b.className = "primary"; b.textContent = "▶ Play";
       const meta = document.createElement("div"); meta.className = "muted"; meta.style.fontSize = ".82rem";
       if (S.pass1 && S.played[id]) { b.disabled = true; b.title = "Pass 1: played once"; }
@@ -392,12 +392,12 @@ $("clearRatings").onclick = () => { if (confirm("Delete all ratings in this brow
 $("save").onclick = () => {
   const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
   const rows = [];
-  for (const [line, o] of Object.entries(S.order)) o.ids.forEach((id, k) => { const s = samples[id], r = S.ratings[id] || {}; if (s) rows.push({ line, sample: String.fromCharCode(65 + k), candidate: s.cand, source_file: s.name, ...r }); });
+  for (const [line, o] of Object.entries(S.order)) o.ids.forEach((id, k) => { const s = samples[id], r = S.ratings[id] || {}; if (s) rows.push({ line, sample: String.fromCharCode(65 + k), candidate: s.cand, performer: manifests[s.code]?.performer_name || "", source_file: s.name, ...r }); });
   if (!rows.length) { alert("Load recordings first."); return; }
   const doc = { schema: "mere-voice.casting-results.v1", saved_at: new Date().toISOString(), listener: S.listener || "", setup: S.setup || "",
-    blind_at_save: S.blind, loudness_matched: S.norm, packages: loadedNames, manifests: Object.fromEntries(Object.entries(manifests).map(([k, m]) => [k, { name: m.performer_name, gear: m.gear, consent_confirmed: m.consent_confirmed, room_tone: m.room_tone, created_at: m.created_at }])), results: rows };
+    blind_at_save: S.blind, loudness_matched: S.norm, packages: loadedNames, manifests: Object.fromEntries(Object.entries(manifests).map(([k, m]) => [k, { name: m.performer_name, room_tone: m.room_tone, created_at: m.created_at }])), results: rows };
   download(`casting_results_${stamp}.json`, JSON.stringify(doc, null, 2), "application/json");
-  const cols = ["line", "sample", "candidate", "source_file", "A", "B", "C", "D", "be", "verdict"];
+  const cols = ["line", "sample", "candidate", "performer", "source_file", "A", "B", "C", "D", "be", "verdict"];
   download(`casting_results_${stamp}.csv`, "﻿" + [cols.join(","), ...rows.map(r => cols.map(c => csvCell(r[c])).join(","))].join("\r\n"), "text/csv");
   $("saveInfo").textContent = "Saved two files (JSON + CSV) to your Downloads folder.";
 };

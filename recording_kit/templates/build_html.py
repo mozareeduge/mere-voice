@@ -6,9 +6,9 @@ gm = json.load(open(S / "gm_pilot.json", encoding="utf-8"))
 reading = json.load(open(S / "reading_sentences.json", encoding="utf-8"))
 by = {l["id"]: l["fa"] for l in lines}
 fa = lambda n: str(n).translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
-TAKE = {"A": "اجرای A · طبیعی", "B": "اجرای B · دور و بالینی"}
+TAKE = {"A": "اجرای A · طبیعی", "B": "اجرای B · دور"}
 DIRECTIONS = """<p><b>اجرای A — «طبیعی»:</b> همان‌طور بخوانید که اگر این جمله را آرام برای کسی در همان اتاق می‌گفتید. بدون بازیگری و بدون اغراق.</p>
-<p><b>اجرای B — «دور و بالینی»:</b> یکنواخت‌تر و خنثی‌تر، کمی دور؛ مثل صدایی که گزارش می‌دهد و احساسش را نشان نمی‌دهد.</p>
+<p><b>اجرای B — «دور»:</b> یکنواخت‌تر و خنثی‌تر، کمی دور؛ مثل صدایی که گزارش می‌دهد و احساسش را نشان نمی‌دهد.</p>
 <p class="hint">در هر دو اجرا صدا باید کامل و روشن باشد. آرام خواندن اشکالی ندارد، اما لطفاً پچ‌پچ یا نجوا نکنید.</p>"""
 
 def line_item(lid, t, part, note=None):
@@ -17,7 +17,7 @@ def line_item(lid, t, part, note=None):
 
 audition = {"id": "audition", "title": "Audition — 3 lines x 2 takes", "items":
     [line_item(l, "A", "سطرها — اجرای A (طبیعی)") for l in ["VOICE-001", "VOICE-004", "VOICE-009"]] +
-    [line_item(l, "B", "سطرها — اجرای B (دور و بالینی)") for l in ["VOICE-001", "VOICE-004", "VOICE-009"]]}
+    [line_item(l, "B", "سطرها — اجرای B (دور)") for l in ["VOICE-001", "VOICE-004", "VOICE-009"]]}
 
 P1 = "بخش ۱ — هفده سطر «صدا»"
 full_items = [line_item(l["id"], t, P1) for l in lines for t in "AB"]
